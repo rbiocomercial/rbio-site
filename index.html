@@ -155,14 +155,17 @@ section{scroll-margin-top:78px}
   .environmental-monitoring .feature-banner{border-radius:14px}
 }
 </style>
-<!-- RBio V10.0 — Analytics comercial: soluções, produtos, CTAs, WhatsApp e leads -->
-<meta content="index, follow" name="robots"/><meta content="https://rbios.com.br/" property="og:url"/><link href="https://rbios.com.br/" rel="canonical"/><script data-rbio-seo="organization" type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"RBio Soluções Biológicas","url":"https://rbios.com.br/","email":"comercial@rbios.com.br","telephone":"+55 62 98130-7973","sameAs":["https://www.instagram.com/microbiologia_emfoco/","https://www.tiktok.com/@microbiologiaemfoco/"]}</script><script data-rbio-ga4-events="2">
+<!-- RBio V10.1 — Analytics comercial organizado: conversões e interesses -->
+<meta content="index, follow" name="robots"/><meta content="https://rbios.com.br/" property="og:url"/><link href="https://rbios.com.br/" rel="canonical"/><script data-rbio-seo="organization" type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"RBio Soluções Biológicas","url":"https://rbios.com.br/","email":"comercial@rbios.com.br","telephone":"+55 62 98130-7973","sameAs":["https://www.instagram.com/microbiologia_emfoco/","https://www.tiktok.com/@microbiologiaemfoco/"]}</script><script data-rbio-ga4-events="3">
 (function(){
   function send(name, params){
     if (typeof window.gtag === 'function') window.gtag('event', name, params || {});
   }
   function clean(value){
     return (value || '').trim().replace(/\s+/g,' ').slice(0,120);
+  }
+  function slug(value){
+    return clean(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_|_$/g,'').slice(0,80);
   }
   document.addEventListener('click', function(e){
     var a=e.target.closest ? e.target.closest('a') : null;
@@ -178,32 +181,30 @@ section{scroll-margin-top:78px}
       send('email_click',{link_text:text,section:sectionId});
     }
 
-    if(href === '#contato'){
-      send('contact_cta_click',{cta_text:text,section:sectionId});
-    }
-
-    var solution=a.classList && a.classList.contains('sol') ? a : (a.classList && a.classList.contains('need') ? a : null);
+    var solution=(a.classList && a.classList.contains('sol')) ? a : ((a.classList && a.classList.contains('need')) ? a : null);
     if(solution){
-      var title=solution.querySelector('h3') || solution;
-      send('solution_click',{solution_name:clean(title.textContent),destination:href});
+      var title=solution.querySelector('h3') || solution.querySelector('.title') || solution;
+      var solutionName=clean(title.textContent);
+      send('solution_interest',{solution_name:solutionName,solution_slug:slug(solutionName),destination:href});
     }
 
     var product=a.closest ? a.closest('.product') : null;
     if(product){
       var productTitle=product.querySelector('h3');
-      send('product_interest',{product_name:clean(productTitle ? productTitle.textContent : text)});
+      var productName=clean(productTitle ? productTitle.textContent : text);
+      send('product_interest',{product_name:productName,product_slug:slug(productName),section:sectionId});
     }
 
     var maldi=a.closest ? a.closest('.maldi') : null;
     if(maldi){
-      send('maldi_interest',{cta_text:text});
+      send('maldi_interest',{cta_text:text,product_name:'MALDI-TOF EXS2600'});
     }
   }, {passive:true});
 
   var form=document.getElementById('contactForm');
   if(form){
     form.addEventListener('submit', function(){
-      send('generate_lead',{method:'whatsapp_form'});
+      send('generate_lead',{method:'whatsapp_form',section:'contato'});
     });
   }
 })();
