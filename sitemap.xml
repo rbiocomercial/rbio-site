@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://rbios.com.br/</loc>
-  </url>
+  <url><loc>https://rbios.com.br/</loc></url>
+  <url><loc>https://rbios.com.br/diagnostico-clinico.html</loc></url>
+  <url><loc>https://rbios.com.br/meios-de-cultura.html</loc></url>
+  <url><loc>https://rbios.com.br/monitoramento-ambiental.html</loc></url>
+  <url><loc>https://rbios.com.br/maldi.html</loc></url>
+  <url><loc>https://rbios.com.br/analise-de-agua.html</loc></url>
 </urlset>
