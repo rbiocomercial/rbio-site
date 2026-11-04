@@ -92,11 +92,20 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 <meta property="og:title" content="Meios de Cultura | RBio Soluções Biológicas">
 <meta property="og:description" content="Meios de cultura desidratados, placas prontas para uso e meios cromogênicos para laboratórios e controle de qualidade.">
 <meta property="og:url" content="https://rbios.com.br/meios-de-cultura.html">
+<link rel="stylesheet" href="cookies.css">
+<script src="cookies.js" defer></script>
 <!-- Google Ads tag: RBio -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18527985961"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  // Consentimento: nenhum cookie de medição é gravado até o visitante aceitar (ver cookies.js).
+  gtag('consent', 'default', {'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied', 'analytics_storage': 'denied'});
+  try {
+    if (localStorage.getItem('rbio_cookie_consent') === 'granted') {
+      gtag('consent', 'update', {'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'analytics_storage': 'granted'});
+    }
+  } catch (e) {}
   gtag('js', new Date());
   gtag('config', 'AW-18527985961');
   gtag('config', 'G-2LNESDRK3G');
@@ -247,10 +256,10 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 <footer>
 <div class="container footer-grid">
 <div><div class="footer-title">RBio Soluções Biológicas</div><div style="font-size:13px;color:var(--muted)">Conectando conhecimento, tecnologia e resultado.</div></div>
-<div><div class="footer-title">Navegação</div><a href="index.html">Início</a><a href="diagnostico-clinico.html">Diagnóstico Clínico</a><a href="monitoramento-ambiental.html">Monitoramento Ambiental</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF EXS2600</a></div>
-<div><div class="footer-title">Contato</div><a href="mailto:comercial@rbios.com.br">comercial@rbios.com.br</a><a href="https://wa.me/5562981307973" target="_blank" rel="noopener">WhatsApp comercial</a></div>
+<div><div class="footer-title">Navegação</div><a href="index.html">Início</a><a href="diagnostico-clinico.html">Diagnóstico Clínico</a><a href="meios-de-cultura.html">Meios de Cultura</a><a href="monitoramento-ambiental.html">Monitoramento Ambiental</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF EXS2600</a><a href="politica-de-privacidade.html">Política de Privacidade</a><a href="politica-de-privacidade.html#cookies" data-cookie-prefs>Preferências de cookies</a></div>
+<div><div class="footer-title">Contato</div><a href="mailto:comercial@rbios.com.br">comercial@rbios.com.br</a><a href="https://wa.me/5562981307973" target="_blank" rel="noopener">WhatsApp <span style="white-space:nowrap">(62) 98130-7973</span></a></div>
 </div>
-<div class="container" style="font-size:12px;color:var(--muted);text-align:center;margin-top:10px">Atendimento comercial em todo o Brasil · Foco no Centro-Oeste</div><div class="container copyright">© RBio Soluções Biológicas · Representação comercial</div>
+<div class="container" style="font-size:12px;color:var(--muted);text-align:center;margin-top:10px">Atendimento comercial em todo o Brasil · Foco no Centro-Oeste</div><div class="container copyright">© 2026 RBio Soluções Biológicas · Representação comercial</div>
 </footer>
 </body>
 </html>
