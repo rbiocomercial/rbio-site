@@ -104,9 +104,12 @@ footer{border-top:1px solid var(--line);padding:35px 0 20px;background:#fff}.foo
     });
     gtag('event', 'generate_lead', {'method': 'whatsapp'});
   });
-  // GA4: cliques no e-mail comercial.
+  // Ads + GA4: cliques no e-mail comercial.
   document.addEventListener('click', function(event) {
-    if (event.target.closest('a[href^="mailto:"]')) gtag('event', 'generate_lead', {'method': 'email'});
+    if (event.target.closest('a[href^="mailto:"]')) {
+      gtag('event', 'conversion', {'send_to': 'AW-18527985961/i7MJCJrt86MdEKnC6oJF', 'transport_type': 'beacon'});
+      gtag('event', 'generate_lead', {'method': 'email'});
+    }
   });
 </script>
 <style>.brand{gap:0}.brand-wordmark{font-size:30px;font-weight:800;letter-spacing:-1.6px}.brand-wordmark b{color:#08283f}.brand-wordmark i{color:#087b88;font-style:normal}.brand-wordmark small{font-size:8.5px;margin-top:6px;letter-spacing:1.6px;color:#08283f;opacity:.8}@media(max-width:650px){.brand-wordmark{font-size:26px}.brand-wordmark small{font-size:7.5px;letter-spacing:1.2px}}</style></head><body><header class="header"><div class="container nav"><a class="brand" href="index.html"><span class="brand-wordmark"><b>R</b><i>Bio</i><small>SOLUÇÕES BIOLÓGICAS</small></span></a><nav class="menu"><a href="index.html">Início</a><a href="diagnostico-clinico.html">Diagnóstico Clínico</a><a href="meios-de-cultura.html">Meios de Cultura</a><a href="monitoramento-ambiental.html" style="color:var(--cyan-dark)">Monitoramento Ambiental</a><a href="analise-de-agua.html">Análise de água</a><a href="#contato">Contato</a></nav><a class="btn btn-primary" href="https://wa.me/5562981307973?text=Ol%C3%A1%2C%20RBio%21%0AGostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener">Solicitar cotação</a><button class="menu-toggle" aria-expanded="false" aria-controls="mobileMenu" onclick="var m=document.getElementById('mobileMenu');this.setAttribute('aria-expanded',m.classList.toggle('open'))" aria-label="Abrir menu">☰</button></div><div class="mobile-menu" id="mobileMenu"><a href="index.html">Início</a><a href="diagnostico-clinico.html">Diagnóstico Clínico</a><a href="meios-de-cultura.html">Meios de Cultura</a><a href="monitoramento-ambiental.html">Monitoramento Ambiental</a><a href="analise-de-agua.html">Análise de água</a><a href="#contato">Contato</a></div></header><main>

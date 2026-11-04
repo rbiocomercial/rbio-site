@@ -183,9 +183,12 @@ section{scroll-margin-top:78px}
     });
     gtag('event', 'generate_lead', {'method': 'whatsapp'});
   });
-  // GA4: cliques no e-mail comercial.
+  // Ads + GA4: cliques no e-mail comercial.
   document.addEventListener('click', function(event) {
-    if (event.target.closest('a[href^="mailto:"]')) gtag('event', 'generate_lead', {'method': 'email'});
+    if (event.target.closest('a[href^="mailto:"]')) {
+      gtag('event', 'conversion', {'send_to': 'AW-18527985961/i7MJCJrt86MdEKnC6oJF', 'transport_type': 'beacon'});
+      gtag('event', 'generate_lead', {'method': 'email'});
+    }
   });
 </script>
 <style>.brand{gap:0}.brand-wordmark{font-size:30px;font-weight:800;letter-spacing:-1.6px}.brand-wordmark b{color:#08283f}.brand-wordmark i{color:#087b88;font-style:normal}.brand-wordmark small{font-size:8.5px;margin-top:6px;letter-spacing:1.6px;color:#08283f;opacity:.8}@media(max-width:650px){.brand-wordmark{font-size:26px}.brand-wordmark small{font-size:7.5px;letter-spacing:1.2px}}</style></head><body><header class="header"><div class="container nav"><a class="brand" href="index.html" aria-label="RBio Soluções Biológicas"><span class="brand-wordmark"><b>R</b><i>Bio</i><small>SOLUÇÕES BIOLÓGICAS</small></span></a><nav class="menu" aria-label="Navegação principal"><a href="index.html">Início</a><a href="diagnostico-clinico.html">Diagnóstico Clínico</a><a href="meios-de-cultura.html">Meios de Cultura</a><a href="monitoramento-ambiental.html">Monitoramento Ambiental</a><a href="analise-de-agua.html">Análise de água</a><a href="index.html#contato">Contato</a></nav><a class="btn btn-primary" href="https://wa.me/5562981307973?text=Ol%C3%A1%2C%20RBio%21%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20as%20solu%C3%A7%C3%B5es." target="_blank" rel="noopener">Solicitar cotação</a><button class="menu-toggle" aria-expanded="false" aria-label="Abrir menu" type="button" onclick="toggleMenu(this)">☰</button></div><div class="mobile-menu" id="mobileMenu"><div class="container"><a href="index.html" onclick="closeMenu()">Início</a><a href="diagnostico-clinico.html" onclick="closeMenu()">Diagnóstico Clínico</a><a href="meios-de-cultura.html" onclick="closeMenu()">Meios de Cultura</a><a href="monitoramento-ambiental.html" onclick="closeMenu()">Monitoramento Ambiental</a><a href="analise-de-agua.html" onclick="closeMenu()">Análise de água</a><a href="index.html#contato" onclick="closeMenu()">Contato</a></div></div></header><main><section class="hero" id="inicio">
