@@ -52,6 +52,7 @@ footer{border-top:1px solid var(--line);padding:35px 0 20px;background:#fff}.foo
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'AW-18527985961');
+  gtag('config', 'G-2LNESDRK3G');
   // Registra cliques que levam ao WhatsApp como conversões do Google Ads.
   document.addEventListener('click', function(event) {
     var link = event.target.closest('a[href*="wa.me/"], a[href*="api.whatsapp.com/"], a[href*="whatsapp.com/"]');
@@ -60,6 +61,11 @@ footer{border-top:1px solid var(--line);padding:35px 0 20px;background:#fff}.foo
       'send_to': 'AW-18527985961/i7MJCJrt86MdEKnC6oJF',
       'transport_type': 'beacon'
     });
+    gtag('event', 'generate_lead', {'method': 'whatsapp'});
+  });
+  // GA4: cliques no e-mail comercial.
+  document.addEventListener('click', function(event) {
+    if (event.target.closest('a[href^="mailto:"]')) gtag('event', 'generate_lead', {'method': 'email'});
   });
 </script>
 </head><body><header class="header"><div class="container nav">
