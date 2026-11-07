@@ -20,6 +20,29 @@
     '@keyframes tv-jump{0%{transform:translateY(0) scale(1)}35%{transform:translateY(-26px) scale(1.06,.94)}70%{transform:translateY(0) scale(.96,1.04)}100%{transform:translateY(0) scale(1)}}';
   document.head.appendChild(css);
 
+
+  // ===== Mascotes espiando nas seções =====
+  css.textContent +=
+    '@keyframes tv-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}' +
+    '.tv-peek{position:absolute;z-index:3;width:132px;top:-50px;animation:tv-float 5.5s ease-in-out infinite;filter:drop-shadow(0 12px 14px rgba(8,40,63,.14))}' +
+    '.tv-peek img{width:100%!important;height:auto!important;max-height:none!important;min-height:0!important;aspect-ratio:auto!important;object-fit:contain!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:none!important;padding:0!important;margin:0!important;display:block}' +
+    '.tv-peek.r{right:max(14px,calc((100% - 1160px) / 2))}.tv-peek.r2{right:calc(max(14px,calc((100% - 1160px) / 2)) + 140px);animation-delay:-2.2s}' +
+    '.tv-peek.l{left:max(14px,calc((100% - 1160px) / 2));animation-delay:-1.3s}' +
+    '.tv-peek.hv-bl{top:auto;bottom:-34px;left:-30px;width:140px}.tv-peek.hv-tr{top:-38px;right:-24px;width:130px;animation-delay:-2.6s}' +
+    '.tv-lib{background:linear-gradient(180deg,#f4fafb,#fff);border-top:1px solid #d9e7ea}' +
+    '.tv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}' +
+    '.tv-grid figure{margin:0;background:#fff;border:1px solid #d9e7ea;border-radius:14px;overflow:hidden;transition:.2s}' +
+    '.tv-grid figure:hover{border-color:#9ccfd5;box-shadow:0 14px 40px rgba(8,40,63,.09)}' +
+    '.tv-grid img{width:100%!important;height:auto!important;aspect-ratio:4/3;object-fit:contain!important;padding:8px!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:linear-gradient(160deg,#fff,#e3f4f6)!important;display:block}' +
+    '.tv-grid figcaption{padding:9px 12px;font-size:13px;color:#08283f;font-weight:700}' +
+    '@media(max-width:900px){.tv-grid{grid-template-columns:1fr 1fr}.tv-peek{width:100px;top:-36px}.tv-peek.r2{right:calc(14px + 104px)}.tv-peek.hv-bl{width:104px;left:-10px;bottom:-26px}.tv-peek.hv-tr{width:96px;right:-8px;top:-28px}}' +
+    '@media(max-width:560px){.tv-peek{width:84px;top:-30px}.tv-peek.r2{right:104px}}' +
+    '@media(prefers-reduced-motion:reduce){.tv-peek{animation:none}}';
+  document.querySelectorAll('.tv-peek').forEach(function (p) {
+    var host = p.parentElement;
+    if (host && getComputedStyle(host).position === 'static') host.style.position = 'relative';
+  });
+
   var bubble = document.createElement('div');
   bubble.className = 'tv-bubble';
   bubble.setAttribute('role', 'status');
@@ -57,15 +80,15 @@
   // ===== Comportamentos de cada mascote (passar o mouse no computador, tocar no celular) =====
   css.textContent +=
     '.tv-p{position:fixed;z-index:79;pointer-events:none;border-radius:50%;will-change:transform,opacity}' +
-    '[data-acao] img{transition:transform .6s cubic-bezier(.34,1.56,.64,1),filter .6s ease}' +
-    '[data-acao].tv-esporo img{transform:scale(.42) rotate(-24deg);filter:drop-shadow(0 0 10px rgba(255,190,90,.95)) drop-shadow(0 0 26px rgba(255,140,40,.6)) brightness(1.12) saturate(1.2)}' +
-    '[data-acao].tv-pigmento img{animation:tv-pyo 1.6s ease-in-out}' +
+    '[data-acao] img,img[data-acao]{transition:transform .6s cubic-bezier(.34,1.56,.64,1),filter .6s ease}' +
+    '[data-acao].tv-esporo img,img[data-acao].tv-esporo{transform:scale(.42) rotate(-24deg);filter:drop-shadow(0 0 10px rgba(255,190,90,.95)) drop-shadow(0 0 26px rgba(255,140,40,.6)) brightness(1.12) saturate(1.2)}' +
+    '[data-acao].tv-pigmento img,img[data-acao].tv-pigmento{animation:tv-pyo 1.6s ease-in-out}' +
     '@keyframes tv-pyo{0%,100%{filter:drop-shadow(0 0 0 rgba(47,224,106,0))}35%{filter:drop-shadow(0 0 14px rgba(47,224,106,.95)) drop-shadow(0 0 34px rgba(120,255,150,.65)) saturate(1.3) brightness(1.08)}70%{filter:drop-shadow(0 0 8px rgba(47,224,106,.6)) drop-shadow(0 0 20px rgba(120,255,150,.35))}}' +
-    '[data-acao].tv-aceno img{animation:tv-wave 1s cubic-bezier(.45,0,.55,1) 2;transform-origin:50% 90%}' +
+    '[data-acao].tv-aceno img,img[data-acao].tv-aceno{animation:tv-wave 1s cubic-bezier(.45,0,.55,1) 2;transform-origin:50% 90%}' +
     '@keyframes tv-wave{0%,100%{transform:rotate(0)}25%{transform:rotate(-9deg) translateY(-3px)}75%{transform:rotate(9deg) translateY(-3px)}}' +
-    '[data-acao].tv-agito img{animation:tv-shake .5s cubic-bezier(.36,.07,.19,.97) 2}' +
+    '[data-acao].tv-agito img,img[data-acao].tv-agito{animation:tv-shake .5s cubic-bezier(.36,.07,.19,.97) 2}' +
     '@keyframes tv-shake{10%,90%{transform:translateX(-1px) rotate(-1deg)}20%,80%{transform:translateX(3px) rotate(1.5deg)}30%,50%,70%{transform:translateX(-4px) rotate(-2deg)}40%,60%{transform:translateX(4px) rotate(2deg)}}' +
-    '[data-acao].tv-squash img{animation:tv-squash .55s cubic-bezier(.34,1.56,.64,1)}' +
+    '[data-acao].tv-squash img,img[data-acao].tv-squash{animation:tv-squash .55s cubic-bezier(.34,1.56,.64,1)}' +
     '@keyframes tv-squash{0%{transform:scale(1)}35%{transform:scale(1.1,.88)}70%{transform:scale(.96,1.05)}100%{transform:scale(1)}}';
 
   var R = function (a, b) { return a + Math.random() * (b - a); };
@@ -78,6 +101,7 @@
     document.body.appendChild(p);
     var an = p.animate(frames, { duration: dur, delay: delay || 0, easing: ease || 'cubic-bezier(.22,.61,.36,1)', fill: 'both' });
     an.onfinish = function () { p.remove(); };
+    return p;
   }
   function ring(x, y, size, color, dur, delay, width) {
     particle(x, y, size, 'border:' + (width || 3) + 'px solid ' + color + ';box-shadow:0 0 12px ' + color,
@@ -189,6 +213,54 @@
       for (var k = 0; k < 4; k++) particle(r.left + r.width / 2, r.top + r.height * .55, r.width * .7, 'border:2px solid rgba(255,156,192,.6)',
         [{ transform: 'scale(.4)', opacity: 0 }, { transform: 'scale(.7)', opacity: .8, offset: .3 }, { transform: 'scale(1.2)', opacity: 0 }], 1100, k * 350, 'ease-out');
     },
+    // E. coli na análise de água: fluorescência azul sob UV (MUG / β-glucuronidase)
+    uv: function (el) {
+      var r = box(el), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+      var i = el.querySelector('img') || el;
+      i.animate([{ filter: 'none' }, { filter: 'drop-shadow(0 0 10px rgba(110,140,255,.95)) drop-shadow(0 0 28px rgba(140,90,255,.7)) hue-rotate(-40deg) saturate(1.4) brightness(1.15)', offset: .3 },
+        { filter: 'drop-shadow(0 0 8px rgba(110,140,255,.8)) drop-shadow(0 0 22px rgba(140,90,255,.5)) hue-rotate(-40deg) saturate(1.3) brightness(1.1)', offset: .75 }, { filter: 'none' }], { duration: 1900, easing: 'ease-in-out' });
+      for (var k = 0; k < 9; k++) {
+        var a = -Math.PI / 2 + R(-.9, .9);
+        particle(cx, r.top - 6, 4, 'background:linear-gradient(#b9a8ff,rgba(124,92,255,0));border-radius:2px;height:46px;width:4px',
+          [{ transform: 'translate(' + Math.cos(a) * 30 + 'px,-60px) rotate(' + (a * 57 + 90) + 'deg)', opacity: 0 }, { transform: 'translate(' + Math.cos(a) * 10 + 'px,-10px) rotate(' + (a * 57 + 90) + 'deg)', opacity: .9, offset: .4 }, { transform: 'translate(0,10px) rotate(' + (a * 57 + 90) + 'deg)', opacity: 0 }], 900, k * 60);
+      }
+      ring(cx, cy, r.width * 1.1, 'rgba(124,92,255,.6)', 1200, 250, 3);
+    },
+    // Coliformes: o meio fica amarelo (ONPG / β-galactosidase)
+    amarelo: function (el) {
+      var r = box(el), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+      bump(el, 'tv-squash', 600);
+      particle(cx, cy, r.width * 1.25, 'background:radial-gradient(circle,rgba(255,224,60,.55) 0,rgba(255,224,60,.25) 45%,rgba(255,224,60,0) 70%)',
+        [{ transform: 'scale(.3)', opacity: 0 }, { transform: 'scale(1)', opacity: 1, offset: .35 }, { transform: 'scale(1.15)', opacity: 0 }], 1800, 0, 'ease-out');
+      ring(cx, cy, r.width, 'rgba(255,205,40,.85)', 1100, 120, 3);
+      ring(cx, cy, r.width * 1.3, 'rgba(255,225,90,.6)', 1300, 380, 2);
+    },
+    // MALDI-TOF: linha de laser escaneia e aparece um mini espectro
+    identificar: function (el) {
+      var r = box(el);
+      particle(r.left + r.width / 2, r.top + r.height / 2, 10, 'width:' + (r.width * 1.05) + 'px;height:3px;left:' + (r.left - r.width * .025) + 'px;border-radius:2px;background:linear-gradient(90deg,rgba(16,168,184,0),#10f0ff,rgba(16,168,184,0));box-shadow:0 0 12px #10f0ff',
+        [{ transform: 'translateY(' + (-r.height * .45) + 'px)', opacity: 0 }, { transform: 'translateY(' + (-r.height * .3) + 'px)', opacity: 1, offset: .15 }, { transform: 'translateY(' + (r.height * .35) + 'px)', opacity: 1, offset: .85 }, { transform: 'translateY(' + (r.height * .45) + 'px)', opacity: 0 }], 900);
+      var bw = 5, n = 9, x0 = r.left + r.width / 2 - n * (bw + 4) / 2;
+      for (var k = 0; k < n; k++) {
+        var h = R(10, 46) * (k === 4 ? 1.4 : 1);
+        particle(x0 + k * (bw + 4), r.top - 4, bw, 'border-radius:2px;width:' + bw + 'px;height:' + h + 'px;transform-origin:50% 100%;background:linear-gradient(#10f0ff,#087b88)',
+          [{ transform: 'translateY(' + (-h / 2) + 'px) scaleY(0)', opacity: 0 }, { transform: 'translateY(' + (-h / 2) + 'px) scaleY(1)', opacity: 1, offset: .35 }, { transform: 'translateY(' + (-h / 2) + 'px) scaleY(1)', opacity: 1, offset: .8 }, { transform: 'translateY(' + (-h / 2) + 'px) scaleY(0)', opacity: 0 }], 1600, 700 + k * 40);
+      }
+      var nome = el.getAttribute('data-nome');
+      if (nome) setTimeout(function () { say('✓ Identificado: ' + nome, r.left + r.width / 2, r.top - 40); }, 900);
+    },
+    // Klebsiella (KPC): escudo de resistência aos carbapenêmicos
+    escudo: function (el) {
+      var r = box(el), cx = r.left + r.width / 2, cy = r.top + r.height / 2, s = r.width * 1.05;
+      bump(el, 'tv-squash', 600);
+      particle(cx, cy, s, 'border-radius:0;clip-path:polygon(25% 3%,75% 3%,100% 50%,75% 97%,25% 97%,0 50%);background:radial-gradient(circle,rgba(226,75,74,0) 52%,rgba(226,75,74,.35) 70%,rgba(226,75,74,.85) 74%,rgba(226,75,74,0) 78%)',
+        [{ transform: 'scale(.5) rotate(-20deg)', opacity: 0 }, { transform: 'scale(1) rotate(0)', opacity: 1, offset: .25 }, { transform: 'scale(1) rotate(0)', opacity: 1, offset: .75 }, { transform: 'scale(1.15)', opacity: 0 }], 1900, 0, 'cubic-bezier(.34,1.56,.64,1)');
+      ['K', 'P', 'C'].forEach(function (c, k) {
+        var t = particle(cx + (k - 1) * 22, r.top + 4, 20, 'border-radius:6px;background:#a32d2d;color:#fff;font:800 12px/20px Inter,system-ui,sans-serif;text-align:center',
+          [{ transform: 'translateY(10px) scale(.5)', opacity: 0 }, { transform: 'translateY(-14px) scale(1)', opacity: 1, offset: .3 }, { transform: 'translateY(-18px) scale(1)', opacity: 1, offset: .8 }, { transform: 'translateY(-26px) scale(.8)', opacity: 0 }], 1700, 200 + k * 90);
+        if (t) t.textContent = c;
+      });
+    },
     // Mascote azul: dá tchau
     aceno: function (el) { bump(el, 'tv-aceno', 2100); }
   };
@@ -203,8 +275,9 @@
 
   if (reduce) return;
 
-  var src = (document.querySelector('[data-swimmer]') || {}).getAttribute ?
-    document.querySelector('[data-swimmer]').getAttribute('data-swimmer') : 'img/turma/pseudomonas.svg';
+  var swHost = document.querySelector('[data-swimmer]');
+  if (!swHost) return;
+  var src = swHost.getAttribute('data-swimmer');
   var sw = document.createElement('div');
   sw.className = 'tv-swimmer';
   sw.setAttribute('aria-hidden', 'true');

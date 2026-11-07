@@ -135,23 +135,11 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 
 <span class="brand-wordmark"><b>R</b><i>Bio</i><small>SOLUÇÕES BIOLÓGICAS</small></span>
 </a>
-<nav class="menu" aria-label="Navegação principal">
-<a href="index.html">Início</a>
-<a href="diagnostico-clinico.html">Diagnóstico Clínico</a>
-<a href="meios-de-cultura.html" style="color:var(--cyan-dark)">Meios de Cultura</a>
-<a href="monitoramento-ambiental.html">Monitoramento Ambiental</a><a href="analise-de-agua.html">Análise de água</a>
-<a href="#contato">Contato</a>
-</nav>
+<nav class="menu" aria-label="Navegação principal"><a href="diagnostico-clinico.html">Diagnóstico</a><a href="meios-de-cultura.html" style="color:var(--cyan-dark)" aria-current="page">Meios de cultura</a><a href="monitoramento-ambiental.html">Monitoramento</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF</a><a href="farmacopeia.html">Guia Farmacopeia</a><a href="#contato">Contato</a></nav>
 <a class="btn btn-primary" href="https://wa.me/5562981307973?text=Ol%C3%A1%2C%20RBio%21%0AGostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener">Solicitar cotação</a>
 <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu" onclick="var m=document.getElementById('mobileMenu');this.setAttribute('aria-expanded',m.classList.toggle('open'))">☰</button>
 </div>
-<div class="mobile-menu" id="mobileMenu">
-<a href="index.html">Início</a>
-<a href="diagnostico-clinico.html">Diagnóstico Clínico</a>
-<a href="meios-de-cultura.html">Meios de Cultura</a>
-<a href="monitoramento-ambiental.html">Monitoramento Ambiental</a>
-<a href="analise-de-agua.html">Análise de água</a><a href="#contato">Contato</a>
-</div>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Início</a><a href="diagnostico-clinico.html">Diagnóstico</a><a href="meios-de-cultura.html" style="color:var(--cyan-dark)" aria-current="page">Meios de cultura</a><a href="monitoramento-ambiental.html">Monitoramento</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF</a><a href="farmacopeia.html">Guia Farmacopeia</a><a href="#contato">Contato</a></div>
 </header>
 
 <main>
@@ -166,7 +154,7 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 <a class="btn btn-outline" href="#contato">Falar com a RBio</a>
 </div>
 </div>
-<div class="hero-visual">
+<div class="hero-visual"><div class="tv-peek hv-tr" data-acao="esporos" data-nome="Aspergillus brasiliensis" data-fato="No ágar OGYE, a oxitetraciclina segura as bactérias e eu, fungo, cresço à vontade."><img src="img/turma/aspergillus.svg" alt="Aspergillus brasiliensis"></div>
 <img src="img/meios-cromogenicos.webp" alt="Meios cromogênicos em placas de Petri" width="1200" height="800" decoding="async">
 <div class="badge">Qualidade e segurança para suas rotinas microbiológicas.</div>
 </div>
@@ -187,7 +175,7 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 </div>
 </section>
 
-<section class="chromogenic">
+<section class="chromogenic"><div class="tv-peek r" data-acao="agito" data-nome="Escherichia coli" data-fato="Em meio cromogênico, minha enzima libera a cor: fica fácil me reconhecer na placa."><img src="img/turma/ecoli.svg" alt="Escherichia coli"></div><div class="tv-peek r2" data-acao="agito" data-nome="Salmonella" data-fato="No XLD, minhas colônias ficam com centro preto por causa do H₂S."><img src="img/turma/salmonella.svg" alt="Salmonella"></div>
 <div class="container chrom-grid">
 <div class="chrom-image"><img src="img/meios-cromogenicos.webp" alt="Placas de meios cromogênicos com colônias de diferentes cores" width="1200" height="800" loading="lazy" decoding="async"></div>
 <div>
@@ -205,7 +193,7 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 </div>
 </section>
 
-<section>
+<section><div class="tv-peek l" data-acao="broto" data-nome="Candida albicans" data-fato="Gosto de Sabouraud: ágar mais ácido que favorece leveduras e fungos."><img src="img/turma/candida.svg" alt="Candida albicans"></div>
 <div class="container split">
 <div>
 <span class="eyebrow">PRONTO PARA USO</span>
@@ -223,7 +211,7 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 </div>
 </section>
 
-<section class="dark">
+<section class="dark"><div class="tv-peek r" data-acao="dourado" data-nome="Staphylococcus aureus" data-fato="No ágar manitol salgado eu fermento o manitol e deixo o meio amarelo."><img src="img/turma/staphylococcus.svg" alt="Staphylococcus aureus"></div>
 <div class="container">
 <span class="eyebrow" style="color:#8fe3e0">MEIOS DESIDRATADOS</span>
 <h2>Biokar para quem prepara o meio no laboratório.</h2>
@@ -252,10 +240,11 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 <footer>
 <div class="container footer-grid">
 <div><div class="footer-title">RBio Soluções Biológicas</div><div style="font-size:13px;color:var(--muted)">Conectando conhecimento, tecnologia e resultado.</div></div>
-<div><div class="footer-title">Navegação</div><a href="index.html">Início</a><a href="diagnostico-clinico.html">Diagnóstico Clínico</a><a href="meios-de-cultura.html">Meios de Cultura</a><a href="monitoramento-ambiental.html">Monitoramento Ambiental</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF EXS2600</a><a href="politica-de-privacidade.html">Política de Privacidade</a><a href="politica-de-privacidade.html#cookies" data-cookie-prefs>Preferências de cookies</a></div>
+<div><div class="footer-title">Navegação</div><a href="index.html">Início</a><a href="diagnostico-clinico.html">Diagnóstico Clínico</a><a href="meios-de-cultura.html">Meios de Cultura</a><a href="monitoramento-ambiental.html">Monitoramento Ambiental</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF EXS2600</a><a href="farmacopeia.html">Guia Farmacopeia</a><a href="politica-de-privacidade.html">Política de Privacidade</a><a href="politica-de-privacidade.html#cookies" data-cookie-prefs>Preferências de cookies</a></div>
 <div><div class="footer-title">Contato</div><a href="mailto:comercial@rbios.com.br">comercial@rbios.com.br</a><a href="https://wa.me/5562981307973" target="_blank" rel="noopener">WhatsApp <span style="white-space:nowrap">(62) 98130-7973</span></a></div>
 </div>
 <div class="container" style="font-size:12px;color:var(--muted);text-align:center;margin-top:10px">Atendimento comercial em todo o Brasil · Foco no Centro-Oeste</div><div class="container copyright">© 2026 RBio Soluções Biológicas · Representação comercial · CNPJ 47.719.622/0001-38</div>
 </footer>
+<script src="turma-viva.js" defer></script>
 </body>
 </html>
