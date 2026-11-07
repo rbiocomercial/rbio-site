@@ -53,6 +53,101 @@
     });
   });
 
+
+  // ===== Comportamentos de cada mascote (passar o mouse no computador, tocar no celular) =====
+  css.textContent +=
+    '.tv-p{position:fixed;z-index:79;pointer-events:none;border-radius:50%}' +
+    '[data-acao] img{transition:transform .5s cubic-bezier(.3,1.5,.5,1),filter .5s}' +
+    '[data-acao].tv-esporo img{transform:scale(.45) rotate(-20deg);filter:drop-shadow(0 0 14px #ffd27a) brightness(1.15)}' +
+    '[data-acao].tv-pigmento img{filter:drop-shadow(0 0 18px #2fe06a) drop-shadow(0 0 30px #8cff9e)}' +
+    '[data-acao].tv-aceno img{animation:tv-wave .9s ease-in-out 2}' +
+    '@keyframes tv-wave{0%,100%{transform:rotate(0)}25%{transform:rotate(-10deg)}75%{transform:rotate(10deg)}}' +
+    '[data-acao].tv-agito img{animation:tv-shake .12s linear 8}' +
+    '@keyframes tv-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(4px) rotate(2deg)}}';
+
+  function box(el) { return el.getBoundingClientRect(); }
+  function particle(x, y, size, bg, anim, dur, extra) {
+    if (reduce) return;
+    var p = document.createElement('div');
+    p.className = 'tv-p';
+    p.style.cssText += 'left:' + (x - size / 2) + 'px;top:' + (y - size / 2) + 'px;width:' + size + 'px;height:' + size + 'px;background:' + bg + ';' + (extra || '');
+    document.body.appendChild(p);
+    var a = p.animate(anim, { duration: dur, easing: 'cubic-bezier(.2,.7,.3,1)', fill: 'forwards' });
+    a.onfinish = function () { p.remove(); };
+  }
+  var R = function (a, b) { return a + Math.random() * (b - a); };
+
+  var ACOES = {
+    // Aspergillus: solta uma nuvem de esporos pretos que flutuam e somem
+    esporos: function (el) {
+      var r = box(el), x = r.left + r.width * .78, y = r.top + r.height * .12;
+      for (var i = 0; i < 26; i++) {
+        var dx = R(-110, 130), dy = R(-140, 30), s = R(4, 9);
+        particle(x, y, s, 'radial-gradient(circle at 35% 30%,#7d8799,#1b1f27)',
+          [{ transform: 'translate(0,0) scale(.4)', opacity: 1 }, { transform: 'translate(' + dx + 'px,' + dy + 'px) scale(1)', opacity: .9, offset: .6 }, { transform: 'translate(' + (dx * 1.3) + 'px,' + (dy * 1.3 - 40) + 'px) scale(.8)', opacity: 0 }],
+          R(1600, 2600));
+      }
+    },
+    // S. aureus ("dourado"): brilhos dourados saindo dos cocos
+    dourado: function (el) {
+      var r = box(el), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+      for (var i = 0; i < 26; i++) {
+        var a = Math.random() * 6.283, d = R(60, 150);
+        particle(cx, cy, R(14, 24), '#ffc61a', [{ transform: 'translate(0,0) scale(.2) rotate(0)', opacity: 1 }, { transform: 'translate(' + Math.cos(a) * d + 'px,' + Math.sin(a) * d + 'px) scale(1) rotate(180deg)', opacity: 0 }],
+          R(1200, 1900), 'border-radius:2px;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);box-shadow:0 0 8px #ffd96b');
+      }
+    },
+    // Bacillus: vira esporo (encolhe e brilha de calor) e depois volta
+    esporo: function (el) {
+      el.classList.add('tv-esporo');
+      var r = box(el);
+      for (var i = 0; i < 8; i++) particle(r.left + r.width / 2 + R(-40, 40), r.top + r.height * .6, R(16, 26), 'radial-gradient(circle,rgba(255,170,60,.45),rgba(255,170,60,0) 70%)',
+        [{ transform: 'translateY(0)', opacity: .9 }, { transform: 'translateY(-70px)', opacity: 0 }], R(900, 1400));
+      setTimeout(function () { el.classList.remove('tv-esporo'); }, 1500);
+    },
+    // Candida: brota uma levedura-filha que se solta e sai flutuando
+    broto: function (el) {
+      if (reduce) return;
+      var r = box(el), img = document.createElement('img');
+      img.src = (el.querySelector('img') || el).getAttribute('src');
+      img.alt = '';
+      var bw = r.width * .55, bh = bw * 300 / 420;
+      img.style.cssText = 'position:fixed;z-index:79;pointer-events:none;width:' + bw + 'px;left:' + (r.left + r.width * .77 - bw * .2) + 'px;top:' + (r.top + r.height * .35 - bh * .8) + 'px;transform-origin:20% 80%;filter:drop-shadow(0 0 1.5px rgba(8,40,63,.45)) drop-shadow(0 10px 12px rgba(8,40,63,.25))';
+      for (var k = 0; k < 10; k++) { var an = k / 10 * 6.283; particle(r.left + r.width * .77, r.top + r.height * .35, 8, '#10a8b8', [{ transform: 'translate(0,0) scale(1)', opacity: .9 }, { transform: 'translate(' + Math.cos(an) * 46 + 'px,' + Math.sin(an) * 46 + 'px) scale(.3)', opacity: 0 }], 700); }
+      el.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.08,.92)' }, { transform: 'scale(1)' }], { duration: 500 });
+      document.body.appendChild(img);
+      var a = img.animate([{ transform: 'scale(0)', opacity: 1, easing: 'cubic-bezier(.3,1.6,.5,1)' }, { transform: 'scale(1.05)', opacity: 1, offset: .3 }, { transform: 'scale(1)', opacity: 1, offset: .45 }, { transform: 'translate(60px,-80px) rotate(20deg) scale(.95)', opacity: 1, offset: .8 }, { transform: 'translate(90px,-120px) rotate(30deg) scale(.85)', opacity: 0 }],
+        { duration: 2600, easing: 'linear', fill: 'forwards' });
+      a.onfinish = function () { img.remove(); };
+    },
+    // Pseudomonas: brilho verde de piocianina
+    pigmento: function (el) {
+      el.classList.add('tv-pigmento');
+      setTimeout(function () { el.classList.remove('tv-pigmento'); }, 1400);
+    },
+    // E. coli e Salmonella: agitam os flagelos e soltam bolhinhas
+    agito: function (el) {
+      el.classList.remove('tv-agito'); void el.offsetWidth; el.classList.add('tv-agito');
+      var r = box(el);
+      for (var i = 0; i < 7; i++) particle(r.left + R(10, r.width - 10), r.top + r.height * .7, R(6, 12), 'rgba(255,255,255,.75)',
+        [{ transform: 'translateY(0)', opacity: .9 }, { transform: 'translate(' + R(-20, 20) + 'px,-80px)', opacity: 0 }], R(900, 1500), 'border:1.5px solid rgba(16,168,184,.6)');
+      setTimeout(function () { el.classList.remove('tv-agito'); }, 1000);
+    },
+    // Mascote azul: dá tchau
+    aceno: function (el) {
+      el.classList.remove('tv-aceno'); void el.offsetWidth; el.classList.add('tv-aceno');
+      setTimeout(function () { el.classList.remove('tv-aceno'); }, 1900);
+    }
+  };
+
+  document.querySelectorAll('[data-acao]').forEach(function (el) {
+    var fn = ACOES[el.getAttribute('data-acao')], last = 0;
+    if (!fn) return;
+    function go() { var n = Date.now(); if (n - last < 2200) return; last = n; fn(el); }
+    if (fine) el.addEventListener('mouseenter', go);
+    el.addEventListener('click', go);
+  });
+
   if (reduce) return;
 
   var src = (document.querySelector('[data-swimmer]') || {}).getAttribute ?

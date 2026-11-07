@@ -97,7 +97,7 @@ section{padding:68px 0}
 .guide h2{color:#fff;font-size:clamp(26px,3.2vw,36px);margin:0 0 10px;letter-spacing:-.8px;line-height:1.1}.guide p{color:#b9d5dc;margin:0 0 20px}
 .guide .eyebrow{color:#8fe3e0}
 .turma{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative;z-index:1}
-.turma img{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:6px}
+.turma span{display:block}.turma img{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:6px}
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
 .step{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
@@ -147,11 +147,11 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 </div>
 <div class="stage" data-swimmer="img/turma/pseudomonas.svg">
 <div class="blob"></div>
-<div class="ch c2" data-nome="Staphylococcus aureus" data-fato="Aureus quer dizer dourado: minhas colônias são amareladas."><img src="img/turma/staphylococcus.svg" alt="Staphylococcus aureus"></div>
-<div class="ch c3" data-nome="Bacillus subtilis" data-fato="Formo esporos: aguento calor que derrubaria muita bactéria."><img src="img/turma/bacillus.svg" alt="Bacillus subtilis"></div>
-<div class="ch c4" data-nome="Candida albicans" data-fato="Sou levedura: me multiplico por brotamento."><img src="img/turma/candida.svg" alt="Candida albicans"></div>
-<div class="ch c5" data-nome="Aspergillus brasiliensis" data-fato="Meus esporos pretos fazem a colônia parecer carvão."><img src="img/turma/aspergillus.svg" alt="Aspergillus brasiliensis"></div>
-<div class="ch c1" data-nome="Pseudomonas aeruginosa" data-fato="Nado com um flagelo polar. Me pega se for capaz!"><img src="img/turma/pseudomonas.svg" alt="Pseudomonas aeruginosa"></div>
+<div class="ch c2" data-acao="dourado" data-nome="Staphylococcus aureus" data-fato="Aureus quer dizer dourado: minhas colônias são amareladas."><img src="img/turma/staphylococcus.svg" alt="Staphylococcus aureus"></div>
+<div class="ch c3" data-acao="esporo" data-nome="Bacillus subtilis" data-fato="Formo esporos: aguento calor que derrubaria muita bactéria."><img src="img/turma/bacillus.svg" alt="Bacillus subtilis"></div>
+<div class="ch c4" data-acao="broto" data-nome="Candida albicans" data-fato="Sou levedura: me multiplico por brotamento."><img src="img/turma/candida.svg" alt="Candida albicans"></div>
+<div class="ch c5" data-acao="esporos" data-nome="Aspergillus brasiliensis" data-fato="Meus esporos pretos fazem a colônia parecer carvão."><img src="img/turma/aspergillus.svg" alt="Aspergillus brasiliensis"></div>
+<div class="ch c1" data-acao="pigmento" data-nome="Pseudomonas aeruginosa" data-fato="Nado com um flagelo polar. Me pega se for capaz!"><img src="img/turma/pseudomonas.svg" alt="Pseudomonas aeruginosa"></div>
 <div class="tag t1" aria-hidden="true"><b>≤ 100 UFC</b> · desafio de meios</div>
 <div class="tag t2" aria-hidden="true"><b>Farmacopeia</b> · 8ª edição</div>
 </div>
@@ -208,7 +208,7 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 <p>Promoção de crescimento, contagem, pesquisa de patógenos e esterilidade, explicados em etapas pela nossa turma.</p>
 <a class="btn btn-primary" href="farmacopeia.html">Abrir o guia →</a>
 </div>
-<div class="turma"><img src="img/turma/pseudomonas.svg" alt="Pseudomonas aeruginosa"><img src="img/turma/staphylococcus.svg" alt="Staphylococcus aureus"><img src="img/turma/ecoli.svg" alt="Escherichia coli"><img src="img/turma/candida.svg" alt="Candida albicans"><img src="img/turma/salmonella.svg" alt="Salmonella"><img src="img/turma/aspergillus.svg" alt="Aspergillus brasiliensis"></div>
+<div class="turma"><span data-acao="pigmento"><img src="img/turma/pseudomonas.svg" alt="Pseudomonas aeruginosa"></span><span data-acao="dourado"><img src="img/turma/staphylococcus.svg" alt="Staphylococcus aureus"></span><span data-acao="agito"><img src="img/turma/ecoli.svg" alt="Escherichia coli"></span><span data-acao="broto"><img src="img/turma/candida.svg" alt="Candida albicans"></span><span data-acao="agito"><img src="img/turma/salmonella.svg" alt="Salmonella"></span><span data-acao="esporos"><img src="img/turma/aspergillus.svg" alt="Aspergillus brasiliensis"></span></div>
 </div>
 </div>
 </section>
@@ -230,7 +230,7 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 <span class="eyebrow">Cotação rápida</span>
 <h2>Diga o que você precisa em 30 segundos</h2>
 <p>Marque as linhas de interesse e envie. A mensagem vai pronta para o nosso WhatsApp comercial.</p>
-<img src="img/turma/guia.svg" alt="" style="width:200px;max-width:60%;margin-top:10px">
+<span data-acao="aceno" style="display:inline-block;width:200px;max-width:60%;margin-top:10px"><img src="img/turma/guia.svg" alt="Mascote da RBio acenando" style="width:100%"></span>
 </div>
 <form class="qform" id="qform" novalidate>
 <label class="f">O que você procura?</label>
