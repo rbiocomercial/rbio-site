@@ -160,7 +160,7 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 .fb-hero h1{font-size:clamp(32px,4.4vw,52px);line-height:1.05;letter-spacing:-1.8px;color:var(--navy);margin:0 0 14px}
 .fb-hero p{font-size:17px;color:var(--muted);margin:0;max-width:600px}
 .mascot{position:relative;background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow);text-align:center}
-.mascot img,.mascot svg{width:100%;max-width:260px;height:auto;display:block;margin:0 auto}
+.mascot img,.mascot svg{width:100%;max-width:340px;height:auto;display:block;margin:0 auto}
 .bubble{position:relative;background:var(--navy);color:#e8f7f8;border-radius:14px;padding:12px 15px;font-size:14px;font-weight:600;margin-top:14px;text-align:left}
 .bubble:before{content:"";position:absolute;top:-8px;left:40px;border:8px solid transparent;border-top:0;border-bottom-color:var(--navy)}
 .chapters{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:24px}
@@ -194,6 +194,9 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 .chap-card{border:1px solid var(--line);background:#fff;border-radius:12px;padding:20px;margin-bottom:12px}
 .chap-card h3{margin:0 0 6px;color:var(--navy)}.chap-card p{margin:0 0 8px;color:var(--muted);font-size:14px}
 @media(max-width:900px){.fb-hero-grid,.gate{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.fstep{margin-left:0;margin-top:-1px;border-radius:0!important}.fstep:first-child{border-radius:12px 12px 0 0!important}.fstep:last-child{border-radius:0 0 12px 12px!important}.chapters{grid-template-columns:1fr 1fr}.rbio-box{grid-template-columns:1fr}.tbl{font-size:13px}}
+.turma{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.turma figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}.turma img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}.turma figcaption{padding:10px 11px;font-size:12px;line-height:1.35}.turma b{display:block;color:var(--navy);font-style:italic;font-size:13px}.turma span{color:var(--muted)}
+.gate-pics{display:flex;gap:8px;margin-top:16px}.gate-pics img{width:31%;aspect-ratio:1;object-fit:cover;border-radius:10px;border:2px solid rgba(255,255,255,.15)}
+@media(max-width:900px){.turma{grid-template-columns:1fr 1fr}}
 </style>
 <main>
 <section class="fb-hero">
@@ -210,14 +213,8 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 </div>
 </div>
 <div class="mascot">
-<!-- MASCOTE: substituir pelo foto da pelúcia (img/mascote-pelucia.webp) -->
-<svg viewBox="0 0 260 190" role="img" aria-label="Mascote da RBio: uma bactéria simpática">
-<g fill="none" stroke="#087b88" stroke-width="3" stroke-linecap="round"><path d="M40 70 q-22 -10 -30 -30"/><path d="M38 120 q-24 8 -30 30"/><path d="M220 70 q22 -10 30 -30"/><path d="M222 120 q24 8 30 30"/><path d="M90 40 q-4 -22 -18 -32"/><path d="M170 40 q4 -22 18 -32"/></g>
-<rect x="30" y="38" width="200" height="114" rx="57" fill="#10a8b8"/><rect x="42" y="48" width="176" height="94" rx="47" fill="#3cc3cf"/>
-<circle cx="105" cy="88" r="13" fill="#fff"/><circle cx="155" cy="88" r="13" fill="#fff"/><circle cx="108" cy="90" r="6" fill="#08283f"/><circle cx="158" cy="90" r="6" fill="#08283f"/>
-<path d="M112 114 q18 16 36 0" stroke="#08283f" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="84" cy="108" r="7" fill="#ff9aa8" opacity=".7"/><circle cx="176" cy="108" r="7" fill="#ff9aa8" opacity=".7"/>
-</svg>
-<div class="bubble">Oi! Vou te guiar pelos ensaios. Começamos por um que muita gente subestima: a promoção de crescimento.</div>
+<img src="img/turma/verde.webp" alt="Pelúcia verde de bactéria, a Pseudomonas aeruginosa da turma RBio" width="720" height="367" style="border-radius:12px;max-width:100%">
+<div class="bubble">Oi! Sou a Pseudomonas aeruginosa (verde, claro — é o meu pigmento). Vou te guiar pelos ensaios, começando pela promoção de crescimento.</div>
 </div>
 </div>
 </section>
@@ -244,6 +241,17 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 </table>
 <p style="font-size:13px;color:var(--muted);margin-top:10px"><b>Critério em meio sólido:</b> a contagem obtida não pode diferir por um fator maior que 2 do valor calculado do inóculo padronizado. <b>Em meio líquido:</b> crescimento claramente visível.</p>
 
+
+<h3 style="color:var(--navy);margin:34px 0 4px">Conheça a turma do capítulo 1</h3>
+<p style="color:var(--muted);font-size:14px;margin:0 0 14px">Os cinco micro-organismos de desafio da promoção de crescimento, em versão pelúcia.</p>
+<div class="turma">
+<figure><img src="img/turma/coccus-rosa.webp" alt="Pelúcia rosa em forma de coco" loading="lazy"><figcaption><b>Staphylococcus aureus</b><span>ATCC 6538 · coco Gram-positivo</span></figcaption></figure>
+<figure><img src="img/turma/verde.webp" alt="Pelúcia verde em forma de bastonete" loading="lazy"><figcaption><b>Pseudomonas aeruginosa</b><span>ATCC 9027 · bacilo Gram-negativo</span></figcaption></figure>
+<figure><img src="img/turma/laranja.webp" alt="Pelúcia laranja em forma de bastonete" loading="lazy"><figcaption><b>Bacillus subtilis</b><span>ATCC 6633 · bacilo esporulado</span></figcaption></figure>
+<figure><img src="img/turma/azul-rosa.webp" alt="Pelúcia azul com manchas rosa" loading="lazy"><figcaption><b>Candida albicans</b><span>ATCC 10231 · levedura</span></figcaption></figure>
+<figure><img src="img/turma/preta.webp" alt="Pelúcia preta" loading="lazy"><figcaption><b>Aspergillus brasiliensis</b><span>ATCC 16404 · fungo filamentoso de esporos pretos</span></figcaption></figure>
+</div>
+<p style="font-size:11px;color:var(--muted);margin-top:8px">Pelúcias ilustrativas: cores e formas são lúdicas e não representam a morfologia real.</p>
 <div class="note"><b>Na prática:</b> a promoção de crescimento é exigida para cada lote de meio, inclusive meio pronto comprado. Um lote reprovado invalida as análises feitas com ele, por isso o inóculo precisa ser confiável e repetível.</div>
 
 <h3 style="color:var(--navy);margin:30px 0 4px">Onde a RBio entra</h3>
@@ -264,6 +272,8 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 <h2>Libere os próximos capítulos</h2>
 <p>Cadastre-se para acessar o guia completo agora e receber os novos capítulos por e-mail.</p>
 <ul><li>Contagem de micro-organismos mesófilos</li><li>Pesquisa de micro-organismos específicos</li><li>Teste de esterilidade</li></ul>
+<p style="margin-top:14px">No capítulo 3, a turma cresce: entram E. coli, Salmonella e outros.</p>
+<div class="gate-pics"><img src="img/turma/rosa.webp" alt="Pelúcia rosa em bastonete" loading="lazy"><img src="img/turma/amarela.webp" alt="Pelúcia amarela com flagelos" loading="lazy"><img src="img/turma/vermelha.webp" alt="Pelúcia vermelha com flagelos" loading="lazy"></div>
 </div>
 <form class="form" id="leadForm" novalidate>
 <label for="l-nome">Nome</label><input id="l-nome" name="nome" autocomplete="name" placeholder="Seu nome">
