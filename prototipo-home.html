@@ -38,15 +38,17 @@ a{color:inherit;text-decoration:none}button,input,select{font:inherit}
 .ch{position:absolute;filter:drop-shadow(0 12px 16px rgba(8,40,63,.12));animation:float 5s ease-in-out infinite}
 .ch img{width:100%;display:block}.ch:hover img{transform:scale(1.04);transition:.2s}.ch:focus-visible{outline:3px solid rgba(16,168,184,.5);border-radius:20px}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.ch.c1{width:46%;left:27%;top:16%;animation-delay:0s;z-index:3}
+.ch.c1{width:70%;left:12%;top:12%;animation-delay:0s;z-index:3}
 .ch.c2{width:34%;left:0;top:4%;animation-delay:-1.2s}
 .ch.c3{width:34%;right:-2%;top:2%;animation-delay:-2.4s}
-.ch.c4{width:33%;left:2%;bottom:6%;animation-delay:-3.1s}
+.ch.c4{width:34%;right:2%;bottom:4%;animation-delay:-3.1s}
 .ch.c5{width:33%;right:0;bottom:4%;animation-delay:-.6s}
 .tag{position:absolute;z-index:4;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:12px;font-weight:800;color:var(--navy);box-shadow:var(--shadow)}
 .tag b{color:var(--cyan-dark)}
-.tag.t1{left:6%;top:58%}.tag.t2{right:4%;top:56%}
-@media(prefers-reduced-motion:reduce){.ch{animation:none}}
+.tag.t1{left:4%;bottom:14%}.tag.t2{right:6%;top:6%}
+.rel{position:relative}.peek{position:absolute;z-index:2;width:190px;animation:float 5.5s ease-in-out infinite;filter:drop-shadow(0 12px 16px rgba(8,40,63,.12))}.peek img{width:100%;display:block}
+.peek.p-sol{right:10px;top:-50px;width:150px}.peek.p-maldi{left:-70px;bottom:-56px;width:170px;animation-delay:-2s}.feature .peek img{border:0;box-shadow:none;border-radius:0}.peek.p-steps{right:10px;top:-40px;width:180px;animation-delay:-1s}
+@media(prefers-reduced-motion:reduce){.ch,.peek{animation:none}}
 /* brands */
 .brands{background:#fff;border-bottom:1px solid var(--line);padding:20px 0}
 .brands .container{display:flex;align-items:center;gap:26px;flex-wrap:wrap;justify-content:center}
@@ -97,7 +99,7 @@ section{padding:68px 0}
 .guide h2{color:#fff;font-size:clamp(26px,3.2vw,36px);margin:0 0 10px;letter-spacing:-.8px;line-height:1.1}.guide p{color:#b9d5dc;margin:0 0 20px}
 .guide .eyebrow{color:#8fe3e0}
 .turma{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;position:relative;z-index:1}
-.turma span{display:block}.turma img{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:6px}
+.turma span{display:block}.turma.duo{grid-template-columns:1fr 1fr;gap:14px}.turma img{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:6px}
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;counter-reset:s}
 .step{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
@@ -121,7 +123,8 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 .copyright{border-top:1px solid rgba(255,255,255,.1);margin-top:26px;padding-top:16px;font-size:11px}
 .proto{position:fixed;left:12px;bottom:12px;z-index:90;background:#b77a35;color:#fff;font-size:11px;font-weight:800;padding:6px 10px;border-radius:999px}
 @media(max-width:960px){.menu,.nav>.btn{display:none}.menu-toggle{display:block}.hero-grid,.feature,.guide,.quote{grid-template-columns:1fr}.stage{height:340px;max-width:460px;margin:auto;width:100%}.grid4{grid-template-columns:1fr 1fr}.finder-box{grid-template-columns:1fr}.tabs{flex-direction:row;overflow-x:auto;border-right:0;border-bottom:1px solid var(--line)}.tabs button{white-space:nowrap;border-bottom:0;border-right:1px solid var(--line)}.tabs button[aria-selected="true"]{box-shadow:inset 0 -3px 0 var(--cyan)}.panel{grid-template-columns:1fr}.panel-side{flex-direction:row}.panel-side img{max-width:110px}.steps{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.hero{padding:40px 0}.hero p{font-size:16px}.actions .btn{width:100%}.stage{height:290px}.grid4{grid-template-columns:1fr 1fr;gap:10px}.card{min-height:auto;padding:14px;gap:8px}.card p{display:none}.card h3{font-size:15px}.ico{width:38px;height:38px}.card.cta{grid-column:1/-1;padding-right:110px}.card.cta p{display:block}.tag{font-size:10.5px;padding:6px 10px}.tag.t1{left:0;top:auto;bottom:-2%}.tag.t2{right:0;top:-2%}.stats{grid-template-columns:1fr}.guide{padding:26px}.two{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.brand-chip{font-size:15px}.brands .container{gap:14px}}
+@media(max-width:960px){.peek{width:130px}.peek.p-sol{top:-20px}.peek.p-maldi{left:auto;right:-6px;bottom:auto;top:-70px;width:120px}.peek.p-steps{top:-26px;width:120px}}
+@media(max-width:560px){.has-peek .head{padding-right:92px}.peek{width:92px}.peek.p-sol{top:-6px;right:-8px}.peek.p-steps{width:96px;top:-4px;right:-8px}.quote span[data-acao]{width:120px!important}.hero{padding:40px 0}.hero p{font-size:16px}.actions .btn{width:100%}.stage{height:290px}.grid4{grid-template-columns:1fr 1fr;gap:10px}.card{min-height:auto;padding:14px;gap:8px}.card p{display:none}.card h3{font-size:15px}.ico{width:38px;height:38px}.card.cta{grid-column:1/-1;padding-right:110px}.card.cta p{display:block}.tag{font-size:10.5px;padding:6px 10px}.tag.t1{left:0;top:auto;bottom:-2%}.tag.t2{right:0;top:-2%}.stats{grid-template-columns:1fr}.guide{padding:26px}.two{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.brand-chip{font-size:15px}.brands .container{gap:14px}}
 </style>
 </head>
 <body>
@@ -147,10 +150,7 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 </div>
 <div class="stage" data-swimmer="img/turma/pseudomonas.svg">
 <div class="blob"></div>
-<div class="ch c2" data-acao="dourado" data-nome="Staphylococcus aureus" data-fato="Aureus quer dizer dourado: minhas colônias são amareladas."><img src="img/turma/staphylococcus.svg" alt="Staphylococcus aureus"></div>
-<div class="ch c3" data-acao="esporo" data-nome="Bacillus subtilis" data-fato="Formo esporos: aguento calor que derrubaria muita bactéria."><img src="img/turma/bacillus.svg" alt="Bacillus subtilis"></div>
 <div class="ch c4" data-acao="broto" data-nome="Candida albicans" data-fato="Sou levedura: me multiplico por brotamento."><img src="img/turma/candida.svg" alt="Candida albicans"></div>
-<div class="ch c5" data-acao="esporos" data-nome="Aspergillus brasiliensis" data-fato="Meus esporos pretos fazem a colônia parecer carvão."><img src="img/turma/aspergillus.svg" alt="Aspergillus brasiliensis"></div>
 <div class="ch c1" data-acao="pigmento" data-nome="Pseudomonas aeruginosa" data-fato="Nado com um flagelo polar. Me pega se for capaz!"><img src="img/turma/pseudomonas.svg" alt="Pseudomonas aeruginosa"></div>
 <div class="tag t1" aria-hidden="true"><b>≤ 100 UFC</b> · desafio de meios</div>
 <div class="tag t2" aria-hidden="true"><b>Farmacopeia</b> · 8ª edição</div>
@@ -161,7 +161,8 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 <div class="brands"><div class="container"><small>Marcas que representamos</small><span class="brand-chip">Solabia</span><span class="brand-chip">Microbiologics</span><span class="brand-chip">Biokar</span><span class="brand-chip">Laborclin</span><span class="brand-chip">PlastLabor</span><span class="brand-chip">Copan</span><span class="brand-chip">Zybio</span></div></div>
 
 <section id="solucoes">
-<div class="container">
+<div class="container rel has-peek">
+<div class="peek p-sol" data-acao="folha" data-nome="Giardia" data-fato="Sou protozoário e nado como uma folha caindo. Me procuram na água de consumo."><img src="img/turma/giardia.svg" alt="Giardia"></div>
 <div class="head"><span class="eyebrow">Soluções</span><h2>Do inóculo ao resultado</h2><p>Escolha por onde começar.</p></div>
 <div class="grid4">
 <a class="card" href="maldi.html"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M8.5 11h5M11 8.5v5"/></svg></span><h3>Identificação microbiológica</h3><p>MALDI-TOF EXS2600: identificação em minutos.</p><span class="go">Conhecer →</span></a>
@@ -195,7 +196,7 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 <div class="stats"><div class="stat"><b>Minutos</b><span>por identificação</span></div><div class="stat"><b>Alta precisão</b><span>espectrometria de massas</span></div><div class="stat"><b>Ampla biblioteca</b><span>bactérias e fungos</span></div></div>
 <a class="btn btn-primary" href="maldi.html">Conhecer o MALDI-TOF →</a>
 </div>
-<img src="img/maldi-tof-exs2600-card.webp" alt="Sistema MALDI-TOF EXS2600" width="499" height="261" loading="lazy">
+<div class="rel"><img src="img/maldi-tof-exs2600-card.webp" alt="Sistema MALDI-TOF EXS2600" width="499" height="261" loading="lazy"><div class="peek p-maldi" data-acao="esporos" data-nome="Aspergillus brasiliensis" data-fato="Meus esporos pretos fazem a colônia parecer carvão. O MALDI-TOF também me identifica!"><img src="img/turma/aspergillus.svg" alt="Aspergillus brasiliensis"></div></div>
 </div>
 </section>
 
@@ -208,13 +209,14 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 <p>Promoção de crescimento, contagem, pesquisa de patógenos e esterilidade, explicados em etapas pela nossa turma.</p>
 <a class="btn btn-primary" href="farmacopeia.html">Abrir o guia →</a>
 </div>
-<div class="turma"><span data-acao="pigmento"><img src="img/turma/pseudomonas.svg" alt="Pseudomonas aeruginosa"></span><span data-acao="dourado"><img src="img/turma/staphylococcus.svg" alt="Staphylococcus aureus"></span><span data-acao="agito"><img src="img/turma/ecoli.svg" alt="Escherichia coli"></span><span data-acao="broto"><img src="img/turma/candida.svg" alt="Candida albicans"></span><span data-acao="agito"><img src="img/turma/salmonella.svg" alt="Salmonella"></span><span data-acao="esporos"><img src="img/turma/aspergillus.svg" alt="Aspergillus brasiliensis"></span></div>
+<div class="turma duo"><span data-acao="agito" data-nome="Escherichia coli" data-fato="Sou rosa no MacConkey porque fermento lactose."><img src="img/turma/ecoli.svg" alt="Escherichia coli"></span><span data-acao="agito" data-nome="Salmonella" data-fato="No XLD, minhas colônias ficam com centro preto."><img src="img/turma/salmonella.svg" alt="Salmonella"></span></div>
 </div>
 </div>
 </section>
 
 <section style="padding-top:20px">
-<div class="container">
+<div class="container has-peek">
+<div class="rel"><div class="peek p-steps" data-acao="esporo" data-nome="Bacillus subtilis" data-fato="Formo esporos: aguento calor que derrubaria muita bactéria."><img src="img/turma/bacillus.svg" alt="Bacillus subtilis"></div></div>
 <div class="head"><span class="eyebrow">Como funciona</span><h2>Do primeiro contato à rotina</h2></div>
 <div class="steps">
 <div class="step"><h3>Entendemos o ensaio</h3><p>Você conta a rotina, a norma seguida e o volume.</p></div>

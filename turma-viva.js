@@ -56,88 +56,141 @@
 
   // ===== Comportamentos de cada mascote (passar o mouse no computador, tocar no celular) =====
   css.textContent +=
-    '.tv-p{position:fixed;z-index:79;pointer-events:none;border-radius:50%}' +
-    '[data-acao] img{transition:transform .5s cubic-bezier(.3,1.5,.5,1),filter .5s}' +
-    '[data-acao].tv-esporo img{transform:scale(.45) rotate(-20deg);filter:drop-shadow(0 0 14px #ffd27a) brightness(1.15)}' +
-    '[data-acao].tv-pigmento img{filter:drop-shadow(0 0 18px #2fe06a) drop-shadow(0 0 30px #8cff9e)}' +
-    '[data-acao].tv-aceno img{animation:tv-wave .9s ease-in-out 2}' +
-    '@keyframes tv-wave{0%,100%{transform:rotate(0)}25%{transform:rotate(-10deg)}75%{transform:rotate(10deg)}}' +
-    '[data-acao].tv-agito img{animation:tv-shake .12s linear 8}' +
-    '@keyframes tv-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(4px) rotate(2deg)}}';
+    '.tv-p{position:fixed;z-index:79;pointer-events:none;border-radius:50%;will-change:transform,opacity}' +
+    '[data-acao] img{transition:transform .6s cubic-bezier(.34,1.56,.64,1),filter .6s ease}' +
+    '[data-acao].tv-esporo img{transform:scale(.42) rotate(-24deg);filter:drop-shadow(0 0 10px rgba(255,190,90,.95)) drop-shadow(0 0 26px rgba(255,140,40,.6)) brightness(1.12) saturate(1.2)}' +
+    '[data-acao].tv-pigmento img{animation:tv-pyo 1.6s ease-in-out}' +
+    '@keyframes tv-pyo{0%,100%{filter:drop-shadow(0 0 0 rgba(47,224,106,0))}35%{filter:drop-shadow(0 0 14px rgba(47,224,106,.95)) drop-shadow(0 0 34px rgba(120,255,150,.65)) saturate(1.3) brightness(1.08)}70%{filter:drop-shadow(0 0 8px rgba(47,224,106,.6)) drop-shadow(0 0 20px rgba(120,255,150,.35))}}' +
+    '[data-acao].tv-aceno img{animation:tv-wave 1s cubic-bezier(.45,0,.55,1) 2;transform-origin:50% 90%}' +
+    '@keyframes tv-wave{0%,100%{transform:rotate(0)}25%{transform:rotate(-9deg) translateY(-3px)}75%{transform:rotate(9deg) translateY(-3px)}}' +
+    '[data-acao].tv-agito img{animation:tv-shake .5s cubic-bezier(.36,.07,.19,.97) 2}' +
+    '@keyframes tv-shake{10%,90%{transform:translateX(-1px) rotate(-1deg)}20%,80%{transform:translateX(3px) rotate(1.5deg)}30%,50%,70%{transform:translateX(-4px) rotate(-2deg)}40%,60%{transform:translateX(4px) rotate(2deg)}}' +
+    '[data-acao].tv-squash img{animation:tv-squash .55s cubic-bezier(.34,1.56,.64,1)}' +
+    '@keyframes tv-squash{0%{transform:scale(1)}35%{transform:scale(1.1,.88)}70%{transform:scale(.96,1.05)}100%{transform:scale(1)}}';
 
-  function box(el) { return el.getBoundingClientRect(); }
-  function particle(x, y, size, bg, anim, dur, extra) {
+  var R = function (a, b) { return a + Math.random() * (b - a); };
+  function box(el) { var i = el.querySelector('img') || el; return i.getBoundingClientRect(); }
+  function particle(x, y, size, style, frames, dur, delay, ease) {
     if (reduce) return;
     var p = document.createElement('div');
     p.className = 'tv-p';
-    p.style.cssText += 'left:' + (x - size / 2) + 'px;top:' + (y - size / 2) + 'px;width:' + size + 'px;height:' + size + 'px;background:' + bg + ';' + (extra || '');
+    p.style.cssText += 'left:' + (x - size / 2) + 'px;top:' + (y - size / 2) + 'px;width:' + size + 'px;height:' + size + 'px;opacity:0;' + style;
     document.body.appendChild(p);
-    var a = p.animate(anim, { duration: dur, easing: 'cubic-bezier(.2,.7,.3,1)', fill: 'forwards' });
-    a.onfinish = function () { p.remove(); };
+    var an = p.animate(frames, { duration: dur, delay: delay || 0, easing: ease || 'cubic-bezier(.22,.61,.36,1)', fill: 'both' });
+    an.onfinish = function () { p.remove(); };
   }
-  var R = function (a, b) { return a + Math.random() * (b - a); };
+  function ring(x, y, size, color, dur, delay, width) {
+    particle(x, y, size, 'border:' + (width || 3) + 'px solid ' + color + ';box-shadow:0 0 12px ' + color,
+      [{ transform: 'scale(.2)', opacity: .9 }, { transform: 'scale(1)', opacity: 0 }], dur, delay, 'cubic-bezier(.16,1,.3,1)');
+  }
+  function bump(el, cls, ms) { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); setTimeout(function () { el.classList.remove(cls); }, ms); }
+  var STAR = 'clip-path:polygon(50% 0,61% 39%,100% 50%,61% 61%,50% 100%,39% 61%,0 50%,39% 39%);border-radius:0;';
 
   var ACOES = {
-    // Aspergillus: solta uma nuvem de esporos pretos que flutuam e somem
+    // Aspergillus: o conidióforo solta uma nuvem de esporos que deriva com o ar
     esporos: function (el) {
-      var r = box(el), x = r.left + r.width * .78, y = r.top + r.height * .12;
-      for (var i = 0; i < 26; i++) {
-        var dx = R(-110, 130), dy = R(-140, 30), s = R(4, 9);
-        particle(x, y, s, 'radial-gradient(circle at 35% 30%,#7d8799,#1b1f27)',
-          [{ transform: 'translate(0,0) scale(.4)', opacity: 1 }, { transform: 'translate(' + dx + 'px,' + dy + 'px) scale(1)', opacity: .9, offset: .6 }, { transform: 'translate(' + (dx * 1.3) + 'px,' + (dy * 1.3 - 40) + 'px) scale(.8)', opacity: 0 }],
-          R(1600, 2600));
+      var r = box(el), x = r.left + r.width * .73, y = r.top + r.height * .1;
+      bump(el, 'tv-squash', 600);
+      for (var i = 0; i < 42; i++) {
+        var dx = R(-60, 140), dy = R(-150, -20), s = R(3, 10), w = R(-30, 30);
+        particle(x + R(-8, 8), y + R(-8, 8), s,
+          'background:radial-gradient(circle at 32% 28%,#a4adbd 0,#4a5262 45%,#14171d 100%);filter:blur(' + (s < 5 ? .6 : 0) + 'px)',
+          [{ transform: 'translate(0,0) scale(.3)', opacity: 0 },
+           { transform: 'translate(' + dx * .35 + 'px,' + dy * .45 + 'px) scale(1)', opacity: .95, offset: .25 },
+           { transform: 'translate(' + (dx * .7 + w) + 'px,' + dy * .8 + 'px) scale(.95)', opacity: .8, offset: .6 },
+           { transform: 'translate(' + (dx + w * 1.6) + 'px,' + (dy - 40) + 'px) scale(.7)', opacity: 0 }],
+          R(2200, 3400), i * 18, 'cubic-bezier(.25,.46,.45,.94)');
       }
     },
-    // S. aureus ("dourado"): brilhos dourados saindo dos cocos
+    // S. aureus ("dourado"): halo dourado e estrelinhas que piscam
     dourado: function (el) {
-      var r = box(el), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
-      for (var i = 0; i < 26; i++) {
-        var a = Math.random() * 6.283, d = R(60, 150);
-        particle(cx, cy, R(14, 24), '#ffc61a', [{ transform: 'translate(0,0) scale(.2) rotate(0)', opacity: 1 }, { transform: 'translate(' + Math.cos(a) * d + 'px,' + Math.sin(a) * d + 'px) scale(1) rotate(180deg)', opacity: 0 }],
-          R(1200, 1900), 'border-radius:2px;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);box-shadow:0 0 8px #ffd96b');
+      var r = box(el), cx = r.left + r.width / 2, cy = r.top + r.height * .55;
+      bump(el, 'tv-squash', 600);
+      ring(cx, cy, r.width * 1.1, 'rgba(255,200,60,.85)', 900, 0, 4);
+      ring(cx, cy, r.width * .8, 'rgba(255,220,120,.7)', 900, 140, 2);
+      for (var i = 0; i < 22; i++) {
+        var a = R(0, 6.283), d = R(r.width * .35, r.width * .8), s = R(10, 22);
+        particle(cx + Math.cos(a) * d * .3, cy + Math.sin(a) * d * .3, s,
+          STAR + 'background:linear-gradient(135deg,#fff7c2,#ffc61a 55%,#e89b00);filter:drop-shadow(0 0 4px rgba(255,200,40,.9))',
+          [{ transform: 'translate(0,0) scale(0) rotate(0)', opacity: 0 },
+           { transform: 'translate(' + Math.cos(a) * d * .7 + 'px,' + Math.sin(a) * d * .7 + 'px) scale(1.25) rotate(45deg)', opacity: 1, offset: .35 },
+           { transform: 'translate(' + Math.cos(a) * d * .85 + 'px,' + Math.sin(a) * d * .85 + 'px) scale(.55) rotate(70deg)', opacity: .8, offset: .55 },
+           { transform: 'translate(' + Math.cos(a) * d * .95 + 'px,' + Math.sin(a) * d * .95 + 'px) scale(1) rotate(100deg)', opacity: 1, offset: .75 },
+           { transform: 'translate(' + Math.cos(a) * d + 'px,' + (Math.sin(a) * d - 20) + 'px) scale(0) rotate(140deg)', opacity: 0 }],
+          R(1300, 1900), i * 25);
       }
     },
-    // Bacillus: vira esporo (encolhe e brilha de calor) e depois volta
+    // Bacillus: esporula — encolhe, brilha de calor, ondas de calor sobem, e volta
     esporo: function (el) {
+      var r = box(el), cx = r.left + r.width / 2, cy = r.top + r.height * .5;
       el.classList.add('tv-esporo');
-      var r = box(el);
-      for (var i = 0; i < 8; i++) particle(r.left + r.width / 2 + R(-40, 40), r.top + r.height * .6, R(16, 26), 'radial-gradient(circle,rgba(255,170,60,.45),rgba(255,170,60,0) 70%)',
-        [{ transform: 'translateY(0)', opacity: .9 }, { transform: 'translateY(-70px)', opacity: 0 }], R(900, 1400));
-      setTimeout(function () { el.classList.remove('tv-esporo'); }, 1500);
+      ring(cx, cy, r.width * .9, 'rgba(255,170,60,.8)', 1000, 150, 3);
+      for (var i = 0; i < 14; i++) {
+        var s = R(18, 34);
+        particle(cx + R(-r.width * .3, r.width * .3), cy + R(0, 20), s,
+          'background:radial-gradient(circle,rgba(255,190,90,.55),rgba(255,140,40,0) 70%);filter:blur(2px)',
+          [{ transform: 'translate(0,0) scale(.6)', opacity: 0 }, { transform: 'translate(' + R(-10, 10) + 'px,-40px) scale(1)', opacity: .9, offset: .3 }, { transform: 'translate(' + R(-25, 25) + 'px,-110px) scale(1.4)', opacity: 0 }],
+          R(1200, 1700), i * 60);
+      }
+      setTimeout(function () { el.classList.remove('tv-esporo'); ring(cx, cy, r.width * .7, 'rgba(255,255,255,.9)', 600, 0, 2); }, 1700);
     },
-    // Candida: brota uma levedura-filha que se solta e sai flutuando
+    // Candida: brotamento — a levedura-filha cresce, se solta e vai embora
     broto: function (el) {
       if (reduce) return;
       var r = box(el), img = document.createElement('img');
       img.src = (el.querySelector('img') || el).getAttribute('src');
       img.alt = '';
-      var bw = r.width * .55, bh = bw * 300 / 420;
-      img.style.cssText = 'position:fixed;z-index:79;pointer-events:none;width:' + bw + 'px;left:' + (r.left + r.width * .77 - bw * .2) + 'px;top:' + (r.top + r.height * .35 - bh * .8) + 'px;transform-origin:20% 80%;filter:drop-shadow(0 0 1.5px rgba(8,40,63,.45)) drop-shadow(0 10px 12px rgba(8,40,63,.25))';
-      for (var k = 0; k < 10; k++) { var an = k / 10 * 6.283; particle(r.left + r.width * .77, r.top + r.height * .35, 8, '#10a8b8', [{ transform: 'translate(0,0) scale(1)', opacity: .9 }, { transform: 'translate(' + Math.cos(an) * 46 + 'px,' + Math.sin(an) * 46 + 'px) scale(.3)', opacity: 0 }], 700); }
-      el.animate([{ transform: 'scale(1)' }, { transform: 'scale(1.08,.92)' }, { transform: 'scale(1)' }], { duration: 500 });
+      var bw = r.width * .55, bh = bw * 300 / 420, bx = r.left + r.width * .77, by = r.top + r.height * .35;
+      img.style.cssText = 'position:fixed;z-index:79;pointer-events:none;width:' + bw + 'px;left:' + (bx - bw * .2) + 'px;top:' + (by - bh * .8) + 'px;transform-origin:20% 80%;filter:drop-shadow(0 0 1.5px rgba(8,40,63,.4)) drop-shadow(0 10px 14px rgba(8,40,63,.22))';
+      bump(el, 'tv-squash', 600);
+      for (var k = 0; k < 12; k++) {
+        var an = k / 12 * 6.283;
+        particle(bx, by, 7, 'background:radial-gradient(circle at 35% 30%,#fff,#10a8b8)',
+          [{ transform: 'translate(0,0) scale(1)', opacity: 0 }, { transform: 'translate(' + Math.cos(an) * 20 + 'px,' + Math.sin(an) * 20 + 'px) scale(1)', opacity: 1, offset: .3 }, { transform: 'translate(' + Math.cos(an) * 50 + 'px,' + Math.sin(an) * 50 + 'px) scale(.2)', opacity: 0 }], 800, 250);
+      }
       document.body.appendChild(img);
-      var a = img.animate([{ transform: 'scale(0)', opacity: 1, easing: 'cubic-bezier(.3,1.6,.5,1)' }, { transform: 'scale(1.05)', opacity: 1, offset: .3 }, { transform: 'scale(1)', opacity: 1, offset: .45 }, { transform: 'translate(60px,-80px) rotate(20deg) scale(.95)', opacity: 1, offset: .8 }, { transform: 'translate(90px,-120px) rotate(30deg) scale(.85)', opacity: 0 }],
-        { duration: 2600, easing: 'linear', fill: 'forwards' });
+      var a = img.animate([
+        { transform: 'scale(0)', opacity: 1, easing: 'cubic-bezier(.34,1.56,.64,1)' },
+        { transform: 'scale(1)', opacity: 1, offset: .35, easing: 'ease-in-out' },
+        { transform: 'translate(12px,-14px) rotate(8deg) scale(1)', opacity: 1, offset: .5, easing: 'ease-out' },
+        { transform: 'translate(70px,-90px) rotate(22deg) scale(.95)', opacity: 1, offset: .82 },
+        { transform: 'translate(100px,-130px) rotate(30deg) scale(.85)', opacity: 0 }],
+        { duration: 2800, easing: 'linear', fill: 'forwards' });
       a.onfinish = function () { img.remove(); };
     },
-    // Pseudomonas: brilho verde de piocianina
+    // Pseudomonas: pulso verde de piocianina
     pigmento: function (el) {
-      el.classList.add('tv-pigmento');
-      setTimeout(function () { el.classList.remove('tv-pigmento'); }, 1400);
+      var r = box(el), cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+      bump(el, 'tv-pigmento', 1700);
+      ring(cx, cy, r.width * 1.05, 'rgba(47,224,106,.7)', 1100, 100, 3);
+      ring(cx, cy, r.width * 1.35, 'rgba(120,255,150,.45)', 1300, 350, 2);
     },
-    // E. coli e Salmonella: agitam os flagelos e soltam bolhinhas
+    // E. coli e Salmonella: batem os flagelos e soltam bolhas
     agito: function (el) {
-      el.classList.remove('tv-agito'); void el.offsetWidth; el.classList.add('tv-agito');
       var r = box(el);
-      for (var i = 0; i < 7; i++) particle(r.left + R(10, r.width - 10), r.top + r.height * .7, R(6, 12), 'rgba(255,255,255,.75)',
-        [{ transform: 'translateY(0)', opacity: .9 }, { transform: 'translate(' + R(-20, 20) + 'px,-80px)', opacity: 0 }], R(900, 1500), 'border:1.5px solid rgba(16,168,184,.6)');
-      setTimeout(function () { el.classList.remove('tv-agito'); }, 1000);
+      bump(el, 'tv-agito', 1050);
+      for (var i = 0; i < 10; i++) {
+        var s = R(7, 15);
+        particle(r.left + R(r.width * .15, r.width * .85), r.top + r.height * .65, s,
+          'background:radial-gradient(circle at 30% 28%,#fff 0,rgba(255,255,255,.55) 35%,rgba(160,230,240,.25) 70%,rgba(16,168,184,.35) 100%);box-shadow:inset 0 0 0 1px rgba(16,168,184,.45)',
+          [{ transform: 'translate(0,0) scale(.4)', opacity: 0 },
+           { transform: 'translate(' + R(-8, 8) + 'px,-30px) scale(1)', opacity: 1, offset: .25 },
+           { transform: 'translate(' + R(-16, 16) + 'px,-70px) scale(1)', opacity: .9, offset: .7 },
+           { transform: 'translate(' + R(-20, 20) + 'px,-100px) scale(1.25)', opacity: 0 }],
+          R(1100, 1700), i * 70, 'cubic-bezier(.33,1,.68,1)');
+      }
+    },
+    // Giardia: movimento de 'folha caindo' (balança e gira suavemente)
+    folha: function (el) {
+      var i = el.querySelector('img') || el;
+      i.animate([{ transform: 'translate(0,0) rotate(0)' }, { transform: 'translate(-14px,6px) rotate(-18deg)', offset: .2 }, { transform: 'translate(12px,14px) rotate(16deg)', offset: .45 },
+        { transform: 'translate(-10px,20px) rotate(-12deg)', offset: .7 }, { transform: 'translate(0,0) rotate(0)' }], { duration: 2000, easing: 'cubic-bezier(.45,0,.55,1)' });
+      var r = box(el);
+      for (var k = 0; k < 4; k++) particle(r.left + r.width / 2, r.top + r.height * .55, r.width * .7, 'border:2px solid rgba(255,156,192,.6)',
+        [{ transform: 'scale(.4)', opacity: 0 }, { transform: 'scale(.7)', opacity: .8, offset: .3 }, { transform: 'scale(1.2)', opacity: 0 }], 1100, k * 350, 'ease-out');
     },
     // Mascote azul: dá tchau
-    aceno: function (el) {
-      el.classList.remove('tv-aceno'); void el.offsetWidth; el.classList.add('tv-aceno');
-      setTimeout(function () { el.classList.remove('tv-aceno'); }, 1900);
-    }
+    aceno: function (el) { bump(el, 'tv-aceno', 2100); }
   };
 
   document.querySelectorAll('[data-acao]').forEach(function (el) {
