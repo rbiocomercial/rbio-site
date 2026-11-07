@@ -36,7 +36,7 @@ a{color:inherit;text-decoration:none}button,input,select{font:inherit}
 .stage{position:relative;height:440px}
 .blob{position:absolute;inset:30px 10px 20px 30px;background:linear-gradient(150deg,#ffffff 0%,#d4eff3 100%);border-radius:46% 54% 50% 50%/52% 46% 54% 48%;box-shadow:inset 0 0 0 1px #cfe7eb}
 .ch{position:absolute;filter:drop-shadow(0 12px 16px rgba(8,40,63,.12));animation:float 5s ease-in-out infinite}
-.ch img{width:100%;display:block}
+.ch img{width:100%;display:block}.ch:hover img{transform:scale(1.04);transition:.2s}.ch:focus-visible{outline:3px solid rgba(16,168,184,.5);border-radius:20px}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .ch.c1{width:46%;left:27%;top:16%;animation-delay:0s;z-index:3}
 .ch.c2{width:34%;left:0;top:4%;animation-delay:-1.2s}
@@ -145,15 +145,15 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 <div class="actions"><a class="btn btn-primary" href="#ensaio">Encontrar pelo meu ensaio →</a><a class="btn btn-outline" href="#cotacao">Falar com a RBio</a></div>
 <div class="trust"><span>Atendimento técnico</span><span>Grupo Solabia</span><span>Foco no Centro-Oeste</span></div>
 </div>
-<div class="stage" aria-hidden="true">
+<div class="stage" data-swimmer="img/turma/pseudomonas.svg">
 <div class="blob"></div>
-<div class="ch c2"><img src="img/turma/staphylococcus.svg" alt=""></div>
-<div class="ch c3"><img src="img/turma/bacillus.svg" alt=""></div>
-<div class="ch c4"><img src="img/turma/candida.svg" alt=""></div>
-<div class="ch c5"><img src="img/turma/aspergillus.svg" alt=""></div>
-<div class="ch c1"><img src="img/turma/pseudomonas.svg" alt=""></div>
-<div class="tag t1"><b>≤ 100 UFC</b> · desafio de meios</div>
-<div class="tag t2"><b>Farmacopeia</b> · 8ª edição</div>
+<div class="ch c2" data-nome="Staphylococcus aureus" data-fato="Aureus quer dizer dourado: minhas colônias são amareladas."><img src="img/turma/staphylococcus.svg" alt="Staphylococcus aureus"></div>
+<div class="ch c3" data-nome="Bacillus subtilis" data-fato="Formo esporos: aguento calor que derrubaria muita bactéria."><img src="img/turma/bacillus.svg" alt="Bacillus subtilis"></div>
+<div class="ch c4" data-nome="Candida albicans" data-fato="Sou levedura: me multiplico por brotamento."><img src="img/turma/candida.svg" alt="Candida albicans"></div>
+<div class="ch c5" data-nome="Aspergillus brasiliensis" data-fato="Meus esporos pretos fazem a colônia parecer carvão."><img src="img/turma/aspergillus.svg" alt="Aspergillus brasiliensis"></div>
+<div class="ch c1" data-nome="Pseudomonas aeruginosa" data-fato="Nado com um flagelo polar. Me pega se for capaz!"><img src="img/turma/pseudomonas.svg" alt="Pseudomonas aeruginosa"></div>
+<div class="tag t1" aria-hidden="true"><b>≤ 100 UFC</b> · desafio de meios</div>
+<div class="tag t2" aria-hidden="true"><b>Farmacopeia</b> · 8ª edição</div>
 </div>
 </div>
 </section>
@@ -246,6 +246,7 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 
 <footer><div class="container footer-grid"><div><div class="footer-title">RBio Soluções Biológicas</div><div style="font-size:13px">Conectando conhecimento, tecnologia e resultado.</div></div><div><div class="footer-title">Navegação</div><a href="diagnostico-clinico.html">Diagnóstico Clínico</a><a href="meios-de-cultura.html">Meios de Cultura</a><a href="monitoramento-ambiental.html">Monitoramento Ambiental</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF EXS2600</a><a href="politica-de-privacidade.html">Política de Privacidade</a></div><div><div class="footer-title">Contato</div><a href="mailto:comercial@rbios.com.br">comercial@rbios.com.br</a><a href="https://wa.me/5562981307973" target="_blank" rel="noopener">WhatsApp (62) 98130-7973</a></div></div><div class="container copyright">© 2026 RBio Soluções Biológicas · Representação comercial · CNPJ 47.719.622/0001-38</div></footer>
 <div class="proto">PROTÓTIPO</div>
+<script src="turma-viva.js" defer></script>
 
 <script>
 (function(){
