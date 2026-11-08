@@ -71,6 +71,9 @@ footer{border-top:1px solid var(--line);padding:35px 0 20px;background:#fff} .fo
  .footer-grid{grid-template-columns:1fr 1fr} .footer-grid>div:first-child{grid-column:1/-1}
  .mobile-menu.open{display:block}
 }
+.badge{position:static!important;display:block;margin-top:10px;left:auto;right:auto;bottom:auto;box-shadow:none}
+.menu a{white-space:nowrap}
+@media(max-width:1180px){.menu,.nav>.btn{display:none}.menu-toggle{display:block}}
 </style>
 
 <style id="rbio-v3-compact">
@@ -105,11 +108,11 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 
 <span class="brand-wordmark"><b>R</b><i>Bio</i><small>SOLUÇÕES BIOLÓGICAS</small></span>
 </a>
-<nav class="menu" aria-label="Navegação principal"><a href="diagnostico-clinico.html">Diagnóstico</a><a href="meios-de-cultura.html" style="color:var(--cyan-dark)" aria-current="page">Meios de cultura</a><a href="monitoramento-ambiental.html">Monitoramento</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF</a><a href="farmacopeia.html">Guia Farmacopeia</a><a href="#contato">Contato</a></nav>
+<nav class="menu" aria-label="Navegação principal"><a href="diagnostico-clinico.html">Diagnóstico</a><a href="meios-de-cultura.html" style="color:var(--cyan-dark)" aria-current="page">Meios de cultura</a><a href="cepas-de-referencia.html">Cepas</a><a href="monitoramento-ambiental.html">Monitoramento</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF</a><a href="farmacopeia.html">Guia Farmacopeia</a><a href="#contato">Contato</a></nav>
 <a class="btn btn-primary" href="https://wa.me/5562981307973?text=Ol%C3%A1%2C%20RBio%21%0AGostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o." target="_blank" rel="noopener">Solicitar cotação</a>
 <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu" onclick="var m=document.getElementById('mobileMenu');this.setAttribute('aria-expanded',m.classList.toggle('open'))">☰</button>
 </div>
-<div class="mobile-menu" id="mobileMenu"><a href="index.html">Início</a><a href="diagnostico-clinico.html">Diagnóstico</a><a href="meios-de-cultura.html" style="color:var(--cyan-dark)" aria-current="page">Meios de cultura</a><a href="monitoramento-ambiental.html">Monitoramento</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF</a><a href="farmacopeia.html">Guia Farmacopeia</a><a href="#contato">Contato</a></div>
+<div class="mobile-menu" id="mobileMenu"><a href="index.html">Início</a><a href="diagnostico-clinico.html">Diagnóstico</a><a href="meios-de-cultura.html" style="color:var(--cyan-dark)" aria-current="page">Meios de cultura</a><a href="cepas-de-referencia.html">Cepas de referência</a><a href="monitoramento-ambiental.html">Monitoramento</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF</a><a href="farmacopeia.html">Guia Farmacopeia</a><a href="#contato">Contato</a></div>
 </header>
 
 <main>
@@ -187,7 +190,7 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 <h2>Para quem prepara o meio no laboratório.</h2>
 <p class="muted" style="max-width:700px">Meios de cultura desidratados e suplementos para diferentes aplicações microbiológicas, com apresentações de 500 g e opções para rotinas específicas.</p>
 <div class="product-grid">
-<article class="product"><img src="img/meios-seletivos.webp" alt="Placa de meio seletivo com colônias" width="1200" height="600" loading="lazy" decoding="async"><div class="product-body"><h3>Linha desidratada</h3><p>Meios clássicos e alternativas para diferentes necessidades de cultivo e preparo.</p><div class="mini-grid"><div class="mini"><h3>Suplementos</h3><p>Componentes para formulações específicas.</p></div><div class="mini"><h3>Orientação comercial</h3><p>A RBio ajuda a direcionar a solução.</p></div></div></div></article>
+<article class="product"><img src="img/frasco-biokar-500g.webp" alt="Frasco de meio de cultura desidratado de 500 g" width="619" height="1082" loading="lazy" decoding="async"><div class="product-body"><h3>Linha desidratada</h3><p>Meios clássicos e alternativas para diferentes necessidades de cultivo e preparo.</p><div class="mini-grid"><div class="mini"><h3>Suplementos</h3><p>Componentes para formulações específicas.</p></div><div class="mini"><h3>Orientação comercial</h3><p>A RBio ajuda a direcionar a solução.</p></div></div></div></article>
 <article class="product"><div class="product-body" style="padding:30px"><h3>O que considerar na escolha?</h3><p>Aplicação, matriz, metodologia, formato de fornecimento e rotina do laboratório. A indicação correta depende do método utilizado e da necessidade do cliente.</p><div class="bullets" style="margin-bottom:0"><div class="check">Meios clássicos e alternativos</div><div class="check">Apresentações de 500 g</div><div class="check">Suplementos</div><div class="check">Orientação comercial</div></div></div></article>
 </div>
 </div>
@@ -248,7 +251,7 @@ var C=[
 {a:'fun',t:'Cultura de fungos',d:'Leveduras, filamentosos e dermatófitos.',m:'candida',i:[['Sabouraud dextrose 4%','placa, tubo e frasco'],['Sabouraud com cloranfenicol','placa, tubo e frasco'],['Cromogênico para Candida','placa'],['Ágar seletivo para fungos','com cicloheximida e cloranfenicol'],['Batata dextrose (PDA)','placa e tubo'],['Ágar Niger','placa e tubo (Cryptococcus)'],['Laminocultivo para fungos','Sabouraud, cromogênico e seletivo']]},
 {a:'cq',t:'Meios gerais',d:'Enriquecimento, manutenção e esterilidade.',m:'pseudomonas',i:[['Caldo TSB (caseína-soja)','tubos 4 e 9 mL'],['BHI','caldo e ágar, placa e tubo'],['Tioglicolato com indicador','tubo'],['Ágar extrato de levedura','placa 49 mm']]},
 {a:'tsa',t:'Teste de sensibilidade',d:'Disco-difusão e concentração inibitória mínima.',m:'staphylococcus',i:[['Mueller-Hinton','placa 90, 140 e 150 mm, tubo e frasco'],['Mueller-Hinton com sangue','placa'],['Discos de antimicrobianos','ampla linha de antimicrobianos'],['Tiras de gradiente (CIM)','antibacterianos e antifúngicos'],['Microdiluição em caldo','colistina/polimixina B e vancomicina'],['Padrão McFarland e salina','tubos'],['Jarras e geradores','anaerobiose, CO₂ e microaerofilia']]},
-{a:'des',t:'Meios desidratados',d:'Frascos de 500 g e 5 kg para quem prepara o meio.',m:'aspergillus',i:[['Ágar e caldo BHI','frasco 500 g'],['Caseína-soja (TSA / TSB / mTSB)','500 g e 5 kg'],['MacConkey e MacConkey sorbitol','ágar e caldo púrpura'],['Sabouraud','dextrose, com cloranfenicol e caldo'],['PDA, ágar malte e extrato de levedura','fungos e leveduras'],['Mueller-Hinton','ágar e caldo, 500 g e 5 kg'],['XLD, Hektoen, SS e Müller-Kauffmann','Salmonella (inclui ISO 6579)'],['Cetrimida, PALCAM, TSC, manitol salgado','meios seletivos'],['Kligler, TSI, triptofano, tioglicolato','provas e esterilidade'],['Caldos sem origem animal','para validação e esterilidade']]},
+{a:'des',t:'Meios desidratados',d:'Frascos de 500 g para quem prepara o meio.',m:'aspergillus',i:[['Ágar e caldo BHI','frasco 500 g'],['Caseína-soja (TSA / TSB / mTSB)','frasco 500 g'],['MacConkey e MacConkey sorbitol','ágar e caldo púrpura'],['Sabouraud','dextrose, com cloranfenicol e caldo'],['PDA, ágar malte e extrato de levedura','fungos e leveduras'],['Mueller-Hinton','ágar e caldo, frasco 500 g'],['XLD, Hektoen, SS e Müller-Kauffmann','Salmonella (inclui ISO 6579)'],['Cetrimida, PALCAM, TSC, manitol salgado','meios seletivos'],['Kligler, TSI, triptofano, tioglicolato','provas e esterilidade'],['Caldos sem origem animal','para validação e esterilidade']]},
 {a:'cep',t:'Cepas de referência',d:'Centenas de cepas rastreáveis à ATCC, liofilizadas e prontas para uso.',m:'bacillus',i:[['Cepas qualitativas','controle de meios, kits e provas'],['Cepas quantitativas','inóculo conhecido para promoção de crescimento'],['Bactérias, leveduras e fungos','incluindo as cepas de desafio da Farmacopeia'],['Painéis para controle de qualidade','consulte disponibilidade']]}
 ];
 var tabs=document.getElementById('catTabs'),grid=document.getElementById('catGrid'),q=document.getElementById('catQ'),cur='all',sel={};
