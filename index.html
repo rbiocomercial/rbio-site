@@ -130,6 +130,7 @@ section{padding:68px 0}
 .qform label.f{display:block;font-size:12px;font-weight:800;color:var(--navy);margin:8px 0 4px}
 .qform input[type=text]{width:100%;border:1px solid #c9dce0;border-radius:9px;padding:11px 12px}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cnpj-note{display:inline-block;background:#fff;border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:10px;padding:10px 14px;font-size:14px;margin-top:6px}
 .qerr{color:#b42318;font-size:12px;min-height:16px;margin:8px 0}
 footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}.footer-title{color:#fff;font-weight:850;margin-bottom:9px}footer a{display:block;font-size:13px;margin:7px 0}
@@ -248,12 +249,15 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 <span class="eyebrow">Cotação rápida</span>
 <h2>Diga o que você precisa em 30 segundos</h2>
 <p>Marque as linhas de interesse e envie. A mensagem vai pronta para o nosso WhatsApp comercial.</p>
+<p class="cnpj-note"><strong>Atendimento exclusivo para empresas (CNPJ).</strong> Não atendemos pessoa física.</p>
 <span data-acao="aceno" style="display:inline-block;width:200px;max-width:60%;margin-top:10px"><img src="img/turma/guia.svg" alt="Mascote da RBio acenando" style="width:100%"></span>
 </div>
 <form class="qform" id="qform" novalidate>
 <label class="f">O que você procura?</label>
 <div class="chips" id="chips"></div>
-<div class="two"><div><label class="f" for="qn">Nome</label><input type="text" id="qn" placeholder="Seu nome" autocomplete="name"></div><div><label class="f" for="qe">Empresa</label><input type="text" id="qe" placeholder="Nome da empresa" autocomplete="organization"></div></div>
+<div class="two"><div><label class="f" for="qn">Nome *</label><input type="text" id="qn" placeholder="Seu nome" autocomplete="name" required></div><div><label class="f" for="qe">Empresa *</label><input type="text" id="qe" placeholder="Nome da empresa" autocomplete="organization" required></div></div>
+<label class="f" for="qc">CNPJ *</label><input type="text" id="qc" placeholder="00.000.000/0000-00" inputmode="numeric" maxlength="18" autocomplete="off" required aria-describedby="qcd">
+<p id="qcd" style="font-size:12px;color:var(--muted);margin:4px 0 0">Obrigatório. Atendemos somente empresas.</p>
 <p class="qerr" id="qerr" role="alert"></p>
 <button class="btn btn-primary" type="submit" style="width:100%">Enviar pelo WhatsApp →</button>
 <p style="font-size:12px;color:var(--muted);margin:10px 0 0">A mensagem só é enviada se você confirmar no WhatsApp. Veja a <a href="politica-de-privacidade.html" style="text-decoration:underline">Política de Privacidade</a>.</p>
@@ -262,7 +266,7 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 </section>
 </main>
 
-<footer><div class="container footer-grid"><div><div class="footer-title">RBio Soluções Biológicas</div><div style="font-size:13px">Conectando conhecimento, tecnologia e resultado.</div></div><div><div class="footer-title">Navegação</div><a href="diagnostico-clinico.html">Diagnóstico Clínico</a><a href="meios-de-cultura.html">Meios de Cultura</a><a href="monitoramento-ambiental.html">Monitoramento Ambiental</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF EXS2600</a><a href="farmacopeia.html">Guia Farmacopeia</a><a href="politica-de-privacidade.html">Política de Privacidade</a><a href="politica-de-privacidade.html#cookies" data-cookie-prefs>Preferências de cookies</a></div><div><div class="footer-title">Contato</div><a href="mailto:comercial@rbios.com.br">comercial@rbios.com.br</a><a href="https://wa.me/5562981307973" target="_blank" rel="noopener">WhatsApp (62) 98130-7973</a></div></div><div class="container" style="font-size:12px;text-align:center;margin-top:10px">Atendimento comercial em todo o Brasil · Foco no Centro-Oeste</div><div class="container copyright">© 2026 RBio Soluções Biológicas · Representação comercial · CNPJ 47.719.622/0001-38</div></footer>
+<footer><div class="container footer-grid"><div><div class="footer-title">RBio Soluções Biológicas</div><div style="font-size:13px">Conectando conhecimento, tecnologia e resultado.</div></div><div><div class="footer-title">Navegação</div><a href="diagnostico-clinico.html">Diagnóstico Clínico</a><a href="meios-de-cultura.html">Meios de Cultura</a><a href="monitoramento-ambiental.html">Monitoramento Ambiental</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF EXS2600</a><a href="farmacopeia.html">Guia Farmacopeia</a><a href="politica-de-privacidade.html">Política de Privacidade</a><a href="politica-de-privacidade.html#cookies" data-cookie-prefs>Preferências de cookies</a></div><div><div class="footer-title">Contato</div><a href="mailto:comercial@rbios.com.br">comercial@rbios.com.br</a><a href="https://wa.me/5562981307973" target="_blank" rel="noopener">WhatsApp (62) 98130-7973</a></div></div><div class="container" style="font-size:12px;text-align:center;margin-top:10px">Atendimento exclusivo para empresas (CNPJ) · Todo o Brasil · Foco no Centro-Oeste</div><div class="container copyright">© 2026 RBio Soluções Biológicas · Representação comercial · CNPJ 47.719.622/0001-38</div></footer>
 <script src="turma-viva.js" defer></script>
 
 <script>
@@ -296,12 +300,16 @@ var C=['Cepas de referência','Meios de cultura','Placas prontas','Análise de �
 document.getElementById('chips').innerHTML=C.map(function(c){return '<label><input type="checkbox" value="'+c+'"><span>'+c+'</span></label>'}).join('');
 var f=document.getElementById('qform'),qe=document.getElementById('qerr');
 f.addEventListener('input',function(){qe.textContent=''});
+function okCnpj(v){var c=v.replace(/\D/g,'');if(c.length!==14||/^(\d)\1+$/.test(c))return false;function dv(l){var t=0,p=l-7;for(var i=0;i<l;i++){t+=c[i]*p--;if(p<2)p=9}var r=t%11;return r<2?0:11-r}return dv(12)==c[12]&&dv(13)==c[13]}
+var qc=document.getElementById('qc');qc.addEventListener('input',function(){var d=qc.value.replace(/\D/g,'').slice(0,14),o=d.slice(0,2);if(d.length>2)o+='.'+d.slice(2,5);if(d.length>5)o+='.'+d.slice(5,8);if(d.length>8)o+='/'+d.slice(8,12);if(d.length>12)o+='-'+d.slice(12);qc.value=o});
 f.addEventListener('submit',function(ev){ev.preventDefault();
 var sel=[].map.call(f.querySelectorAll('#chips input:checked'),function(x){return x.value});
-var n=document.getElementById('qn').value.trim(),em=document.getElementById('qe').value.trim();
+var n=document.getElementById('qn').value.trim(),em=document.getElementById('qe').value.trim(),cj=document.getElementById('qc').value.trim();
 if(!sel.length){qe.textContent='Marque pelo menos uma opção.';return}
 if(!n){qe.textContent='Informe seu nome.';return}
-var msg='Olá, RBio!\n\nNome: '+n+'\nEmpresa: '+(em||'-')+'\nInteresse: '+sel.join(', ');
+if(!em){qe.textContent='Informe o nome da empresa.';return}
+if(!okCnpj(cj)){qe.textContent='Informe um CNPJ válido. O atendimento é exclusivo para empresas.';document.getElementById('qc').focus();return}
+var msg='Olá, RBio!\n\nNome: '+n+'\nEmpresa: '+em+'\nCNPJ: '+cj+'\nInteresse: '+sel.join(', ');
 if(typeof rbioLead==='function')rbioLead('cotacao_rapida');
 window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank','noopener');});
 })();
