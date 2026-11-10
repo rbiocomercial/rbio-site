@@ -29,6 +29,7 @@ window.RBIO_MEIOS = {
  w:'Meio sólido nutritivo de uso geral, sem seletividade. Na Farmacopeia é o meio da contagem de micro-organismos aeróbios totais, e no monitoramento ambiental é o meio das placas de contato e de sedimentação.',
  c:['Peptona de caseína','Farinha de soja (digestão papaínica)','Cloreto de sódio','Ágar'], ph:'7,3 ± 0,2', e:'Autoclavar em ciclo validado.',
  o:[['mes','p','Crescimento de colônias de aspecto variado; não diferencia espécies.'],['sa','p','Crescimento não inferior a 50% do inóculo de até 100 UFC.'],['pa','p','Crescimento não inferior a 50% do inóculo.'],['bs','p','Crescimento não inferior a 50% do inóculo.'],['ca','p','Crescimento não inferior a 50% do inóculo.'],['ab','p','Crescimento não inferior a 50% do inóculo.']],
+ x:[['sa','Coco Gram-positivo: colônias douradas e cremosas.'],['ec','Gram-negativo: colônias lisas e acinzentadas.'],['bs','Bacilo esporulado: colônias grandes, secas e rugosas.']],
  i:'Promoção de crescimento a (32,5 ± 2,5) °C: bactérias até 3 dias, fungos até 5 dias.'},
 
 {n:'Caldo caseína-soja', s:['TSB','Tryptic Soy Broth','Trypticase Soy Broth','SCDM','caldo tripticaseína de soja','caldo triptona de soja','CASO caldo'], t:['fb','clin'], u:'Enriquecimento · esterilidade',
@@ -52,7 +53,7 @@ window.RBIO_MEIOS = {
 {n:'Ágar batata-dextrose', s:['BDA','PDA','Potato Dextrose Agar','ágar batata dextrose'], t:['fb','alim'], u:'Bolores e leveduras',
  w:'Meio para cultivo e contagem de fungos. A acidificação com ácido tartárico reduz o crescimento de bactérias quando necessário.',
  c:['Infusão de batata','Dextrose','Ágar'], ph:'5,6 ± 0,2 (pode ser acidificado a 3,5)', e:'Autoclavar em ciclo validado. Acidificar somente após a esterilização.',
- o:[['bol','pi','Colônias filamentosas, muitas vezes com pigmento no verso da placa.'],['ab','pi','Colônias com esporos pretos.']],
+ o:[['bol','pi','Colônias filamentosas, muitas vezes com pigmento no verso da placa.'],['ab','pi','Colônias com esporos pretos.'],['ca','pi','Colônias cremosas e brancas.']],
  i:'Incubação a (22,5 ± 2,5) °C por até 5 dias.'},
 
 {n:'Caldo de enriquecimento para enterobactérias Mossel', s:['caldo Mossel','EE Mossel','Enterobacteria Enrichment Broth','caldo EE'], t:['fb'], u:'Seletivo · Gram-negativas bile-tolerantes',
@@ -112,6 +113,7 @@ window.RBIO_MEIOS = {
  w:'Meio sólido rico, usado no isolamento de Clostridium depois do enriquecimento. Pode levar gentamicina para aumentar a seletividade e é a base do ágar sangue na rotina clínica.',
  c:['Hidrolisado de caseína','Peptona de carne','Digesto de coração','Extrato de levedura','Amido de milho','Cloreto de sódio','Ágar'], ph:'7,3 ± 0,2', e:'Autoclavar em ciclo validado. A gentamicina, quando usada, é adicionada ao meio resfriado a 45 a 50 °C.',
  o:[['cl','pi','Colônias características, em anaerobiose.']],
+ x:[['sa','Gram-positivos crescem bem nesta base rica.'],['ec','Sem suplemento seletivo, enterobactérias também crescem.'],['bs','Bacilos do ambiente aparecem com facilidade.']],
  i:'Incubação a (32,5 ± 2,5) °C por 48 h em anaerobiose.'},
 
 {n:'Meio fluido de tioglicolato', s:['FTM','tioglicolato','Fluid Thioglycollate Medium','caldo tioglicolato'], t:['fb'], u:'Teste de esterilidade · anaeróbios',
@@ -124,6 +126,7 @@ window.RBIO_MEIOS = {
  w:'Meio não seletivo padrão para a contagem de bactérias aeróbias mesófilas em alimentos e água. É o número que indica a carga microbiana geral e as condições de higiene do processo.',
  c:['Triptona','Extrato de levedura','Glicose','Ágar'], ph:'7,0 ± 0,2', e:'Autoclavar em ciclo validado. Usual em pour plate, com o meio a 45 a 47 °C.',
  o:[['mes','pi','Colônias de aspecto variado; o resultado é expresso em UFC por grama ou mililitro.']],
+ x:[['bs','Bacilo comum em matérias-primas e no ambiente.'],['sa','Chega pela manipulação e pelas superfícies.'],['ec','Quando aparece, costuma indicar falha de higiene.']],
  i:'Incubação a 35 a 37 °C por 48 h, ou a 30 °C por 72 h conforme o método.'},
 {n:'Ágar Baird-Parker', s:['BP','Baird Parker','ágar Baird-Parker com gema de ovo e telurito','BPA','RPF'], t:['alim'], u:'Seletivo · Staphylococcus coagulase positiva',
  w:'Meio seletivo e diferencial para estafilococos em alimentos. O telurito e o cloreto de lítio inibem a flora acompanhante, e a gema de ovo revela as enzimas: a colônia típica é preta e brilhante, com halo claro de lipólise. A versão com fibrinogênio e plasma mostra direto a coagulase.',
@@ -200,12 +203,13 @@ window.RBIO_MEIOS = {
  w:'Meio pobre em nutrientes, pensado para bactérias de água tratada, que se recuperam mal em meios ricos. É o meio da contagem de heterotróficos, usada no controle de água purificada e de sistemas de distribuição.',
  c:['Extrato de levedura','Peptona proteose','Hidrolisado de caseína','Glicose','Amido solúvel','Piruvato de sódio','Fosfato de potássio','Sulfato de magnésio','Ágar'], ph:'7,2 ± 0,2', e:'Autoclavar em ciclo validado.',
  o:[['het','pi','Colônias pequenas e de crescimento lento; o resultado é expresso em UFC por mililitro.']],
+ x:[['pa','Clássica da água tratada: vive com pouquíssimo nutriente.'],['bs','Esporulados resistem ao tratamento e reaparecem aqui.'],['ec','Cresce no meio, mas em água tratada é sinal de alerta.']],
  i:'Incubação a 20 a 28 °C por 5 a 7 dias. A incubação longa e fria é o que recupera essas bactérias.'},
 
 {n:'Ágar sangue', s:['ágar sangue de carneiro','blood agar','ágar sangue 5%','hemólise'], t:['clin'], u:'Clínico · meio rico e hemólise',
  w:'Meio rico da rotina clínica, feito com uma base nutritiva e sangue desfibrinado de carneiro. Permite ver o padrão de hemólise, que é um dos primeiros passos da identificação.',
  c:['Base nutritiva (ágar Columbia ou similar)','Sangue desfibrinado de carneiro a 5%'], ph:'7,3 ± 0,2', e:'Autoclavar a base, resfriar a 45 a 50 °C e adicionar o sangue com cuidado para não formar bolhas.',
- o:[['sa','pi','Colônias douradas, muitas vezes com hemólise beta: halo transparente.'],['ec','pi','Colônias acinzentadas, em geral sem hemólise.']],
+ o:[['sa','pi','Colônias douradas, muitas vezes com hemólise beta: halo transparente.'],['ec','pi','Colônias acinzentadas, em geral sem hemólise.'],['pa','pi','Colônias esverdeadas, com odor característico.']],
  i:'Incubação a 35 a 37 °C por 18 a 24 h, com ou sem atmosfera enriquecida com CO₂.'},
 
 {n:'Ágar CLED', s:['CLED','Cystine Lactose Electrolyte Deficient','ágar cled','urocultura'], t:['clin'], u:'Clínico · urocultura',
@@ -218,12 +222,14 @@ window.RBIO_MEIOS = {
  w:'Meio padronizado do teste de sensibilidade a antimicrobianos por disco-difusão. A profundidade de 4 mm e o teor de cátions e de timidina são controlados, porque influenciam direto no tamanho do halo.',
  c:['Infusão de carne','Hidrolisado ácido de caseína','Amido','Ágar'], ph:'7,3 ± 0,1', e:'Autoclavar em ciclo validado. Distribuir com 4 mm de profundidade e secar a superfície antes do uso.',
  o:[['ec','pi','Cepa de controle: os halos precisam ficar dentro da faixa esperada pelo CLSI ou BrCAST.'],['sa','pi','Cepa de controle do ensaio.'],['pa','pi','Cepa de controle do ensaio.']],
+ x:[['ec','Cepa de controle Gram-negativa do antibiograma.'],['sa','Cepa de controle Gram-positiva do antibiograma.'],['pa','Cepa de controle para os antimicrobianos antipseudomonas.']],
  i:'Incubação a 35 ± 2 °C por 16 a 18 h, em atmosfera comum.'},
 
 {n:'Ágar caseína-soja com neutralizantes', s:['TSA Letheen','TSA com neutralizante','D/E Neutralizing','TSA LTHTh','placa de contato','RODAC'], t:['amb'], u:'Ambiental · superfícies com desinfetante',
  w:'TSA com neutralizantes como lecitina, polissorbato 80 e tiossulfato. Serve para amostrar superfícies e mãos onde há resíduo de desinfetante: sem neutralizar, o resíduo continua agindo na placa e o resultado dá falso negativo.',
  c:['Base de ágar caseína-soja','Lecitina','Polissorbato 80','Tiossulfato de sódio','Histidina (em algumas formulações)'], ph:'7,3 ± 0,2', e:'Autoclavar em ciclo validado. Em placas de contato, a superfície precisa ficar convexa para o contato com a área amostrada.',
  o:[['mes','p','Contagem de UFC por placa, comparada ao limite da classificação da área.'],['sa','p','Usado também na validação da capacidade de neutralização.']],
+ x:[['sa','Vem das mãos e das superfícies da área limpa.'],['bs','Esporulado, é o mais difícil de eliminar na sanitização.'],['ca','Leveduras e bolores também entram no monitoramento.']],
  i:'Incubação usual em dois estágios: 20 a 25 °C para fungos e 30 a 35 °C para bactérias.'}
 
   ]

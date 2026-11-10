@@ -147,6 +147,30 @@ footer{border-top:1px solid var(--line);padding:35px 0 20px;background:#fff} .fo
 @media(max-width:620px){.mc-head{flex-direction:column;align-items:stretch;gap:12px}
 .mc-right{justify-content:flex-start}
 .mc-btn{justify-content:center;padding:10px 14px;font-size:13px;width:100%}}
+.mc-fig{display:inline-block;line-height:0;border-radius:9px;background:linear-gradient(160deg,#fff 0%,#e3f4f6 100%)}
+.mc-fig[data-fato]{cursor:pointer}
+.mc-org .mc-fig{width:62px;height:46px;display:grid;place-items:center}
+.mc-org .mc-fig img{max-width:58px;max-height:44px;width:auto;height:auto;object-fit:contain;background:none;border-radius:0;display:block}
+.mc-item.open .mc-org .mc-fig img{animation:mc-pop .5s cubic-bezier(.34,1.56,.64,1) both}
+.mc-item.open .mc-org:nth-child(2) .mc-fig img{animation-delay:.07s}
+.mc-item.open .mc-org:nth-child(3) .mc-fig img{animation-delay:.14s}
+.mc-item.open .mc-org:nth-child(4) .mc-fig img{animation-delay:.21s}
+.mc-item.open .mc-org:nth-child(5) .mc-fig img{animation-delay:.28s}
+@keyframes mc-pop{from{opacity:0;transform:translateY(8px) scale(.82)}to{opacity:1;transform:none}}
+.mc-ex{margin-top:14px}
+.mc-ex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.mc-ex-grid figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+.mc-ex-grid .mc-fig{width:100%;height:84px;display:grid;place-items:center;border-radius:10px;margin-bottom:9px;padding:6px}
+.mc-ex-grid .mc-fig img{max-width:100%;max-height:72px;width:auto;height:auto;object-fit:contain;display:block}
+.mc-item.open .mc-ex-grid figure:nth-child(1) .mc-fig img{animation:mc-pop .5s cubic-bezier(.34,1.56,.64,1) .06s both}
+.mc-item.open .mc-ex-grid figure:nth-child(2) .mc-fig img{animation:mc-pop .5s cubic-bezier(.34,1.56,.64,1) .16s both}
+.mc-item.open .mc-ex-grid figure:nth-child(3) .mc-fig img{animation:mc-pop .5s cubic-bezier(.34,1.56,.64,1) .26s both}
+.mc-ex-grid i{display:block;font-style:italic;font-weight:800;color:var(--navy);font-size:13.5px;line-height:1.3}
+.mc-ex-grid small{display:block;color:var(--muted);font-size:11px;font-weight:700;margin-top:2px}
+.mc-ex-grid p{margin:6px 0 0;font-size:12.5px;color:var(--text);line-height:1.45}
+.mc-ex-note{margin:12px 0 0;font-size:12px;color:var(--muted)}
+@media(prefers-reduced-motion:reduce){.mc-item.open .mc-fig img{animation:none!important}}
+@media(max-width:620px){.mc-ex-grid{grid-template-columns:1fr}.mc-ex-grid figure{display:grid;grid-template-columns:84px 1fr;gap:12px;text-align:left;align-items:center}.mc-ex-grid .mc-fig{height:66px;margin:0}.mc-ex-grid .mc-fig img{max-height:56px}}
 </style>
 
 <style id="rbio-v3-compact">
@@ -218,6 +242,20 @@ var D=window.RBIO_MEIOS; if(!D) return;
 var T='img/turma/', WA='5562981307973';
 var AREAS=[['','Todos'],['fb','Farmacopeia'],['alim','Alimentos'],['agua','Água'],['clin','Clínico'],['amb','Ambiental']];
 var ROLES={p:['r-p','Cresce'],i:['r-i','Aspecto'],n:['r-n','Inibido']};
+var ACAO={sa:'dourado',pa:'pigmento',bs:'esporo',bce:'esporo',ca:'broto',ab:'esporos',bol:'esporos',ec:'agito',st:'agito',cl:'esporo',co:'amarelo',ctt:'amarelo'};
+var FATO={
+ sa:'No ágar manitol salgado eu fermento o manitol e deixo o meio amarelo.',
+ pa:'A piocianina é minha: é ela que deixa o ágar cetrimida esverdeado.',
+ bs:'Quando aperta, eu viro esporo e espero o momento certo de voltar.',
+ bce:'Também viro esporo. No MYP eu não fermento o manitol, por isso fico rosado.',
+ ca:'Eu cresço por brotamento: a levedura-filha nasce de um broto e se solta.',
+ ab:'Meus conídios pretos viajam pelo ar. É assim que eu apareço na sua placa.',
+ bol:'Em Sabouraud e em BDA eu me espalho em filamentos e às vezes coloro o verso da placa.',
+ ec:'Fermento a lactose: no MacConkey minha colônia fica rosada.',
+ st:'Produzo gás sulfídrico. É por isso que no XLD minha colônia tem centro preto.',
+ cl:'Sou anaeróbio: só cresço quando o oxigênio sai do meio. E também viro esporo.',
+ co:'Minha beta-galactosidase quebra o ONPG e deixa a amostra amarela.',
+ ctt:'Eu aguento 44,5 °C. É isso que me separa dos outros coliformes.'};
 var SUG=['TSA','Chapman','XLD','Sabouraud','Salmonella','coliformes','urocultura','Baird-Parker'];
 var q='', area='', open={};
 var $q=document.getElementById('mcQ'), $list=document.getElementById('mcList'),
@@ -246,13 +284,31 @@ function synLine(m){
   var ord=hit===null?s:[s[hit]].concat(s.filter(function(_,i){return i!==hit}));
   return '<span class="mc-syn">Também chamado de '+ord.slice(0,4).map(hl).join(' · ')+'</span>';
 }
-function orgHtml(x){
+function fig(k,m){
+  var g=D.org[k]; if(!g||!g[2]) return '';
+  var acao=ACAO[k]||'', fato=FATO[k]||'';
+  if(k==='ec' && /cromogênico/.test(m.n)) acao='uv';
+  return '<span class="mc-fig"'+(acao?' data-acao="'+acao+'"':'')+
+    (fato?' data-nome="'+esc(g[0])+'" data-fato="'+esc(fato)+'"':'')+
+    '><img src="'+T+g[2]+'" alt="'+esc(g[0])+'" loading="lazy" decoding="async"></span>';
+}
+function orgHtml(x,m){
   var g=D.org[x[0]]; if(!g) return '';
   var roles=String(x[1]).split('').map(function(r){var R=ROLES[r];return R?'<span class="mc-role '+R[0]+'">'+R[1]+'</span>':''}).join('');
   var grupo=/grupo|contagem/.test(g[1]);
-  var img=g[2]?'<img src="'+T+g[2]+'" alt="" loading="lazy" decoding="async">':'';
-  return '<div class="mc-org'+(g[2]?'':' noimg')+'">'+img+'<div><i class="'+(grupo?'reto':'')+'">'+hl(g[0])+'</i>'+
+  return '<div class="mc-org'+(g[2]?'':' noimg')+'">'+fig(x[0],m)+'<div><i class="'+(grupo?'reto':'')+'">'+hl(g[0])+'</i>'+
     (grupo?'':'<small>'+esc(g[1])+'</small>')+'<p>'+roles+' '+esc(x[2])+'</p></div></div>';
+}
+function exemplosHtml(m){
+  if(!m.x||!m.x.length) return '';
+  return '<div class="mc-box mc-ex"><h4>Exemplos de quem cresce aqui</h4>'+
+    '<div class="mc-ex-grid">'+m.x.map(function(e){
+      var g=D.org[e[0]]; if(!g) return '';
+      return '<figure>'+fig(e[0],m)+'<figcaption><i>'+esc(g[0])+'</i>'+
+        (g[1] && !/grupo|contagem/.test(g[1])?'<small>'+esc(g[1])+'</small>':'')+
+        '<p>'+esc(e[1])+'</p></figcaption></figure>';
+    }).join('')+'</div>'+
+    '<p class="mc-ex-note">Meio sem seletividade: cresce um conjunto amplo de micro-organismos. Toque em um personagem para ver uma curiosidade.</p></div>';
 }
 function card(m,idx){
   var ab=open[idx]?' open':'';
@@ -274,9 +330,10 @@ function card(m,idx){
           '<div class="mc-facts"><span><b>pH final a 25 °C</b>'+esc(m.ph)+'</span>'+
           '<span><b>Preparo</b>'+esc(m.e)+'</span></div></div>'+
         '<div class="mc-box"><h4>Micro-organismos de controle</h4>'+
-          (m.o||[]).map(orgHtml).join('')+
+          (m.o||[]).map(function(x){return orgHtml(x,m)}).join('')+
           (m.i?'<p class="mc-inc">'+esc(m.i)+'</p>':'')+'</div>'+
       '</div>'+
+      exemplosHtml(m)+
       '<div class="mc-cta"><a class="btn btn-primary" href="'+wa+'" target="_blank" rel="noopener">Pedir cotação deste meio →</a>'+
       '<a class="btn btn-outline" href="cepas-de-referencia.html">Ver cepas de referência</a></div>'+
     '</div></article>';
@@ -287,6 +344,7 @@ function render(){
   $empty.style.display=r.length?'none':'block';
   $count.textContent=r.length?(r.length===1?'1 meio encontrado':r.length+' meios encontrados'):'';
   if(q && r.length===1) open[r[0][1]]=true;
+  if(typeof window.tvPreparar==='function') window.tvPreparar($list);
 }
 AREAS.forEach(function(a){
   var b=document.createElement('button'); b.type='button'; b.textContent=a[1];
@@ -312,6 +370,7 @@ $list.addEventListener('click',function(ev){
   var it=h.parentNode, i=it.getAttribute('data-i');
   if(open[i]) delete open[i]; else open[i]=true;
   it.classList.toggle('open'); h.setAttribute('aria-expanded', open[i]?'true':'false');
+  if(open[i] && typeof window.tvPreparar==='function') window.tvPreparar(it);
 });
 render();
 })();

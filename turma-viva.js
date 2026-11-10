@@ -60,21 +60,37 @@
   }
 
   // Personagens clicáveis com curiosidade
-  document.querySelectorAll('[data-fato]').forEach(function (el) {
+  function prepararFato(el) {
+    if (el.dataset.tvReady) return;
+    el.dataset.tvReady = '1';
     el.style.pointerEvents = 'auto';
     el.setAttribute('role', 'button'); el.setAttribute('tabindex', '0');
     el.setAttribute('aria-label', (el.getAttribute('data-nome') || 'Personagem') + ': ver curiosidade');
-    el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); } });
-    el.addEventListener('click', function () {
-      if (!reduce) {
-        el.classList.remove('tv-jump'); void el.offsetWidth; el.classList.add('tv-jump');
-        el.addEventListener('animationend', function f() { el.classList.remove('tv-jump'); el.removeEventListener('animationend', f); });
-      }
-      var r = el.getBoundingClientRect();
-      say(el.getAttribute('data-fato'), r.left + r.width / 2, r.top);
-      if (typeof gtag === 'function') gtag('event', 'turma_clique', { personagem: el.getAttribute('data-nome') || '' });
-    });
+  }
+  function prepararTodos(raiz) {
+    (raiz || document).querySelectorAll('[data-fato]').forEach(prepararFato);
+  }
+  prepararTodos();
+  // Delegação: funciona também para personagens criados depois (busca de meios)
+  document.addEventListener('click', function (ev) {
+    var el = ev.target.closest && ev.target.closest('[data-fato]');
+    if (!el) return;
+    prepararFato(el);
+    if (!reduce) {
+      el.classList.remove('tv-jump'); void el.offsetWidth; el.classList.add('tv-jump');
+      el.addEventListener('animationend', function f() { el.classList.remove('tv-jump'); el.removeEventListener('animationend', f); });
+    }
+    var r = el.getBoundingClientRect();
+    say(el.getAttribute('data-fato'), r.left + r.width / 2, r.top);
+    if (typeof gtag === 'function') gtag('event', 'turma_clique', { personagem: el.getAttribute('data-nome') || '' });
   });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var el = e.target.closest && e.target.closest('[data-fato]');
+    if (!el) return;
+    e.preventDefault(); el.click();
+  });
+  window.tvPreparar = prepararTodos;
 
 
   // ===== Comportamentos de cada mascote (passar o mouse no computador, tocar no celular) =====
@@ -265,13 +281,25 @@
     aceno: function (el) { bump(el, 'tv-aceno', 2100); }
   };
 
-  document.querySelectorAll('[data-acao]').forEach(function (el) {
-    var fn = ACOES[el.getAttribute('data-acao')], last = 0;
+  var ultimoAcao = new WeakMap();
+  function dispararAcao(el) {
+    var fn = ACOES[el.getAttribute('data-acao')];
     if (!fn) return;
-    function go() { var n = Date.now(); if (n - last < 2200) return; last = n; fn(el); }
-    if (fine) el.addEventListener('mouseenter', go);
-    el.addEventListener('click', go);
+    var n = Date.now();
+    if (n - (ultimoAcao.get(el) || 0) < 2200) return;
+    ultimoAcao.set(el, n);
+    fn(el);
+  }
+  // Delegação, para alcançar os personagens criados depois
+  document.addEventListener('click', function (ev) {
+    var el = ev.target.closest && ev.target.closest('[data-acao]');
+    if (el) dispararAcao(el);
   });
+  if (fine) document.addEventListener('mouseover', function (ev) {
+    var el = ev.target.closest && ev.target.closest('[data-acao]');
+    if (el && !el.contains(ev.relatedTarget)) dispararAcao(el);
+  });
+  window.tvAcao = dispararAcao;
 
   if (reduce) return;
 
