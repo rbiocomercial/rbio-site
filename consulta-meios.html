@@ -340,11 +340,12 @@ function card(m,idx){
 }
 function render(){
   var r=D.meios.map(function(m,i){return [m,i]}).filter(function(p){return match(p[0])});
+  if(q && r.length===1) open[r[0][1]]=true;
   $list.innerHTML=r.map(function(p){return card(p[0],p[1])}).join('');
   $empty.style.display=r.length?'none':'block';
   $count.textContent=r.length?(r.length===1?'1 meio encontrado':r.length+' meios encontrados'):'';
-  if(q && r.length===1) open[r[0][1]]=true;
   if(typeof window.tvPreparar==='function') window.tvPreparar($list);
+  if(typeof window.tvDemo==='function') $list.querySelectorAll('.mc-item.open').forEach(function(it){window.tvDemo(it)});
 }
 AREAS.forEach(function(a){
   var b=document.createElement('button'); b.type='button'; b.textContent=a[1];
@@ -357,12 +358,21 @@ AREAS.forEach(function(a){
 $sug.innerHTML='<span>Experimente:</span>';
 SUG.forEach(function(s){
   var b=document.createElement('button'); b.type='button'; b.textContent=s;
-  b.onclick=function(){ $q.value=s; q=s; open={}; render(); $q.focus(); };
+  b.onclick=function(){ $q.value=s; q=s; open={}; render(); subir(); };
   $sug.appendChild(b);
 });
+function subir(){
+  var h=document.querySelector('.header'), alt=h?h.getBoundingClientRect().height:72;
+  var cx=document.querySelector('.mc-search');
+  if(!cx) return;
+  var alvo=cx.getBoundingClientRect().top+window.pageYOffset-alt-14;
+  if(Math.abs(window.pageYOffset-alvo)<40) return;
+  window.scrollTo({top:Math.max(0,alvo),behavior:'smooth'});
+}
 var tm;
 $q.addEventListener('input',function(){ clearTimeout(tm); tm=setTimeout(function(){
   q=$q.value.trim(); open={}; render();
+  if(q) subir();
   if(q.length>2 && typeof gtag==='function') gtag('event','busca_meio',{termo:q.toLowerCase()});
 },160)});
 $list.addEventListener('click',function(ev){
@@ -370,7 +380,10 @@ $list.addEventListener('click',function(ev){
   var it=h.parentNode, i=it.getAttribute('data-i');
   if(open[i]) delete open[i]; else open[i]=true;
   it.classList.toggle('open'); h.setAttribute('aria-expanded', open[i]?'true':'false');
-  if(open[i] && typeof window.tvPreparar==='function') window.tvPreparar(it);
+  if(open[i]){
+    if(typeof window.tvPreparar==='function') window.tvPreparar(it);
+    if(typeof window.tvDemo==='function') window.tvDemo(it);
+  }
 });
 render();
 })();
