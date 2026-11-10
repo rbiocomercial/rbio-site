@@ -56,7 +56,7 @@
     bubble.style.top = Math.max(10, y - 54) + 'px';
     bubble.classList.add('on');
     clearTimeout(bubbleTimer);
-    bubbleTimer = setTimeout(function () { bubble.classList.remove('on'); }, 2600);
+    bubbleTimer = setTimeout(function () { bubble.classList.remove('on'); }, 3600);
   }
 
   // Personagens clicáveis com curiosidade
@@ -81,7 +81,16 @@
       el.addEventListener('animationend', function f() { el.classList.remove('tv-jump'); el.removeEventListener('animationend', f); });
     }
     var r = el.getBoundingClientRect();
-    say(el.getAttribute('data-fato'), r.left + r.width / 2, r.top);
+    var txt = el.getAttribute('data-fato');
+    // Com efeito próprio: o balão espera o efeito acontecer e aparece embaixo, sem tampar
+    if (el.hasAttribute('data-acao')) {
+      setTimeout(function () {
+        var b = el.getBoundingClientRect();
+        say(txt, b.left + b.width / 2, b.bottom + 58);
+      }, 1250);
+    } else {
+      say(txt, r.left + r.width / 2, r.top);
+    }
     if (typeof gtag === 'function') gtag('event', 'turma_clique', { personagem: el.getAttribute('data-nome') || '' });
   });
   document.addEventListener('keydown', function (e) {
@@ -300,6 +309,18 @@
     if (el && !el.contains(ev.relatedTarget)) dispararAcao(el);
   });
   window.tvAcao = dispararAcao;
+  // Mostra o efeito sozinho (duas vezes) quando o personagem entra em cena
+  window.tvDemo = function (raiz, repeticoes) {
+    if (reduce) return;
+    var els = [].slice.call((raiz || document).querySelectorAll('[data-acao]:not([data-tv-demo])'), 0, 4);
+    var vezes = repeticoes || 2;
+    els.forEach(function (el, i) {
+      el.setAttribute('data-tv-demo', '1');
+      for (var v = 0; v < vezes; v++) {
+        setTimeout(function () { dispararAcao(el); }, 320 + i * 240 + v * 2700);
+      }
+    });
+  };
 
   if (reduce) return;
 
