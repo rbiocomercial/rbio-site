@@ -58,6 +58,7 @@ a{color:inherit;text-decoration:none}button,input,select{font:inherit}
 .ch.c5{width:33%;right:0;bottom:4%;animation-delay:-.6s}
 .tag{position:absolute;z-index:4;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:12px;font-weight:800;color:var(--navy);box-shadow:var(--shadow)}
 .tag b{color:var(--cyan-dark)}
+a.tag{text-decoration:none;cursor:pointer}a.tag:hover{border-color:var(--cyan-dark)}
 .tag.t1{left:4%;bottom:14%}.tag.t2{right:6%;top:6%}
 .rel{position:relative}.peek{position:absolute;z-index:2;width:190px;animation:float 5.5s ease-in-out infinite;filter:drop-shadow(0 12px 16px rgba(8,40,63,.12))}.peek img{width:100%;display:block}
 .peek.p-sol{right:10px;top:-50px;width:150px}.peek.p-maldi{left:-70px;bottom:-56px;width:170px;animation-delay:-2s}.feature .peek img{border:0;box-shadow:none;border-radius:0}.peek.p-steps{right:10px;top:-40px;width:180px;animation-delay:-1s}
@@ -163,14 +164,13 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 <h1>Resultados confiáveis começam no <em>meio certo</em>.</h1>
 <p>Cepas de referência, meios de cultura, placas prontas e identificação por MALDI-TOF, com suporte técnico de quem entende a rotina do seu laboratório.</p>
 <div class="actions"><a class="btn btn-primary" href="#ensaio">Encontrar pelo meu ensaio →</a><a class="btn btn-outline" href="#contato">Falar com a RBio</a></div>
-<div class="trust"><span>Atendimento técnico</span><span>Fabricantes reconhecidos</span><span>Foco no Centro-Oeste</span></div>
 </div>
 <div class="stage" data-swimmer="img/turma/pseudomonas.svg">
 <div class="blob"></div>
 <div class="ch c4" data-acao="broto" data-nome="Candida albicans" data-fato="Sou levedura: me multiplico por brotamento."><img src="img/turma/candida.svg" alt="Candida albicans"></div>
 <div class="ch c1" data-acao="pigmento" data-nome="Pseudomonas aeruginosa" data-fato="Nado com um flagelo polar. Me pega se for capaz!"><img src="img/turma/pseudomonas.svg" alt="Pseudomonas aeruginosa"></div>
 <div class="tag t1" aria-hidden="true"><b>≤ 100 UFC</b> · desafio de meios</div>
-<div class="tag t2" aria-hidden="true"><b>Farmacopeia</b> · 8ª edição</div>
+<a class="tag t2" href="https://www.gov.br/anvisa/pt-br/assuntos/farmacopeia/farmacopeia-brasileira" target="_blank" rel="noopener" aria-label="Farmacopeia Brasileira 8ª edição no site da Anvisa (abre em nova aba)"><b>Farmacopeia</b> · 8ª edição ↗</a>
 </div>
 </div>
 </section>
@@ -266,7 +266,7 @@ footer{background:#061d2d;color:#a9c2cc;padding:38px 0 22px;margin-top:20px}
 </section>
 </main>
 
-<footer><div class="container footer-grid"><div><div class="footer-title">RBio Soluções Biológicas</div><div style="font-size:13px">Conectando conhecimento, tecnologia e resultado.</div></div><div><div class="footer-title">Navegação</div><a href="diagnostico-clinico.html">Diagnóstico Clínico</a><a href="meios-de-cultura.html">Meios de Cultura</a><a href="monitoramento-ambiental.html">Monitoramento Ambiental</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF EXS2600</a><a href="farmacopeia.html">Guia Farmacopeia</a><a href="politica-de-privacidade.html">Política de Privacidade</a><a href="politica-de-privacidade.html#cookies" data-cookie-prefs>Preferências de cookies</a></div><div><div class="footer-title">Contato</div><a href="mailto:comercial@rbios.com.br">comercial@rbios.com.br</a><a href="https://wa.me/5562981307973" target="_blank" rel="noopener">WhatsApp (62) 98130-7973</a></div></div><div class="container" style="font-size:12px;text-align:center;margin-top:10px">Atendimento exclusivo para empresas (CNPJ) · Todo o Brasil · Foco no Centro-Oeste</div><div class="container copyright">© 2026 RBio Soluções Biológicas · Representação comercial · CNPJ 47.719.622/0001-38</div></footer>
+<footer><div class="container footer-grid"><div><div class="footer-title">RBio Soluções Biológicas</div><div style="font-size:13px">Conectando conhecimento, tecnologia e resultado.</div></div><div><div class="footer-title">Navegação</div><a href="diagnostico-clinico.html">Diagnóstico Clínico</a><a href="meios-de-cultura.html">Meios de Cultura</a><a href="monitoramento-ambiental.html">Monitoramento Ambiental</a><a href="analise-de-agua.html">Análise de água</a><a href="maldi.html">MALDI-TOF EXS2600</a><a href="farmacopeia.html">Guia Farmacopeia</a><a href="politica-de-privacidade.html">Política de Privacidade</a><a href="politica-de-privacidade.html#cookies" data-cookie-prefs>Preferências de cookies</a></div><div><div class="footer-title">Contato</div><a href="mailto:comercial@rbios.com.br">comercial@rbios.com.br</a><a href="https://wa.me/5562981307973" target="_blank" rel="noopener">WhatsApp (62) 98130-7973</a></div></div><div class="container" style="font-size:12px;text-align:center;margin-top:10px">Atendimento exclusivo para empresas (CNPJ) · Atendimento em todo o Brasil</div><div class="container copyright">© 2026 RBio Soluções Biológicas · Representação comercial · CNPJ 47.719.622/0001-38</div></footer>
 <script src="turma-viva.js" defer></script>
 
 <script>
