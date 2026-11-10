@@ -13,6 +13,7 @@ window.RBIO_MEIOS = {
     ec:  ['Escherichia coli', 'ATCC 8739', 'ecoli.svg'],
     st:  ['Salmonella Typhimurium', 'ATCC 14028', 'salmonella.svg'],
     cl:  ['Clostridium sporogenes', 'ATCC 11437', 'clostridium.svg'],
+    cl2: ['Clostridium sporogenes', 'ATCC 19404 ou ATCC 11437', 'clostridium.svg'],
     co:  ['Coliformes totais', 'grupo', 'coliforme.svg'],
     ctt: ['Coliformes termotolerantes', 'grupo', 'coliforme.svg'],
     bol: ['Bolores e leveduras', 'grupo', 'aspergillus.svg'],
@@ -69,10 +70,10 @@ window.RBIO_MEIOS = {
  i:'Incubação a (32,5 ± 2,5) °C por 18 a 24 h.'},
 
 {n:'Caldo MacConkey', s:['MacConkey Broth','caldo MC'], t:['fb'], u:'Seletivo · Escherichia coli',
- w:'Caldo seletivo com bile e lactose, incubado em temperatura mais alta para favorecer a E. coli na pesquisa de patógenos.',
+ w:'Caldo seletivo com bile e lactose, incubado a (43 ± 1) °C para favorecer a E. coli na pesquisa de patógenos.',
  c:['Hidrolisado de gelatina','Lactose','Bile de boi','Púrpura de bromocresol'], ph:'7,3 ± 0,2', e:'Autoclavar em ciclo validado.',
  o:[['ec','p','Turvação do caldo, com viragem do indicador para amarelo.'],['sa','n','Sem crescimento.']],
- i:'Incubação a 42 a 44 °C por 24 a 48 h.'},
+ i:'Incubação a (43 ± 1) °C por 24 a 48 h.'},
 
 {n:'Ágar MacConkey', s:['MacConkey Agar','ágar MC','MacConkey'], t:['fb','clin','agua'], u:'Seletivo · Gram-negativas',
  w:'Meio sólido seletivo e diferencial, clássico na rotina clínica. Separa quem fermenta lactose de quem não fermenta.',
@@ -119,7 +120,7 @@ window.RBIO_MEIOS = {
 {n:'Meio fluido de tioglicolato', s:['FTM','tioglicolato','Fluid Thioglycollate Medium','caldo tioglicolato'], t:['fb'], u:'Teste de esterilidade · anaeróbios',
  w:'Meio do teste de esterilidade voltado a bactérias anaeróbias e aeróbias. O tioglicolato consome o oxigênio e a resazurina funciona como indicador: a camada superior rosada mostra até onde o meio está oxidado.',
  c:['L-cistina','Cloreto de sódio','Dextrose','Extrato de levedura','Digesto de caseína','Tioglicolato de sódio','Resazurina','Ágar'], ph:'7,1 ± 0,2', e:'Autoclavar em ciclo validado. Descartar se mais de um terço do meio estiver rosado.',
- o:[['cl','p','Turvação do caldo.'],['sa','p','Turvação do caldo.'],['pa','p','Turvação do caldo.']],
+ o:[['cl2','p','Turvação do caldo.'],['sa','p','Turvação do caldo.'],['pa','p','Turvação do caldo.']],
  i:'Incubação a (32,5 ± 2,5) °C: bactérias até 3 dias na promoção de crescimento, 14 dias no ensaio.'},
 
 {n:'Ágar padrão para contagem', s:['PCA','Plate Count Agar','ágar para contagem em placas','Standard Methods Agar'], t:['alim','agua'], u:'Contagem total de mesófilos',
@@ -144,19 +145,19 @@ window.RBIO_MEIOS = {
  w:'Primeira etapa da técnica do número mais provável. O lauril sulfato inibe Gram-positivas e o tubo de Durham mostra a produção de gás a partir da lactose, que é o resultado presuntivo para coliformes.',
  c:['Triptose','Lactose','Cloreto de sódio','Fosfatos de potássio','Lauril sulfato de sódio'], ph:'6,8 ± 0,2', e:'Autoclavar em ciclo validado, com tubo de Durham invertido.',
  o:[['co','pi','Turvação com produção de gás no tubo de Durham: presuntivo positivo.'],['sa','n','Sem crescimento.']],
- i:'Incubação a 35 a 37 °C por 24 a 48 h. Todo tubo com gás segue para a confirmação.'},
+ i:'Incubação a (35 ± 0,5) °C por 24 a 48 h. Todo tubo com gás segue para a confirmação.'},
 
 {n:'Caldo verde brilhante bile 2%', s:['BGBL','VB','caldo bile verde brilhante','Brilliant Green Bile Broth','caldo VB'], t:['alim','agua'], u:'Confirmação · coliformes totais',
  w:'Etapa de confirmação dos coliformes totais no número mais provável. A bile e o verde brilhante tornam o meio bem mais seletivo, e o gás confirma o resultado presuntivo do caldo lauril.',
  c:['Peptona','Lactose','Bile de boi','Verde brilhante'], ph:'7,2 ± 0,2', e:'Autoclavar em ciclo validado, com tubo de Durham invertido.',
  o:[['co','pi','Produção de gás no tubo de Durham: coliformes totais confirmados.']],
- i:'Incubação a 35 a 37 °C por 24 a 48 h.'},
+ i:'Incubação a (35 ± 0,5) °C por 24 a 48 h.'},
 
 {n:'Caldo EC', s:['EC','caldo E. coli','EC Broth','caldo EC com MUG'], t:['alim','agua'], u:'Confirmação · termotolerantes e E. coli',
- w:'Confirmação dos coliformes termotolerantes, pela incubação em banho a 45 °C, temperatura que separa quem é de origem fecal. A versão com MUG acusa a E. coli pela fluorescência sob luz ultravioleta.',
+ w:'Confirmação dos coliformes termotolerantes, pela incubação em banho-maria a 44,5 °C, temperatura que separa quem é de origem fecal. A versão com MUG acusa a E. coli pela fluorescência sob luz ultravioleta.',
  c:['Triptose','Lactose','Sais biliares','Fosfatos de potássio','Cloreto de sódio'], ph:'6,9 ± 0,2', e:'Autoclavar em ciclo validado, com tubo de Durham. Incubar em banho-maria com agitação para manter a temperatura exata.',
- o:[['ctt','pi','Produção de gás a 45 °C: termotolerantes confirmados.'],['ec','pi','No caldo com MUG, fluorescência azul sob UV de 365 nm.']],
- i:'Incubação a (45,0 ± 0,2) °C por 24 h, em banho-maria.'},
+ o:[['ctt','pi','Produção de gás a 44,5 °C: termotolerantes confirmados.'],['ec','pi','No caldo com MUG, fluorescência azul sob UV de 365 nm.']],
+ i:'Incubação a (44,5 ± 0,2) °C por 24 h, em banho-maria com agitação. A FDA passou de 45,5 °C para 44,5 °C em 2017.'},
 
 {n:'Ágar Listeria segundo Ottaviani e Agosti', s:['ALOA','Listeria ágar cromogênico','Oxford','PALCAM','ágar Listeria'], t:['alim'], u:'Seletivo · Listeria monocytogenes',
  w:'Meios seletivos para Listeria em alimentos. No meio cromogênico, a colônia fica azul-esverdeada e a L. monocytogenes forma ainda um halo opaco pela ação da fosfolipase. Nos meios Oxford e PALCAM, a esculina escurecida dá colônias pretas com halo.',
@@ -168,7 +169,7 @@ window.RBIO_MEIOS = {
  w:'Meio seletivo e diferencial para Bacillus cereus em alimentos. A polimixina inibe a flora acompanhante; o B. cereus não fermenta o manitol, o que mantém a colônia rosada, e a lecitinase na gema de ovo forma um halo branco de precipitação.',
  c:['Peptona','Extrato de carne','D-manitol','Cloreto de sódio','Vermelho de fenol','Ágar','Emulsão de gema de ovo','Polimixina B'], ph:'7,2 ± 0,2', e:'Autoclavar a base, resfriar a 45 a 50 °C e adicionar a gema de ovo e a polimixina.',
  o:[['bce','pi','Colônias rosadas, grandes, com halo branco de precipitação ao redor.'],['ec','n','Sem crescimento.']],
- i:'Incubação a 30 a 35 °C por 24 a 48 h.'},
+ i:'Incubação a 30 °C por 24 a 48 h, conforme a ISO 7932. Alguns fabricantes indicam 35 ± 2 °C por 24 a 40 h.'},
 
 {n:'Ágar dicloran rosa bengala cloranfenicol', s:['DRBC','DG18','rosa bengala','ágar dicloran','Dichloran Rose Bengal'], t:['alim'], u:'Bolores e leveduras em alimentos',
  w:'Meio de escolha para contagem de fungos em alimentos. O dicloran e a rosa bengala limitam o alastramento dos bolores, o que evita que uma colônia invasora cubra a placa, e o cloranfenicol inibe bactérias. A versão DG18 é usada em alimentos secos.',
@@ -183,9 +184,9 @@ window.RBIO_MEIOS = {
 
 {n:'Ágar m-Endo', s:['m-Endo','Endo','LES Endo','membrana filtrante coliformes'], t:['agua'], u:'Água · coliformes por membrana',
  w:'Meio usado na técnica de membrana filtrante para coliformes totais em água. A fucsina e o sulfito formam o brilho metálico verde característico quando há fermentação forte da lactose, típico de E. coli.',
- c:['Triptose','Peptona','Extrato de levedura','Lactose','Fosfatos','Lauril sulfato de sódio','Desoxicolato de sódio','Sulfito de sódio','Fucsina básica','Ágar'], ph:'7,2 ± 0,2', e:'Não autoclavar. Aquecer até a ebulição, resfriar e usar no mesmo dia. Proteger da luz.',
+ c:['Triptose','Peptona','Extrato de levedura','Lactose','Fosfatos','Lauril sulfato de sódio','Desoxicolato de sódio','Sulfito de sódio','Fucsina básica','Ágar'], ph:'7,2 ± 0,2', e:'Dissolver o meio em água com cerca de 20 mL de etanol 95% por litro e aquecer até a ebulição. Não autoclavar. Resfriar, distribuir e proteger da luz.',
  o:[['co','pi','Colônias vermelhas com brilho metálico verde sobre a membrana.'],['sa','n','Sem crescimento.']],
- i:'Incubação a 35 °C por 22 a 24 h, com a membrana sobre o meio.'},
+ i:'Técnica LES em duas etapas: a membrana fica 1,5 a 2 h a 35 °C sobre disco embebido em caldo lauril sulfato e depois vai para o ágar, a (35 ± 0,5) °C por 20 a 24 h.'},
 
 {n:'Ágar m-FC', s:['m-FC','mFC','membrana filtrante termotolerantes','coliformes fecais membrana'], t:['agua'], u:'Água · coliformes termotolerantes',
  w:'Meio para coliformes termotolerantes por membrana filtrante. A incubação a 44,5 °C e o rosolic acid tornam o meio bem seletivo, e o azul de anilina dá a cor azul das colônias.',
@@ -193,11 +194,11 @@ window.RBIO_MEIOS = {
  o:[['ctt','pi','Colônias azuis sobre a membrana. Colônias cinzas ou creme não são contadas.']],
  i:'Incubação a (44,5 ± 0,2) °C por 24 h, em banho-maria ou estufa de precisão.'},
 
-{n:'Ágar Slanetz e Bartley', s:['Slanetz','m-Enterococcus','enterococos em água','KF Streptococcus'], t:['agua'], u:'Água · enterococos',
+{n:'Ágar Slanetz e Bartley', s:['Slanetz','Slanetz-Bartley','m-Enterococcus','enterococos em água','ISO 7899-2'], t:['agua'], u:'Água · enterococos',
  w:'Meio para enterococos intestinais em água, indicadores de contaminação fecal mais resistentes no ambiente que os coliformes. O cloreto de trifeniltetrazólio é reduzido pelas colônias, que ficam vermelhas ou marrons.',
- c:['Triptose','Extrato de levedura','Glicose','Fosfato de potássio','Azida sódica','Cloreto de trifeniltetrazólio','Ágar'], ph:'7,2 ± 0,2', e:'Não autoclavar. Aquecer até a ebulição e resfriar.',
+ c:['Triptose','Extrato de levedura','Glicose','Fosfato de potássio','Azida sódica','Cloreto de trifeniltetrazólio','Ágar'], ph:'7,2 ± 0,1', e:'Não autoclavar. Aquecer até a ebulição e resfriar.',
  o:[['ent','pi','Colônias vermelhas, marrons ou rosadas sobre a membrana.']],
- i:'Incubação a 44 °C por 44 h, ou a 37 °C conforme o método adotado.'},
+ i:'Incubação a (36 ± 2) °C por 44 ± 4 h, conforme a ISO 7899-2. A confirmação transfere a membrana para ágar bile esculina azida a 44 °C por 2 h: colônias marrom-escuras a pretas confirmam enterococos intestinais.'},
 
 {n:'Ágar R2A', s:['R2A','Reasoner 2A','heterotróficos','contagem de heterotróficos'], t:['agua'], u:'Água · bactérias heterotróficas',
  w:'Meio pobre em nutrientes, pensado para bactérias de água tratada, que se recuperam mal em meios ricos. É o meio da contagem de heterotróficos, usada no controle de água purificada e de sistemas de distribuição.',
