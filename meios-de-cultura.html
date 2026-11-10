@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Meios de cultura desidratados, placas prontas para uso e meios cromogênicos para laboratórios e controle de qualidade.">
+<meta name="description" content="Consulte meios de cultura por nome ou sigla: composição, pH, preparo e micro-organismos de controle. Farmacopeia Brasileira, alimentos, água, clínico e ambiental.">
 <title>Meios de Cultura | RBio Soluções Biológicas</title>
 <style>
 :root{--navy:#08283f;--navy2:#0d4663;--cyan:#10a8b8;--cyan-dark:#087b88;--ice:#eff8f9;--text:#18333e;--muted:#60747d;--line:#d9e7ea;--white:#fff;--shadow:0 14px 40px rgba(8,40,63,.09);--r:12px}
@@ -123,7 +123,8 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 <h1>Soluções para suas rotinas microbiológicas</h1>
 <p>Meios de cultura desidratados e prontos para uso, desenvolvidos para diferentes aplicações em diagnóstico, controle de qualidade, alimentos, água e monitoramento ambiental.</p>
 <div class="actions">
-<a class="btn btn-primary" href="#catalogo">Ver catálogo por aplicação →</a>
+<a class="btn btn-primary" href="#consulta">Consultar um meio →</a>
+<a class="btn btn-outline" href="#catalogo">Ver catálogo por aplicação</a>
 <a class="btn btn-outline" href="#contato">Falar com a RBio</a>
 </div>
 </div>
@@ -222,6 +223,64 @@ section{padding:54px 0}.split{gap:42px}.head h2,.split h2{font-size:32px}
 .cat-bar.on{display:flex}
 .cat-bar b{font-size:14px}.cat-bar span{font-size:12px;color:#b9d5dc;display:block}
 .cat-note{font-size:12px;color:var(--muted);margin-top:14px}
+.mc{background:#f4fafb;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mc-h2{margin:0 0 10px;max-width:760px}
+.mc-sub{margin:0 0 20px;color:var(--muted);max-width:760px}
+.mc-sr{position:absolute;left:-9999px}
+.mc-search{position:relative;display:block;max-width:560px}
+.mc-search input{width:100%;border:1px solid #c9dce0;border-radius:12px;padding:15px 16px 15px 46px;font:inherit;font-size:16px;background:#fff;box-shadow:var(--shadow)}
+.mc-search input:focus{outline:none;border-color:var(--cyan);box-shadow:0 0 0 3px rgba(16,168,184,.15)}
+.mc-search svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:20px;height:20px;color:var(--muted);pointer-events:none}
+.mc-sug{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 0;align-items:center;font-size:12px;color:var(--muted)}
+.mc-sug button{border:1px solid #c9dce0;background:#fff;color:var(--navy);border-radius:999px;padding:6px 12px;font:800 12px/1.2 inherit;cursor:pointer}
+.mc-sug button:hover{border-color:var(--cyan);color:var(--cyan-dark)}
+.mc-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 10px}
+.mc-tabs button{border:1px solid #c9dce0;background:#fff;color:var(--navy);border-radius:999px;padding:9px 15px;font:800 13px/1.2 inherit;cursor:pointer;transition:.15s}
+.mc-tabs button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.mc-tabs button:focus-visible{outline:3px solid rgba(16,168,184,.45);outline-offset:2px}
+.mc-count{margin:0 0 12px;font-size:12.5px;color:var(--muted)}
+.mc-list{display:grid;gap:10px}
+.mc-item{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.mc-item.open{border-color:#b8d5da;box-shadow:var(--shadow)}
+.mc-head{all:unset;box-sizing:border-box;width:100%;display:flex;gap:14px;align-items:center;justify-content:space-between;padding:16px 18px;cursor:pointer}
+.mc-head:focus-visible{outline:3px solid rgba(16,168,184,.45);outline-offset:-3px}
+.mc-head h3{margin:0;color:var(--navy);font-size:17px;line-height:1.3}
+.mc-syn{display:block;font-size:12.5px;color:var(--muted);margin-top:4px}
+.mc-uso{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--cyan-dark);background:var(--ice);border-radius:999px;padding:4px 10px;margin-top:8px}
+.mc-mini{display:flex;align-items:center;flex:0 0 auto}
+.mc-mini img{width:34px;height:26px;object-fit:contain;margin-left:-6px}
+.mc-chev{flex:0 0 auto;font-size:15px;color:var(--cyan-dark);transition:transform .2s;margin-left:10px}
+.mc-item.open .mc-chev{transform:rotate(90deg)}
+.mc-body{display:none;padding:4px 18px 20px;border-top:1px solid var(--line)}
+.mc-item.open .mc-body{display:block}
+.mc-what{margin:16px 0 0;font-size:14.5px;line-height:1.6}
+.mc-cols{display:grid;grid-template-columns:.85fr 1.15fr;gap:16px;margin-top:16px;align-items:start}
+.mc-box{border:1px solid var(--line);border-radius:12px;padding:15px;background:#fbfdfe}
+.mc-box h4{margin:0 0 10px;color:var(--navy);font-size:13px;letter-spacing:.3px;text-transform:uppercase}
+.mc-comp{margin:0;padding:0;list-style:none;display:grid;gap:5px;font-size:13.5px}
+.mc-comp li{padding-left:14px;position:relative;line-height:1.45}
+.mc-comp li:before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--cyan)}
+.mc-facts{margin:12px 0 0;display:grid;gap:7px;font-size:13px;line-height:1.5}
+.mc-facts b{color:var(--navy);display:block;font-size:11px;letter-spacing:.4px;text-transform:uppercase}
+.mc-org{display:grid;grid-template-columns:62px 1fr;gap:12px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.mc-org.noimg{grid-template-columns:1fr}
+.mc-org img{width:62px;height:46px;object-fit:contain;background:linear-gradient(160deg,#fff 0%,#e3f4f6 100%);border-radius:9px}
+.mc-org i{font-style:italic;font-weight:800;color:var(--navy);font-size:14px}
+.mc-org i.reto{font-style:normal}
+.mc-org small{color:var(--muted);font-size:11.5px;font-weight:700;margin-left:5px}
+.mc-org p{margin:4px 0 0;font-size:12.5px;color:var(--text);line-height:1.45}
+.mc-role{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;border-radius:999px;padding:3px 8px;margin-right:4px}
+.r-p{background:#e3f6ea;color:#17673a}.r-i{background:#e6f0ff;color:#24508f}.r-n{background:#fdeceb;color:#9a2b22}
+.mc-inc{font-size:12.5px;color:var(--muted);margin:10px 0 0;padding:10px 12px;background:var(--ice);border-radius:10px;line-height:1.5}
+.mc-cta{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+.mc-cta .btn{font-size:13px;padding:10px 15px}
+.mc-empty{display:none;color:var(--muted);padding:16px 0;font-size:14px}
+.mc-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:18px}
+.mc-legend .mc-role{margin-right:5px}
+.mc-note{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.6;max-width:900px}
+.mc-note a{text-decoration:underline}
+.mc mark{background:#fff3b0;color:inherit;border-radius:3px;padding:0 1px}
+@media(max-width:860px){.mc-cols{grid-template-columns:1fr}.mc-mini{display:none}.mc-head{padding:14px 15px}.mc-body{padding:4px 15px 18px}}
 mark{background:#fff3b0;color:inherit;border-radius:3px;padding:0 1px}
 @media(max-width:960px){.cat-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:620px){.cat-grid{grid-template-columns:1fr}.cat-search{flex:1 1 100%}.cat-tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}.cat-tabs button{white-space:nowrap}}
@@ -272,6 +331,129 @@ draw();
 })();
 </script>
 </section>
+<section class="mc" id="consulta">
+<div class="container">
+<span class="eyebrow">Consulta rápida</span>
+<h2 class="mc-h2">Qual meio usar? Busque pelo nome, pela sigla ou pelo micro-organismo.</h2>
+<p class="mc-sub">Digite TSA, Chapman, XLD, Salmonella, coliformes, urocultura. Você vê para que serve o meio, os componentes, o pH, como preparar e quais micro-organismos são usados no controle de qualidade, com o aspecto esperado da colônia.</p>
+<label class="mc-search"><span class="mc-sr">Buscar meio de cultura</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="mcQ" placeholder="Ex.: TSA, Sabouraud, Salmonella, coliformes…" autocomplete="off" spellcheck="false"></label>
+<div class="mc-sug" id="mcSug"></div>
+<div class="mc-tabs" id="mcTabs" role="group" aria-label="Filtrar por área"></div>
+<p class="mc-count" id="mcCount" role="status" aria-live="polite"></p>
+<div class="mc-list" id="mcList"></div>
+<p class="mc-empty" id="mcEmpty">Não encontramos esse meio na consulta. Tente outro nome ou sigla, ou fale com a RBio que a gente procura para você.</p>
+<div class="mc-legend">
+<span><b class="mc-role r-p">Cresce</b> o meio precisa permitir o crescimento</span>
+<span><b class="mc-role r-i">Aspecto</b> a colônia precisa ter a aparência esperada</span>
+<span><b class="mc-role r-n">Inibido</b> o meio precisa impedir o crescimento</span>
+</div>
+<p class="mc-note">Resumo educativo para consulta rápida. Os meios farmacopeicos seguem a Farmacopeia Brasileira, Volume I, capítulos de ensaios microbiológicos, disponível gratuitamente no <a href="https://www.gov.br/anvisa/pt-br/assuntos/farmacopeia/farmacopeia-brasileira" target="_blank" rel="noopener">site da Anvisa</a>; os de alimentos e água seguem os métodos de referência usuais. Esta página não substitui o texto oficial nem a bula do fabricante: confira sempre o método aplicável e as instruções do lote. Personagens ilustrativos, sem relação com a morfologia real.</p>
+</div>
+</section>
+<script src="meios-dados.js"></script>
+<script>
+(function(){
+var D=window.RBIO_MEIOS; if(!D) return;
+var T='img/turma/', WA='5562981307973';
+var AREAS=[['','Todos'],['fb','Farmacopeia'],['alim','Alimentos'],['agua','Água'],['clin','Clínico'],['amb','Ambiental']];
+var ROLES={p:['r-p','Cresce'],i:['r-i','Aspecto'],n:['r-n','Inibido']};
+var SUG=['TSA','Chapman','XLD','Sabouraud','Salmonella','coliformes','urocultura','Baird-Parker'];
+var q='', area='', open={};
+var $q=document.getElementById('mcQ'), $list=document.getElementById('mcList'),
+    $empty=document.getElementById('mcEmpty'), $tabs=document.getElementById('mcTabs'),
+    $sug=document.getElementById('mcSug'), $count=document.getElementById('mcCount');
+
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function norm(s){return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+function hl(s){ if(!q) return esc(s);
+  var n=norm(s), t=norm(q), i=n.indexOf(t); if(i<0) return esc(s);
+  return esc(s.slice(0,i))+'<mark>'+esc(s.slice(i,i+q.length))+'</mark>'+esc(s.slice(i+q.length)); }
+
+function hay(m){
+  var o=(m.o||[]).map(function(x){var g=D.org[x[0]];return g?g[0]+' '+g[1]:''}).join(' ');
+  return norm([m.n,(m.s||[]).join(' '),m.u,m.w,o,(m.c||[]).join(' ')].join(' '));
+}
+function match(m){
+  if(area && (m.t||[]).indexOf(area)<0) return false;
+  if(!q) return true;
+  return hay(m).indexOf(norm(q))>=0;
+}
+function synLine(m){
+  var s=(m.s||[]); if(!s.length) return '';
+  var t=norm(q), hit=null;
+  if(q) for(var i=0;i<s.length;i++){ if(norm(s[i]).indexOf(t)>=0){hit=i;break} }
+  var ord=hit===null?s:[s[hit]].concat(s.filter(function(_,i){return i!==hit}));
+  return '<span class="mc-syn">Também chamado de '+ord.slice(0,4).map(hl).join(' · ')+'</span>';
+}
+function orgHtml(x){
+  var g=D.org[x[0]]; if(!g) return '';
+  var roles=String(x[1]).split('').map(function(r){var R=ROLES[r];return R?'<span class="mc-role '+R[0]+'">'+R[1]+'</span>':''}).join('');
+  var grupo=/grupo|contagem/.test(g[1]);
+  var img=g[2]?'<img src="'+T+g[2]+'" alt="" loading="lazy" decoding="async">':'';
+  return '<div class="mc-org'+(g[2]?'':' noimg')+'">'+img+'<div><i class="'+(grupo?'reto':'')+'">'+hl(g[0])+'</i>'+
+    (grupo?'':'<small>'+esc(g[1])+'</small>')+'<p>'+roles+' '+esc(x[2])+'</p></div></div>';
+}
+function card(m,idx){
+  var ab=open[idx]?' open':'';
+  var minis=(m.o||[]).map(function(x){var g=D.org[x[0]];return g&&g[2]?g[2]:null})
+    .filter(function(v,i,a){return v&&a.indexOf(v)===i}).slice(0,4)
+    .map(function(f){return '<img src="'+T+f+'" alt="" loading="lazy" decoding="async">'}).join('');
+  var wa='https://wa.me/'+WA+'?text='+encodeURIComponent('Olá, RBio!\nGostaria de uma cotação de '+m.n+'.');
+  return '<article class="mc-item'+ab+'" data-i="'+idx+'">'+
+    '<button type="button" class="mc-head" aria-expanded="'+(open[idx]?'true':'false')+'">'+
+      '<span><h3>'+hl(m.n)+'</h3>'+synLine(m)+'<span class="mc-uso">'+esc(m.u)+'</span></span>'+
+      '<span class="mc-mini">'+minis+'<span class="mc-chev">▶</span></span>'+
+    '</button>'+
+    '<div class="mc-body">'+
+      '<p class="mc-what">'+hl(m.w)+'</p>'+
+      '<div class="mc-cols">'+
+        '<div class="mc-box"><h4>Composição</h4><ul class="mc-comp">'+
+          (m.c||[]).map(function(c){return '<li>'+hl(c)+'</li>'}).join('')+'</ul>'+
+          '<div class="mc-facts"><span><b>pH final a 25 °C</b>'+esc(m.ph)+'</span>'+
+          '<span><b>Preparo</b>'+esc(m.e)+'</span></div></div>'+
+        '<div class="mc-box"><h4>Micro-organismos de controle</h4>'+
+          (m.o||[]).map(orgHtml).join('')+
+          (m.i?'<p class="mc-inc">'+esc(m.i)+'</p>':'')+'</div>'+
+      '</div>'+
+      '<div class="mc-cta"><a class="btn btn-primary" href="'+wa+'" target="_blank" rel="noopener">Pedir cotação deste meio →</a>'+
+      '<a class="btn btn-outline" href="cepas-de-referencia.html">Ver cepas de referência</a></div>'+
+    '</div></article>';
+}
+function render(){
+  var r=D.meios.map(function(m,i){return [m,i]}).filter(function(p){return match(p[0])});
+  $list.innerHTML=r.map(function(p){return card(p[0],p[1])}).join('');
+  $empty.style.display=r.length?'none':'block';
+  $count.textContent=r.length?(r.length===1?'1 meio encontrado':r.length+' meios encontrados'):'';
+  if(q && r.length===1) open[r[0][1]]=true;
+}
+AREAS.forEach(function(a){
+  var b=document.createElement('button'); b.type='button'; b.textContent=a[1];
+  b.setAttribute('aria-pressed', a[0]===area?'true':'false');
+  b.onclick=function(){ area=a[0]; open={};
+    [].forEach.call($tabs.children,function(x){x.setAttribute('aria-pressed','false')});
+    b.setAttribute('aria-pressed','true'); render(); };
+  $tabs.appendChild(b);
+});
+$sug.innerHTML='<span>Experimente:</span>';
+SUG.forEach(function(s){
+  var b=document.createElement('button'); b.type='button'; b.textContent=s;
+  b.onclick=function(){ $q.value=s; q=s; open={}; render(); $q.focus(); };
+  $sug.appendChild(b);
+});
+var tm;
+$q.addEventListener('input',function(){ clearTimeout(tm); tm=setTimeout(function(){
+  q=$q.value.trim(); open={}; render();
+  if(q.length>2 && typeof gtag==='function') gtag('event','busca_meio',{termo:q.toLowerCase()});
+},160)});
+$list.addEventListener('click',function(ev){
+  var h=ev.target.closest('.mc-head'); if(!h) return;
+  var it=h.parentNode, i=it.getAttribute('data-i');
+  if(open[i]) delete open[i]; else open[i]=true;
+  it.classList.toggle('open'); h.setAttribute('aria-expanded', open[i]?'true':'false');
+});
+render();
+})();
+</script>
 <section id="contato" class="cta">
 <div class="container">
 <div class="cta-box">
