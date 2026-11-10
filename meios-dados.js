@@ -31,19 +31,19 @@ window.RBIO_MEIOS = {
  c:['Peptona de caseína','Farinha de soja (digestão papaínica)','Cloreto de sódio','Ágar'], ph:'7,3 ± 0,2', e:'Autoclavar em ciclo validado.',
  o:[['mes','p','Crescimento de colônias de aspecto variado; não diferencia espécies.'],['sa','p','Crescimento não inferior a 50% do inóculo de até 100 UFC.'],['pa','p','Crescimento não inferior a 50% do inóculo.'],['bs','p','Crescimento não inferior a 50% do inóculo.'],['ca','p','Crescimento não inferior a 50% do inóculo.'],['ab','p','Crescimento não inferior a 50% do inóculo.']],
  x:[['sa','Coco Gram-positivo: colônias douradas e cremosas.'],['ec','Gram-negativo: colônias lisas e acinzentadas.'],['bs','Bacilo esporulado: colônias grandes, secas e rugosas.']],
- i:'Promoção de crescimento a (32,5 ± 2,5) °C: bactérias até 3 dias, fungos até 5 dias.'},
+ i:'Contagem de mesófilos a (32,5 ± 2,5) °C por 3 a 5 dias. Na promoção de crescimento, bactérias até 3 dias e fungos até 5 dias.'},
 
 {n:'Caldo caseína-soja', s:['TSB','Tryptic Soy Broth','Trypticase Soy Broth','SCDM','caldo tripticaseína de soja','caldo triptona de soja','CASO caldo'], t:['fb','clin'], u:'Enriquecimento · esterilidade',
  w:'Caldo nutritivo de uso geral. Serve para o enriquecimento inicial na pesquisa de patógenos e é um dos dois meios do teste de esterilidade, voltado a aeróbios e fungos.',
  c:['Peptona de caseína','Farinha de soja (digestão papaínica)','Cloreto de sódio','Fosfato de potássio dibásico','Glicose'], ph:'7,3 ± 0,2', e:'Autoclavar em ciclo validado.',
  o:[['ec','p','Turvação do caldo.'],['bs','p','Turvação do caldo.'],['ca','p','Turvação do caldo.'],['ab','p','Crescimento visível.']],
- i:'Enriquecimento a (32,5 ± 2,5) °C por 18 a 24 h. No teste de esterilidade, incubação a (22,5 ± 2,5) °C.'},
+ i:'Enriquecimento a (32,5 ± 2,5) °C por 18 a 24 h. No número mais provável, tubos a (32,5 ± 2,5) °C por no máximo 5 dias. No teste de esterilidade, incubação a (22,5 ± 2,5) °C por 14 dias.'},
 
 {n:'Ágar Sabouraud-dextrose 4%', s:['SDA','Sabouraud Dextrose Agar','ágar Sabouraud glicose','Sabouraud 4%'], t:['fb','alim','amb'], u:'Bolores e leveduras · Candida',
  w:'Meio ácido e rico em glicose, que favorece fungos e leveduras e desfavorece a maioria das bactérias. Usado na contagem de bolores e leveduras e no isolamento de Candida albicans. Pode levar cloranfenicol para inibir bactérias.',
  c:['Dextrose','Mistura de peptona de tecido animal e peptona de caseína','Ágar'], ph:'5,6 ± 0,2', e:'Autoclavar em ciclo validado.',
  o:[['bol','pi','Colônias filamentosas (bolores) ou cremosas (leveduras).'],['ca','pi','Colônias brancas, cremosas.'],['ab','pi','Colônias filamentosas com esporos pretos.']],
- i:'Contagem de bolores e leveduras a (22,5 ± 2,5) °C por até 5 dias. Pesquisa de Candida a (32,5 ± 2,5) °C por 24 a 48 h.'},
+ i:'Contagem de bolores e leveduras a (22,5 ± 2,5) °C por 5 a 7 dias. Pesquisa de Candida a (32,5 ± 2,5) °C por 24 a 48 h.'},
 
 {n:'Caldo Sabouraud-dextrose', s:['Sabouraud Dextrose Broth','caldo Sabouraud'], t:['fb'], u:'Enriquecimento de Candida',
  w:'Versão líquida do Sabouraud, usada para enriquecer a amostra antes do isolamento de Candida albicans.',
@@ -63,10 +63,10 @@ window.RBIO_MEIOS = {
  o:[['ec','p','Turvação do caldo.'],['pa','p','Turvação do caldo.'],['sa','n','Sem crescimento: o meio precisa inibir Gram-positivas.']],
  i:'Incubação a (32,5 ± 2,5) °C por 24 a 48 h.'},
 
-{n:'Ágar violeta vermelho neutro bile glicose', s:['VRBG','VRBD','Violet Red Bile Glucose Agar','ágar cristal violeta vermelho neutro bile glicose'], t:['fb','alim'], u:'Seletivo · enterobactérias',
+{n:'Ágar violeta vermelho neutro glicose', s:['VRBG','VRBD','Violet Red Bile Glucose Agar','ágar violeta vermelho neutro bile glicose','ágar cristal violeta vermelho neutro bile glicose'], t:['fb','alim'], u:'Seletivo · enterobactérias',
  w:'Meio sólido seletivo e diferencial. O cristal violeta e os sais biliares inibem Gram-positivas, e o vermelho neutro revela a fermentação da glicose pelas enterobactérias.',
  c:['Extrato de levedura','Peptona de gelatina','Sais biliares','Cloreto de sódio','Glicose','Ágar','Vermelho neutro','Cristal violeta'], ph:'7,4 ± 0,2', e:'Não autoclavar. Aquecer até a ebulição e resfriar antes de distribuir.',
- o:[['ec','pi','Colônias rosadas a vermelhas, geralmente com halo de precipitação de bile.'],['pa','p','Crescimento com colônias características, sem a cor da fermentação.'],['sa','n','Sem crescimento.']],
+ o:[['ec','pi','Colônias rosadas a vermelhas, geralmente com halo de precipitação de bile.'],['pa','pi','Crescimento com colônias características, sem a cor da fermentação.'],['sa','n','Sem crescimento.']],
  i:'Incubação a (32,5 ± 2,5) °C por 18 a 24 h.'},
 
 {n:'Caldo MacConkey', s:['MacConkey Broth','caldo MC'], t:['fb'], u:'Seletivo · Escherichia coli',
@@ -87,9 +87,9 @@ window.RBIO_MEIOS = {
  i:'Incubação a (32,5 ± 2,5) °C por 18 a 24 h. Em alimentos costuma-se usar 41,5 °C.'},
 
 {n:'Ágar xilose lisina desoxicolato', s:['XLD','Xylose Lysine Deoxycholate Agar'], t:['fb','alim'], u:'Seletivo · Salmonella e Shigella',
- w:'Meio seletivo e diferencial. A Salmonella descarboxila a lisina e produz gás sulfídrico, o que forma colônias vermelhas com centro preto. Quem fermenta xilose ou lactose em excesso acidifica o meio e fica amarelo.',
+ w:'Meio seletivo e diferencial. A Salmonella descarboxila a lisina e produz gás sulfídrico, o que forma colônias vermelhas, com ou sem centro negro. Quem fermenta xilose ou lactose em excesso acidifica o meio e fica amarelo.',
  c:['Xilose','L-lisina','Lactose','Sacarose','Cloreto de sódio','Extrato de levedura','Vermelho de fenol','Desoxicolato de sódio','Tiossulfato de sódio','Citrato férrico amoniacal','Ágar'], ph:'7,4 ± 0,2', e:'Não autoclavar. Aquecer até a ebulição, resfriar a cerca de 50 °C e distribuir.',
- o:[['st','pi','Colônias vermelhas com centro preto.'],['ec','n','Colônias amarelas ou crescimento inibido.']],
+ o:[['st','pi','Colônias bem desenvolvidas, vermelhas, com ou sem centro negro.'],['ec','n','Colônias amarelas ou crescimento inibido.']],
  i:'Incubação a (32,5 ± 2,5) °C por 18 a 48 h.'},
 
 {n:'Ágar cetrimida', s:['Pseudomonas Cetrimide Agar','ágar cetrimide','ágar Pseudomonas'], t:['fb','agua','amb'], u:'Seletivo · Pseudomonas aeruginosa',
@@ -101,7 +101,7 @@ window.RBIO_MEIOS = {
 {n:'Ágar sal manitol', s:['Chapman','ágar manitol salgado','MSA','Mannitol Salt Agar','ágar Chapman'], t:['fb','alim','clin'], u:'Seletivo · Staphylococcus aureus',
  w:'Meio seletivo pela alta concentração de sal, que poucas bactérias toleram. É diferencial pelo manitol: o S. aureus fermenta e deixa o meio amarelo ao redor da colônia.',
  c:['Hidrolisado de caseína','Peptona péptica','Extrato de carne','D-manitol','Cloreto de sódio (alta concentração)','Vermelho de fenol','Ágar'], ph:'7,4 ± 0,2', e:'Ferver por 1 minuto com agitação e autoclavar em ciclo validado.',
- o:[['sa','pi','Colônias amarelas com zona amarela ao redor: fermenta o manitol.'],['ec','n','Sem crescimento.']],
+ o:[['sa','pi','Colônias amarelas ou brancas rodeadas por zona amarela: fermenta o manitol.'],['ec','n','Sem crescimento.']],
  i:'Incubação a (32,5 ± 2,5) °C por 18 a 72 h.'},
 
 {n:'Meio reforçado para Clostridium', s:['RCM','Reinforced Clostridial Medium','caldo reforçado para clostrídios'], t:['fb'], u:'Anaeróbios · Clostridium',
