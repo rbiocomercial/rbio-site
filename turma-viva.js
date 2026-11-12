@@ -260,7 +260,7 @@
       ring(cx, cy, r.width, 'rgba(255,205,40,.85)', 1100, 120, 3);
       ring(cx, cy, r.width * 1.3, 'rgba(255,225,90,.6)', 1300, 380, 2);
     },
-    // identificar: linha de laser escaneia e aparece um mini espectro
+    // MALDI-TOF: linha de laser escaneia e aparece um mini espectro
     identificar: function (el) {
       var r = box(el);
       particle(r.left + r.width / 2, r.top + r.height / 2, 10, 'width:' + (r.width * 1.05) + 'px;height:3px;left:' + (r.left - r.width * .025) + 'px;border-radius:2px;background:linear-gradient(90deg,rgba(16,168,184,0),#10f0ff,rgba(16,168,184,0));box-shadow:0 0 12px #10f0ff',
