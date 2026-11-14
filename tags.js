@@ -9,6 +9,9 @@ try {
     gtag('consent', 'update', {'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted', 'analytics_storage': 'granted'});
   }
 } catch (e) {}
+// Sem cookies, o Google ainda consegue atribuir cliques de anúncio pela URL (sem dados pessoais).
+gtag('set', 'url_passthrough', true);
+gtag('set', 'ads_data_redaction', true);
 gtag('js', new Date());
 gtag('config', 'AW-18527985961');
 gtag('config', 'G-2LNESDRK3G');
