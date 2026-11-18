@@ -1,0 +1,26 @@
+{
+ "data": "2026-11-19",
+ "instagram": {
+  "connector": "instagram",
+  "account": "17841461195394088",
+  "action": "create_carousel_post",
+  "params": {
+   "image_urls": [
+    "https://rbios.com.br/img/posts/dez/d01-1.jpg",
+    "https://rbios.com.br/img/posts/dez/d01-2.jpg",
+    "https://rbios.com.br/img/posts/dez/d01-3.jpg",
+    "https://rbios.com.br/img/posts/dez/d01-4.jpg"
+   ],
+   "caption": "Sem neutralizante, a placa de contato pode dar um resultado limpo que não é real. 🧫\n\nO resíduo de sanitizante continua agindo dentro do meio e inibe o crescimento. Por isso as placas de monitoramento costumam levar:\n\n• Lecitina: neutraliza quaternários de amônio\n• Polissorbato 80: neutraliza fenólicos e conservantes\n• Tiossulfato (cloro e iodo) e histidina (aldeídos), quando o sanitizante pede\n\nAntes de trocar de sanitizante, confirme se o meio continua neutralizando.\n\n👉 Atendimento técnico para empresas (CNPJ): link na bio ou rbios.com.br\n\n#microbiologia #controledequalidade #laboratorio #meiosdecultura #RBio"
+  }
+ },
+ "linkedin": {
+  "connector": "linkedin_organic",
+  "account": "145447703",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d01-1.jpg",
+   "commentary": "Placa de contato sem neutralizante é um risco de falso negativo no monitoramento ambiental.\n\nO resíduo do sanitizante continua ativo dentro do meio. Os agentes mais usados:\n\n- Lecitina: quaternários de amônio\n- Polissorbato 80: fenólicos e conservantes\n- Tiossulfato: cloro e iodo\n- Histidina: aldeídos\n\nToda troca de sanitizante deveria vir acompanhada da verificação da neutralização no meio usado.\n\nAtendemos laboratórios e indústrias com orientação técnica em meios de cultura, monitoramento ambiental e controle de qualidade microbiológico. Fale com a RBio: https://rbios.com.br"
+  }
+ }
+}

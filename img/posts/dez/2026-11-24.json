@@ -1,0 +1,21 @@
+{
+ "data": "2026-11-24",
+ "instagram": {
+  "connector": "instagram",
+  "account": "17841461195394088",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d06-1.jpg",
+   "caption": "Swab ou esponja? Depende da superfície. 🧽\n\n• Swab: áreas pequenas, cantos, frestas e superfícies irregulares\n• Esponja: áreas grandes, como esteiras, ralos, pisos e equipamentos\n\nEm pesquisa ambiental de patógenos na indústria de alimentos, a esponja cobre mais área e aumenta a chance de detecção.\n\n👉 Atendimento técnico para empresas (CNPJ): link na bio ou rbios.com.br\n\n#microbiologia #controledequalidade #laboratorio #meiosdecultura #RBio"
+  }
+ },
+ "linkedin": {
+  "connector": "linkedin_organic",
+  "account": "145447703",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d06-1.jpg",
+   "commentary": "Coleta de superfície: swab ou esponja?\n\n- Swab: áreas pequenas, cantos, frestas e superfícies irregulares\n- Esponja: áreas grandes, como esteiras, ralos, pisos e equipamentos\n\nNa pesquisa ambiental de patógenos em alimentos, cobrir mais área aumenta a chance de detecção, e a esponja leva vantagem.\n\nAtendemos laboratórios e indústrias com orientação técnica em meios de cultura, monitoramento ambiental e controle de qualidade microbiológico. Fale com a RBio: https://rbios.com.br"
+  }
+ }
+}

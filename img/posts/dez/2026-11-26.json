@@ -1,0 +1,21 @@
+{
+ "data": "2026-11-26",
+ "instagram": {
+  "connector": "instagram",
+  "account": "17841461195394088",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d08-1.jpg",
+   "caption": "Meio desidratado empedrou? Descarte. ⚠️\n\nO pó absorve umidade com facilidade, e isso afeta o desempenho. Para conservar:\n• pote sempre bem fechado\n• local seco e protegido da luz\n• temperatura indicada no rótulo\n• data de abertura anotada no pote\n\nGrumos ou mudança de cor indicam que o meio já se alterou.\n\n👉 Atendimento técnico para empresas (CNPJ): link na bio ou rbios.com.br\n\n#microbiologia #controledequalidade #laboratorio #meiosdecultura #RBio"
+  }
+ },
+ "linkedin": {
+  "connector": "linkedin_organic",
+  "account": "145447703",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d08-1.jpg",
+   "commentary": "Meio de cultura desidratado é higroscópico: absorve umidade e perde desempenho.\n\nBoas práticas simples:\n- pote sempre bem fechado\n- local seco, protegido da luz, na temperatura do rótulo\n- data de abertura registrada\n\nGrumos ou mudança de cor são sinal de descarte, não de \"ainda dá para usar\".\n\nAtendemos laboratórios e indústrias com orientação técnica em meios de cultura, monitoramento ambiental e controle de qualidade microbiológico. Fale com a RBio: https://rbios.com.br"
+  }
+ }
+}

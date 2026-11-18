@@ -1,0 +1,26 @@
+{
+ "data": "2026-11-21",
+ "instagram": {
+  "connector": "instagram",
+  "account": "17841461195394088",
+  "action": "create_carousel_post",
+  "params": {
+   "image_urls": [
+    "https://rbios.com.br/img/posts/dez/d03-1.jpg",
+    "https://rbios.com.br/img/posts/dez/d03-2.jpg",
+    "https://rbios.com.br/img/posts/dez/d03-3.jpg",
+    "https://rbios.com.br/img/posts/dez/d03-4.jpg"
+   ],
+   "caption": "A tampa que não abre sozinha. 🔒\n\nPlacas com trava têm um encaixe entre tampa e base que mantém a placa fechada:\n\n• No transporte da área amostrada até o laboratório\n• No empilhamento dentro da estufa\n• No manuseio do dia a dia, com menos abertura acidental\n\nUm detalhe simples que protege o resultado do monitoramento.\n\n👉 Atendimento técnico para empresas (CNPJ): link na bio ou rbios.com.br\n\n#microbiologia #controledequalidade #laboratorio #meiosdecultura #RBio"
+  }
+ },
+ "linkedin": {
+  "connector": "linkedin_organic",
+  "account": "145447703",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d03-1.jpg",
+   "commentary": "Placas com trava: um detalhe de projeto que protege o resultado.\n\nO encaixe entre tampa e base mantém a placa fechada no transporte entre áreas, deixa as pilhas mais estáveis na estufa e reduz a abertura acidental depois da coleta.\n\nEm programas de monitoramento ambiental com muitas placas por dia, isso significa menos perda e menos investigação desnecessária.\n\nAtendemos laboratórios e indústrias com orientação técnica em meios de cultura, monitoramento ambiental e controle de qualidade microbiológico. Fale com a RBio: https://rbios.com.br"
+  }
+ }
+}

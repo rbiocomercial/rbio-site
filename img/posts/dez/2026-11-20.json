@@ -1,0 +1,21 @@
+{
+ "data": "2026-11-20",
+ "instagram": {
+  "connector": "instagram",
+  "account": "17841461195394088",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d02-1.jpg",
+   "caption": "O cloro não para de agir quando a amostra entra no frasco. 💧\n\nEm água tratada, o cloro residual continua matando bactérias durante o transporte. Sem neutralizar, o resultado sai melhor do que a água realmente é.\n\nPor isso a coleta de água clorada usa frasco estéril com tiossulfato de sódio, transporte refrigerado e análise dentro do prazo do método.\n\n👉 Atendimento técnico para empresas (CNPJ): link na bio ou rbios.com.br\n\n#microbiologia #controledequalidade #laboratorio #meiosdecultura #RBio"
+  }
+ },
+ "linkedin": {
+  "connector": "linkedin_organic",
+  "account": "145447703",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d02-1.jpg",
+   "commentary": "Coleta de água tratada: o cloro não para de agir dentro do frasco.\n\nSem tiossulfato de sódio, o cloro residual continua inativando micro-organismos até a análise, e o laudo subestima a contaminação.\n\nFrasco estéril com tiossulfato, transporte refrigerado e análise dentro do prazo do método são o básico para um resultado confiável.\n\nAtendemos laboratórios e indústrias com orientação técnica em meios de cultura, monitoramento ambiental e controle de qualidade microbiológico. Fale com a RBio: https://rbios.com.br"
+  }
+ }
+}

@@ -1,0 +1,26 @@
+{
+ "data": "2026-12-01",
+ "instagram": {
+  "connector": "instagram",
+  "account": "17841461195394088",
+  "action": "create_carousel_post",
+  "params": {
+   "image_urls": [
+    "https://rbios.com.br/img/posts/dez/d13-1.jpg",
+    "https://rbios.com.br/img/posts/dez/d13-2.jpg",
+    "https://rbios.com.br/img/posts/dez/d13-3.jpg",
+    "https://rbios.com.br/img/posts/dez/d13-4.jpg"
+   ],
+   "caption": "Como funciona o atendimento da RBio? 🔬\n\n1. Você conta a sua necessidade pelo formulário no site\n2. Fazemos a indicação técnica e enviamos a proposta\n3. Acompanhamos o uso e programamos a reposição\n\nAtendemos laboratórios e indústrias farmacêuticas, cosméticas, de alimentos e de saneamento (somente CNPJ).\n\n👉 Atendimento técnico para empresas (CNPJ): link na bio ou rbios.com.br\n\n#microbiologia #controledequalidade #laboratorio #meiosdecultura #RBio"
+  }
+ },
+ "linkedin": {
+  "connector": "linkedin_organic",
+  "account": "145447703",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d13-1.jpg",
+   "commentary": "Como funciona o atendimento da RBio Soluções Biológicas:\n\n1. Você descreve a necessidade pelo formulário em rbios.com.br\n2. Fazemos a indicação técnica e enviamos uma proposta clara\n3. Acompanhamos o uso e programamos a reposição\n\nAtendemos laboratórios e indústrias farmacêuticas, cosméticas, de alimentos e de saneamento.\n\nAtendemos laboratórios e indústrias com orientação técnica em meios de cultura, monitoramento ambiental e controle de qualidade microbiológico. Fale com a RBio: https://rbios.com.br"
+  }
+ }
+}

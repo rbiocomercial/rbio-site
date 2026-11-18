@@ -1,0 +1,21 @@
+{
+ "data": "2026-11-22",
+ "instagram": {
+  "connector": "instagram",
+  "account": "17841461195394088",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d04-1.jpg",
+   "caption": "Mito ou verdade: autoclavar por mais tempo deixa o meio mais seguro? 🤔\n\nMito. O excesso de calor:\n• escurece o meio (caramelização dos açúcares)\n• altera o pH\n• degrada nutrientes e indicadores\n\nO resultado é um meio que pode reprovar na promoção de crescimento. Siga o tempo e a temperatura do fabricante e valide o ciclo da sua autoclave.\n\n👉 Atendimento técnico para empresas (CNPJ): link na bio ou rbios.com.br\n\n#microbiologia #controledequalidade #laboratorio #meiosdecultura #RBio"
+  }
+ },
+ "linkedin": {
+  "connector": "linkedin_organic",
+  "account": "145447703",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d04-1.jpg",
+   "commentary": "Autoclavar por mais tempo não deixa o meio mais seguro.\n\nO superaquecimento escurece o meio, altera o pH e degrada nutrientes e indicadores, o que pode reprovar o lote na promoção de crescimento.\n\nCiclo validado e tempo do fabricante: é isso que garante esterilidade sem perder desempenho.\n\nAtendemos laboratórios e indústrias com orientação técnica em meios de cultura, monitoramento ambiental e controle de qualidade microbiológico. Fale com a RBio: https://rbios.com.br"
+  }
+ }
+}

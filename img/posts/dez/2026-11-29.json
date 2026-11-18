@@ -1,0 +1,26 @@
+{
+ "data": "2026-11-29",
+ "instagram": {
+  "connector": "instagram",
+  "account": "17841461195394088",
+  "action": "create_carousel_post",
+  "params": {
+   "image_urls": [
+    "https://rbios.com.br/img/posts/dez/d11-1.jpg",
+    "https://rbios.com.br/img/posts/dez/d11-2.jpg",
+    "https://rbios.com.br/img/posts/dez/d11-3.jpg",
+    "https://rbios.com.br/img/posts/dez/d11-4.jpg"
+   ],
+   "caption": "Coliformes totais, termotolerantes e E. coli: qual a diferença? 💧\n\n• Totais: fermentam lactose a 35 °C e indicam falhas no tratamento ou na rede\n• Termotolerantes: crescem a 44,5 °C, mais associados à origem fecal\n• E. coli: identificada pela β-glucuronidase, é o indicador de contaminação fecal\n\nNa água para consumo humano, E. coli deve estar ausente em 100 mL.\n\n👉 Atendimento técnico para empresas (CNPJ): link na bio ou rbios.com.br\n\n#microbiologia #controledequalidade #laboratorio #meiosdecultura #RBio"
+  }
+ },
+ "linkedin": {
+  "connector": "linkedin_organic",
+  "account": "145447703",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d11-1.jpg",
+   "commentary": "Coliformes totais, termotolerantes e E. coli respondem a perguntas diferentes.\n\n- Totais: indicam falha no tratamento ou na rede de distribuição\n- Termotolerantes: crescem a 44,5 °C, mais associados à origem fecal\n- E. coli: indicador específico de contaminação fecal, detectado pela β-glucuronidase\n\nNa água para consumo humano, E. coli deve estar ausente em 100 mL.\n\nAtendemos laboratórios e indústrias com orientação técnica em meios de cultura, monitoramento ambiental e controle de qualidade microbiológico. Fale com a RBio: https://rbios.com.br"
+  }
+ }
+}
