@@ -1,0 +1,21 @@
+{
+ "data": "2026-12-02",
+ "instagram": {
+  "connector": "instagram",
+  "account": "17841461195394088",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d14-1.jpg",
+   "caption": "Já incubou o seu meio sem inocular nada? 🧫\n\nSeparar uma amostra de cada lote e incubar sem inóculo é o jeito de confirmar que o meio saiu estéril. Qualquer crescimento reprova o lote.\n\nÉ o controle negativo que dá confiança a todos os outros resultados.\n\n👉 Atendimento técnico para empresas (CNPJ): link na bio ou rbios.com.br\n\n#microbiologia #controledequalidade #laboratorio #meiosdecultura #RBio"
+  }
+ },
+ "linkedin": {
+  "connector": "linkedin_organic",
+  "account": "145447703",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d14-1.jpg",
+   "commentary": "Teste de esterilidade do meio: incubar sem inocular.\n\nUma amostra representativa de cada lote, incubada sem inóculo, confirma a esterilidade. Qualquer crescimento reprova o lote.\n\nÉ o controle negativo que sustenta todos os demais resultados do laboratório.\n\nAtendemos laboratórios e indústrias com orientação técnica em meios de cultura, monitoramento ambiental e controle de qualidade microbiológico. Fale com a RBio: https://rbios.com.br"
+  }
+ }
+}

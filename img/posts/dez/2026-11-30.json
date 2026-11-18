@@ -1,0 +1,21 @@
+{
+ "data": "2026-11-30",
+ "instagram": {
+  "connector": "instagram",
+  "account": "17841461195394088",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d12-1.jpg",
+   "caption": "Todo lote de meio preparado precisa contar a própria história. 📋\n\nRegistre:\n• lote e validade do meio desidratado\n• data de preparo e responsável\n• pH final\n• ciclo de esterilização\n• resultado da promoção de crescimento\n\nNuma auditoria ou investigação, é esse registro que sustenta o seu resultado.\n\n👉 Atendimento técnico para empresas (CNPJ): link na bio ou rbios.com.br\n\n#microbiologia #controledequalidade #laboratorio #meiosdecultura #RBio"
+  }
+ },
+ "linkedin": {
+  "connector": "linkedin_organic",
+  "account": "145447703",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d12-1.jpg",
+   "commentary": "Rastreabilidade de meios preparados: o que registrar em cada lote.\n\n- Lote e validade do meio desidratado\n- Data de preparo e responsável\n- pH final\n- Ciclo de esterilização\n- Resultado da promoção de crescimento\n\nEm auditoria ou investigação de desvio, é esse registro que sustenta o resultado.\n\nAtendemos laboratórios e indústrias com orientação técnica em meios de cultura, monitoramento ambiental e controle de qualidade microbiológico. Fale com a RBio: https://rbios.com.br"
+  }
+ }
+}

@@ -1,0 +1,21 @@
+{
+ "data": "2026-11-28",
+ "instagram": {
+  "connector": "instagram",
+  "account": "17841461195394088",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d10-1.jpg",
+   "caption": "Mito ou verdade: placa sem crescimento é área limpa? 🧫\n\nNem sempre. A placa também fica vazia quando:\n• o meio está vencido ou mal armazenado\n• falta neutralizante para o sanitizante usado\n• a temperatura ou o tempo de incubação estão errados\n\nResultado zero só vale quando o processo inteiro está sob controle.\n\n👉 Atendimento técnico para empresas (CNPJ): link na bio ou rbios.com.br\n\n#microbiologia #controledequalidade #laboratorio #meiosdecultura #RBio"
+  }
+ },
+ "linkedin": {
+  "connector": "linkedin_organic",
+  "account": "145447703",
+  "action": "create_image_post",
+  "params": {
+   "image_url": "https://rbios.com.br/img/posts/dez/d10-1.jpg",
+   "commentary": "Placa sem crescimento nem sempre significa área limpa.\n\nMeio vencido, falta de neutralizante para o sanitizante em uso e incubação fora do especificado também produzem placas vazias.\n\nUm resultado zero só é confiável quando meio, coleta e incubação estão sob controle.\n\nAtendemos laboratórios e indústrias com orientação técnica em meios de cultura, monitoramento ambiental e controle de qualidade microbiológico. Fale com a RBio: https://rbios.com.br"
+  }
+ }
+}
