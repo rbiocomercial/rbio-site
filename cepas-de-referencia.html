@@ -84,7 +84,7 @@ footer{border-top:1px solid var(--line);padding:35px 0 20px;background:#fff}.foo
 <div class="cq-box"><label for="cqInput" class="cq-label">Micro-organismo ou referência</label><div class="cq-field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="cqInput" type="search" autocomplete="off" spellcheck="false" placeholder="Ex.: E. coli, ATCC 25922, NCTC 12923, WDCM 00032"></div>
 <div class="cq-sug" aria-label="Sugestões"><button type="button" data-q="E. coli">E. coli</button><button type="button" data-q="S. aureus">S. aureus</button><button type="button" data-q="P. aeruginosa">P. aeruginosa</button><button type="button" data-q="C. albicans">C. albicans</button><button type="button" data-q="A. brasiliensis">A. brasiliensis</button><button type="button" data-q="Salmonella">Salmonella</button><button type="button" data-q="ATCC 6633">ATCC 6633</button></div></div>
 <p id="cqStatus" class="cq-status" aria-live="polite"></p><div id="cqResults" class="cq-results"></div>
-<p class="cq-src">Equivalências conforme o catálogo de cepas de referência da WDCM (World Data Centre for Microorganisms) e as listas dos bancos de cultura. Confirme sempre a designação no certificado da cepa.</p></div></section>
+<p class="cq-src">Equivalências conforme o catálogo de cepas de referência da WDCM (World Data Centre for Microorganisms) , conferidas com o catálogo da DSMZ e as listas dos bancos de cultura. Nomes reclassificados aparecem com o nome antigo e o atual. Confirme sempre a designação no certificado da cepa.</p></div></section>
 
 <section id="solucoes"><div class="container"><span class="eyebrow">OPÇÕES</span><h2>O formato certo para cada controle.</h2><p class="lead">Bactérias, leveduras e fungos, incluindo as cepas de desafio citadas na Farmacopeia.</p>
 <div class="grid2">
@@ -109,11 +109,12 @@ var D=window.CEPAS||[],inp=document.getElementById('cqInput'),out=document.getEl
 if(!inp||!D.length)return;
 var MAIN=['ATCC','NCTC','NCPF','DSM','CIP','NCIMB','CECT'],COLS=MAIN.concat(['LMG','CCUG','CCM','JCM','IFO','IMI','NCYC','CBS','MUCL','NRRL','IHEM','WDCM']);
 function n(s){return (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9.\-]+/g,' ').split(' ').map(function(w){return w.replace(/^[.\-]+|[.\-]+$/g,'')}).filter(Boolean).join(' ')}
-function c(s){return n(s).replace(/ /g,'')}
+function c(s){return z(n(s).replace(/ /g,''))}
+function z(s){return s.replace(/\.0+(\d)/g,'.$1')}
 function num(r){return (r.split(' ')[1]||'').toLowerCase()}
-D.forEach(function(x){x._w=n([x.o].concat(x.a||[]).join(' ')).split(' ');var all=x.r.slice();if(x.w)all.push(x.w);x._r=all.map(function(r){return{c:c(r),k:r.split(' ')[0].toLowerCase(),v:num(r).replace(/^0+/,'')}})});
+D.forEach(function(x){x._w=n([x.o].concat(x.a||[]).join(' ')).split(' ');var all=x.r.slice();if(x.w)all.push(x.w);x._r=all.map(function(r){return{c:c(r),k:r.split(' ')[0].toLowerCase(),v:z(num(r).replace(/^0+/,''))}})});
 function esc(s){return s.replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
-function parse(q){var t=n(q).split(' ').filter(Boolean),o=[];for(var i=0;i<t.length;i++){var a=t[i];if(COLS.indexOf(a.toUpperCase())>=0&&t[i+1]&&/^[a-z]?-?\d/.test(t[i+1])){o.push({ref:a+t[i+1],col:a});i++}else if(/^[a-z]+\d/.test(a)){var m=a.match(/^([a-z]+)(.*)$/);o.push(COLS.indexOf(m[1].toUpperCase())>=0?{ref:a,col:m[1]}:{word:a})}else if(/^\d/.test(a))o.push({num:a.replace(/^0+/,'')||'0',z:/^0/.test(a)});else if(COLS.indexOf(a.toUpperCase())>=0)o.push({col:a});else o.push({word:a})}return o}
+function parse(q){var t=n(q).split(' ').filter(Boolean),o=[];for(var i=0;i<t.length;i++){var a=t[i];if(COLS.indexOf(a.toUpperCase())>=0&&t[i+1]&&/^[a-z]?-?\d/.test(t[i+1])){o.push({ref:z(a+t[i+1]),col:a});i++}else if(/^[a-z]+\d/.test(a)){var m=a.match(/^([a-z]+)(.*)$/);o.push(COLS.indexOf(m[1].toUpperCase())>=0?{ref:z(a),col:m[1]}:{word:a})}else if(/^\d/.test(a))o.push({num:z(a.replace(/^0+/,''))||'0',z:/^0/.test(a)});else if(COLS.indexOf(a.toUpperCase())>=0)o.push({col:a});else o.push({word:a})}return o}
 function match(x,toks){var hits=[];x._e=0;for(var i=0;i<toks.length;i++){var t=toks[i],ok=false;
  if(t.word){ok=x._w.some(function(w){return w.indexOf(t.word)===0})}
  else if(t.ref){x._r.forEach(function(r,j){var rv=r.k+r.v;var q2=t.ref.replace(/^([a-z]+)0+/,'$1'),zz=/^[a-z]+0/.test(t.ref);if(zz?rv===q2:(r.c.indexOf(t.ref)===0||rv.indexOf(q2)===0)){ok=true;hits.push(j);if(r.c===t.ref||rv===q2)x._e++}})}
