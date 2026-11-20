@@ -11,7 +11,7 @@
     "https://rbios.com.br/img/posts/dez/d13-3.jpg",
     "https://rbios.com.br/img/posts/dez/d13-4.jpg"
    ],
-   "caption": "Como funciona o atendimento da RBio? 🔬\n\n1. Você conta a sua necessidade pelo formulário no site\n2. Fazemos a indicação técnica e enviamos a proposta\n3. Acompanhamos o uso e programamos a reposição\n\nAtendemos laboratórios e indústrias farmacêuticas, cosméticas, de alimentos e de saneamento (somente CNPJ).\n\n👉 Atendimento técnico para empresas (CNPJ): link na bio ou rbios.com.br\n\n#microbiologia #controledequalidade #laboratorio #meiosdecultura #RBio"
+   "caption": "Teste de esterilidade: o falso positivo mais caro do laboratório. 🧫\n\nUma contaminação do próprio ensaio pode reprovar um lote inteiro. Três cuidados fazem a diferença:\n\n• Ambiente: isolador ou fluxo unidirecional classe A, com monitoramento durante o ensaio\n• Meios: tioglicolato a 30–35 °C e caseína-soja a 20–25 °C, por no mínimo 14 dias\n• Controles: negativos e de promoção de crescimento, para provar que o resultado é do produto\n\nSalve este post e siga @rbios.com.br para mais conteúdo de microbiologia e controle de qualidade.\n\n#microbiologia #controledequalidade #laboratorio #industriafarmaceutica #RBio"
   }
  },
  "linkedin": {
@@ -20,7 +20,7 @@
   "action": "create_image_post",
   "params": {
    "image_url": "https://rbios.com.br/img/posts/dez/d13-li.jpg",
-   "commentary": "Como funciona o atendimento da RBio Soluções Biológicas:\n\n1. Você descreve a necessidade pelo formulário em rbios.com.br\n2. Fazemos a indicação técnica e enviamos uma proposta clara\n3. Acompanhamos o uso e programamos a reposição\n\nAtendemos laboratórios e indústrias farmacêuticas, cosméticas, de alimentos e de saneamento.\n\nConteúdo técnico da RBio Soluções Biológicas. Siga a página para mais dicas de microbiologia e controle de qualidade: https://rbios.com.br"
+   "commentary": "Teste de esterilidade: o falso positivo mais caro do laboratório.\n\nUma contaminação do próprio ensaio pode reprovar um lote inteiro de produto. Três cuidados fazem a diferença:\n\n- Ambiente: isolador ou fluxo unidirecional classe A, com monitoramento ambiental durante a execução\n- Meios: tioglicolato a 30–35 °C e caseína-soja a 20–25 °C, por no mínimo 14 dias de incubação\n- Controles: negativos e de promoção de crescimento, que mostram que o resultado é do produto, e não do ensaio\n\nQuando o teste dá positivo, a investigação começa por esses três pontos.\n\nConteúdo técnico da RBio Soluções Biológicas. Siga a página para mais dicas de microbiologia e controle de qualidade: https://rbios.com.br"
   }
  }
 }
